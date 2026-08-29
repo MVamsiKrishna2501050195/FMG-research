@@ -1,0 +1,45 @@
+dataset,feature,subgroup,subgroup_name,shap_clean,shap_stress,shap_shift
+Adult Income,age,0,g0,0.040902,0.042128,0.001225
+Adult Income,workclass,0,g0,0.004753,0.003419,-0.001334
+Adult Income,fnlwgt,0,g0,0.009123,0.00857,-0.000553
+Adult Income,education,0,g0,0.010058,0.009118,-0.000941
+Adult Income,education-num,0,g0,0.049111,0.046491,-0.00262
+Adult Income,marital-status,0,g0,0.056607,0.065723,0.009116
+Adult Income,occupation,0,g0,0.023909,0.029576,0.005667
+Adult Income,relationship,0,g0,0.088475,0.090371,0.001895
+Adult Income,race,0,g0,0.003649,0.004266,0.000617
+Adult Income,capital-gain,0,g0,0.032988,0.029963,-0.003025
+Adult Income,capital-loss,0,g0,0.011552,0.011654,0.000102
+Adult Income,hours-per-week,0,g0,0.026441,0.024852,-0.001588
+Adult Income,native-country,0,g0,0.002402,0.002457,5.6e-05
+Adult Income,age,1,g1,0.051349,0.047208,-0.004141
+Adult Income,workclass,1,g1,0.013686,0.009646,-0.00404
+Adult Income,fnlwgt,1,g1,0.014808,0.012944,-0.001865
+Adult Income,education,1,g1,0.016678,0.015299,-0.00138
+Adult Income,education-num,1,g1,0.075919,0.068165,-0.007754
+Adult Income,marital-status,1,g1,0.06712,0.07355,0.00643
+Adult Income,occupation,1,g1,0.036329,0.039191,0.002862
+Adult Income,relationship,1,g1,0.08228,0.083716,0.001436
+Adult Income,race,1,g1,0.00375,0.003549,-0.000201
+Adult Income,capital-gain,1,g1,0.058371,0.052328,-0.006043
+Adult Income,capital-loss,1,g1,0.01852,0.016523,-0.001998
+Adult Income,hours-per-week,1,g1,0.033897,0.032064,-0.001833
+Adult Income,native-country,1,g1,0.003318,0.002869,-0.00045
+COMPAS,age,0,g0,0.110566,0.107329,-0.003237
+COMPAS,c_charge_degree,0,g0,0.025268,0.023761,-0.001507
+COMPAS,sex,0,g0,0.030868,0.029203,-0.001665
+COMPAS,priors_count,0,g0,0.155254,0.137064,-0.01819
+COMPAS,days_b_screening_arrest,0,g0,0.024941,0.024908,-3.2e-05
+COMPAS,juv_fel_count,0,g0,0.003811,0.003478,-0.000333
+COMPAS,juv_misd_count,0,g0,0.009524,0.008995,-0.000529
+COMPAS,juv_other_count,0,g0,0.0172,0.015131,-0.002069
+COMPAS,c_days_from_compas,0,g0,0.017087,0.01948,0.002393
+COMPAS,age,1,g1,0.091962,0.094891,0.00293
+COMPAS,c_charge_degree,1,g1,0.030852,0.028346,-0.002506
+COMPAS,sex,1,g1,0.032516,0.028862,-0.003655
+COMPAS,priors_count,1,g1,0.130045,0.123381,-0.006664
+COMPAS,days_b_screening_arrest,1,g1,0.034547,0.030634,-0.003913
+COMPAS,juv_fel_count,1,g1,0.002149,0.00221,6e-05
+COMPAS,juv_misd_count,1,g1,0.004944,0.004497,-0.000446
+COMPAS,juv_other_count,1,g1,0.016015,0.015093,-0.000923
+COMPAS,c_days_from_compas,1,g1,0.022022,0.019925,-0.002098
