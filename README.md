@@ -26,8 +26,11 @@ Analysis conventions
 - Primary seeds are 42, 123, 456, 1, 7, 13, 21, 37, 55, and 99.
 - Primary masking rates are 5%, 10%, and 20%.
 
-Before submission
------------------
-Add the package to a permanent repository or journal supplement, record the
-software and library versions used for execution, and replace the request-only
-distribution wording in the manuscript with the permanent archive link.
+Repository and manuscript
+-------------------------
+This release is publicly available at:
+https://github.com/MVamsiKrishna2501050195/FMG-research
+
+The IJMLC-compliant manuscript in this repository cites the same repository in
+its Data Availability statement. Before journal submission, archive this
+release in a persistent service such as Zenodo if the journal requires a DOI.
