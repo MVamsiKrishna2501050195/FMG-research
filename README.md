@@ -45,8 +45,8 @@ replaced by aggregate accuracy denominators.
 Analysis conventions
 --------------------
 - MCAR masking is an independent per-feature-cell probability. For a test row
-  with (p) eligible features, the expected probability of at least one
-  masked feature is (1-(1-\epsilon)^p); it is not the masking rate itself.
+  with `p` eligible features, the expected probability of at least one masked
+  feature is `1 - (1 - epsilon)^p`; it is not the masking rate itself.
 - Test-time MCAR masking is applied after model training and only to test
   features.
 - The same trained model is evaluated on clean and stressed test data.
@@ -59,8 +59,8 @@ Analysis conventions
 - The 12 primary comparisons are Adult Income, COMPAS, and Taiwan Credit
   crossed with RF, XGB, LGB, and MLP.
 - The zero-FMG test is a one-sided paired Wilcoxon test over seeds. The
-  prespecified 12-comparison threshold is (0.05/12=0.0041667), displayed as
-  0.0042 in result tables. Cohen's (d_z) uses unrounded per-seed FMG values.
+  prespecified 12-comparison threshold is `0.05/12 = 0.0041667`, displayed as
+  0.0042 in result tables. Cohen's `d_z` uses unrounded per-seed FMG values.
 
 Re-running the notebook
 -----------------------
