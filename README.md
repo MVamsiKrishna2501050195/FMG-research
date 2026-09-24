@@ -77,6 +77,4 @@ Repository and manuscript
 This release is publicly available at:
 https://github.com/MVamsiKrishna2501050195/FMG-research
 
-The IJMLC-compliant manuscript in this repository cites the same repository in
-its Data Availability statement. Before journal submission, archive this
-release in a persistent service such as Zenodo if the journal requires a DOI.
+
