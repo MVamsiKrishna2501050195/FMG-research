@@ -1,0 +1,16 @@
+Supplemental sensitivity analysis: mixed-type, one-hot categorical representation.
+Python: 3.11.15
+NumPy: 2.4.6
+pandas: 3.0.5
+scikit-learn: 1.6.1
+CPU: Intel64 Family 6 Model 126 Stepping 5, GenuineIntel
+Logical CPUs: 4
+System RAM: 7.74 GiB
+Split seeds: 42, 123, 456, 1, 7, 13, 21, 37, 55, 99
+Mask: 20% independent MCAR over raw test feature cells; same mask per dataset/seed across imputation strategies.
+Classifier: RandomForestClassifier(n_estimators=100, random_state=seed, n_jobs=-1), fit only on clean training data.
+Strategies: numeric median + categorical most-frequent; numeric 5-NN + categorical most-frequent; numeric iterative imputation (10 iterations, seed 42) + categorical most-frequent.
+Categorical columns are one-hot encoded after train-fitted imputation; categorical cells are masked before encoding; unknown categories are ignored by the encoder.
+This sensitivity run is not the primary experiment and is descriptive; it does not revise the primary results.
+Raw per-seed output: typeaware_imputation_sensitivity_per_seed.csv
+Summary output: typeaware_imputation_sensitivity_summary.csv
