@@ -18,9 +18,10 @@ in the repository root.
 The fresh 800-row table matches the archived root-level results at the
 archived six-decimal precision. All 800 identifiers match; the absolute
 differences for accuracy, both group recalls, and FMG are zero. Do not interpret
-this benchmark rerun as independent deployment evidence. The historical
-Colab hardware was not recorded; the manifest describes only the new local
-rerun.
+this benchmark rerun as independent deployment evidence. The historical run
+used a Google Colab CPU runtime, but its exact CPU model, CPU count, and RAM
+allocation were not recorded. The manifest describes the new local rerun's
+hardware separately.
 
 To reproduce, install the dependencies listed in `run_manifest.json` and run
 from the repository root:

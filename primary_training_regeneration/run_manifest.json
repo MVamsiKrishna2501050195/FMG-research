@@ -106,5 +106,5 @@
       "available_ram_bytes_at_start": 1548759040
     }
   },
-  "historical_colab_hardware": "not recorded in original notebook; this manifest describes only the new rerun"
+  "historical_colab_hardware": "Google Colab CPU runtime used; exact CPU model, CPU count, and RAM allocation were not recorded. This manifest describes the new local rerun separately."
 }

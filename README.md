@@ -149,8 +149,9 @@ they do not establish robustness to all MAR mechanisms or universal subgroup
 behavior.
 The executed notebook output reports Python 3.11 (kernel metadata), NumPy
 2.1.3, pandas 2.2.3, scikit-learn 1.6.1, XGBoost 3.2.0, LightGBM 4.6.0, and
-SHAP 0.51.0. It does not record the exact Colab hardware allocation or SciPy
-version. The notebook downloads Adult and COMPAS from their upstream sources
+SHAP 0.51.0. The original run used a Google Colab CPU runtime, but the exact
+CPU model/count, memory allocation, and SciPy version were not recorded. The
+notebook downloads Adult and COMPAS from their upstream sources
 and requires the user to upload the Taiwan Credit CSV; those source snapshots
 are not bundled here, so exact reruns also require matching input data files.
 
@@ -170,8 +171,9 @@ The run manifest records SHA-256 fingerprints for the uploaded Taiwan CSV and
 the downloaded inputs, dataset/group fingerprints, Python/package versions, and
 the observed local hardware (Windows 10, 4 logical CPUs, approximately 7.74 GiB
 RAM). These are details of the new rerun, not the historical Colab execution.
-The original Colab hardware allocation was not recorded and cannot be
-reconstructed reliably after the fact. The notebook's primary-training
+The original run is known to have used Google Colab on CPU; its exact CPU model,
+CPU count, and RAM allocation were not recorded and cannot be reconstructed
+reliably after the fact. The notebook's primary-training
 dependency versions are documented in the manifest; they may differ from the
 original Colab runtime. The historical environment therefore remains only
 partially specified even though the primary result table has now been
