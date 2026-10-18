@@ -1,0 +1,201 @@
+dataset,model,seed,masking_gap,exploratory
+Adult Income,LR,42,0.006757,False
+Adult Income,RF,42,0.073241,False
+Adult Income,XGB,42,0.093467,False
+Adult Income,LGB,42,0.120377,False
+Adult Income,MLP,42,0.045747,False
+Adult Income,LR,123,0.019944,False
+Adult Income,RF,123,0.043285,False
+Adult Income,XGB,123,0.066729,False
+Adult Income,LGB,123,0.074396,False
+Adult Income,MLP,123,0.045937,False
+Adult Income,LR,456,0.027089,False
+Adult Income,RF,456,0.100634,False
+Adult Income,XGB,456,0.11511,False
+Adult Income,LGB,456,0.088677,False
+Adult Income,MLP,456,0.008304,False
+Adult Income,LR,1,0.009312,False
+Adult Income,RF,1,0.120661,False
+Adult Income,XGB,1,0.108295,False
+Adult Income,LGB,1,0.093165,False
+Adult Income,MLP,1,0.029643,False
+Adult Income,LR,7,0.030202,False
+Adult Income,RF,7,0.102684,False
+Adult Income,XGB,7,0.095231,False
+Adult Income,LGB,7,0.106902,False
+Adult Income,MLP,7,0.028298,False
+Adult Income,LR,13,0.026721,False
+Adult Income,RF,13,0.104937,False
+Adult Income,XGB,13,0.080323,False
+Adult Income,LGB,13,0.08637,False
+Adult Income,MLP,13,0.061727,False
+Adult Income,LR,21,0.009336,False
+Adult Income,RF,21,0.07818,False
+Adult Income,XGB,21,0.086547,False
+Adult Income,LGB,21,0.086956,False
+Adult Income,MLP,21,0.0089,False
+Adult Income,LR,37,0.017547,False
+Adult Income,RF,37,0.074752,False
+Adult Income,XGB,37,0.112229,False
+Adult Income,LGB,37,0.109703,False
+Adult Income,MLP,37,0.055433,False
+Adult Income,LR,55,0.031195,False
+Adult Income,RF,55,0.100517,False
+Adult Income,XGB,55,0.098637,False
+Adult Income,LGB,55,0.103001,False
+Adult Income,MLP,55,0.042649,False
+Adult Income,LR,99,0.016893,False
+Adult Income,RF,99,0.108602,False
+Adult Income,XGB,99,0.11456,False
+Adult Income,LGB,99,0.083807,False
+Adult Income,MLP,99,0.056656,False
+COMPAS,LR,42,-0.002393,False
+COMPAS,RF,42,-0.027084,False
+COMPAS,XGB,42,-0.041736,False
+COMPAS,LGB,42,-0.026897,False
+COMPAS,MLP,42,0.013584,False
+COMPAS,LR,123,0.001941,False
+COMPAS,RF,123,0.015865,False
+COMPAS,XGB,123,0.001955,False
+COMPAS,LGB,123,0.010815,False
+COMPAS,MLP,123,0.039267,False
+COMPAS,LR,456,0.016708,False
+COMPAS,RF,456,-0.017748,False
+COMPAS,XGB,456,-0.011541,False
+COMPAS,LGB,456,-0.027813,False
+COMPAS,MLP,456,0.031628,False
+COMPAS,LR,1,0.008995,False
+COMPAS,RF,1,-0.005041,False
+COMPAS,XGB,1,-0.020617,False
+COMPAS,LGB,1,0.003244,False
+COMPAS,MLP,1,0.021838,False
+COMPAS,LR,7,-0.008271,False
+COMPAS,RF,7,-0.017003,False
+COMPAS,XGB,7,-0.036595,False
+COMPAS,LGB,7,-0.014556,False
+COMPAS,MLP,7,0.007526,False
+COMPAS,LR,13,0.009256,False
+COMPAS,RF,13,-0.011328,False
+COMPAS,XGB,13,-0.013978,False
+COMPAS,LGB,13,-0.00265,False
+COMPAS,MLP,13,0.037346,False
+COMPAS,LR,21,-0.000157,False
+COMPAS,RF,21,0.00993,False
+COMPAS,XGB,21,-0.032112,False
+COMPAS,LGB,21,-0.014577,False
+COMPAS,MLP,21,0.025514,False
+COMPAS,LR,37,0.038733,False
+COMPAS,RF,37,0.042586,False
+COMPAS,XGB,37,0.055191,False
+COMPAS,LGB,37,0.054567,False
+COMPAS,MLP,37,0.060937,False
+COMPAS,LR,55,0.001736,False
+COMPAS,RF,55,0.032525,False
+COMPAS,XGB,55,0.058448,False
+COMPAS,LGB,55,0.050307,False
+COMPAS,MLP,55,0.042692,False
+COMPAS,LR,99,0.01579,False
+COMPAS,RF,99,0.024168,False
+COMPAS,XGB,99,-0.01917,False
+COMPAS,LGB,99,-0.022393,False
+COMPAS,MLP,99,0.012634,False
+Taiwan Credit,LR,42,0.051572,False
+Taiwan Credit,RF,42,0.081334,False
+Taiwan Credit,XGB,42,0.055375,False
+Taiwan Credit,LGB,42,0.069891,False
+Taiwan Credit,MLP,42,0.076137,False
+Taiwan Credit,LR,123,0.05539,False
+Taiwan Credit,RF,123,0.070854,False
+Taiwan Credit,XGB,123,0.06145,False
+Taiwan Credit,LGB,123,0.074632,False
+Taiwan Credit,MLP,123,0.066268,False
+Taiwan Credit,LR,456,0.047208,False
+Taiwan Credit,RF,456,0.087829,False
+Taiwan Credit,XGB,456,0.067351,False
+Taiwan Credit,LGB,456,0.067685,False
+Taiwan Credit,MLP,456,0.064574,False
+Taiwan Credit,LR,1,0.069563,False
+Taiwan Credit,RF,1,0.108475,False
+Taiwan Credit,XGB,1,0.083645,False
+Taiwan Credit,LGB,1,0.097057,False
+Taiwan Credit,MLP,1,0.080435,False
+Taiwan Credit,LR,7,0.04519,False
+Taiwan Credit,RF,7,0.077308,False
+Taiwan Credit,XGB,7,0.046413,False
+Taiwan Credit,LGB,7,0.071178,False
+Taiwan Credit,MLP,7,0.077524,False
+Taiwan Credit,LR,13,0.048802,False
+Taiwan Credit,RF,13,0.078032,False
+Taiwan Credit,XGB,13,0.076036,False
+Taiwan Credit,LGB,13,0.073365,False
+Taiwan Credit,MLP,13,0.06744,False
+Taiwan Credit,LR,21,0.06308,False
+Taiwan Credit,RF,21,0.080041,False
+Taiwan Credit,XGB,21,0.06454,False
+Taiwan Credit,LGB,21,0.069631,False
+Taiwan Credit,MLP,21,0.059812,False
+Taiwan Credit,LR,37,0.061231,False
+Taiwan Credit,RF,37,0.077316,False
+Taiwan Credit,XGB,37,0.06747,False
+Taiwan Credit,LGB,37,0.06341,False
+Taiwan Credit,MLP,37,0.06465,False
+Taiwan Credit,LR,55,0.052766,False
+Taiwan Credit,RF,55,0.072547,False
+Taiwan Credit,XGB,55,0.06956,False
+Taiwan Credit,LGB,55,0.07069,False
+Taiwan Credit,MLP,55,0.072005,False
+Taiwan Credit,LR,99,0.048665,False
+Taiwan Credit,RF,99,0.078502,False
+Taiwan Credit,XGB,99,0.06598,False
+Taiwan Credit,LGB,99,0.070004,False
+Taiwan Credit,MLP,99,0.071835,False
+German Credit,LR,42,-0.013333,True
+German Credit,RF,42,0.025238,True
+German Credit,XGB,42,0.042698,True
+German Credit,LGB,42,0.027619,True
+German Credit,MLP,42,0.0,True
+German Credit,LR,123,-0.006667,True
+German Credit,RF,123,0.021458,True
+German Credit,XGB,123,0.045,True
+German Credit,LGB,123,0.121875,True
+German Credit,MLP,123,0.0,True
+German Credit,LR,456,-0.011481,True
+German Credit,RF,456,-0.028519,True
+German Credit,XGB,456,-0.036667,True
+German Credit,LGB,456,0.005185,True
+German Credit,MLP,456,0.0,True
+German Credit,LR,1,0.016667,True
+German Credit,RF,1,0.034545,True
+German Credit,XGB,1,0.009394,True
+German Credit,LGB,1,0.092121,True
+German Credit,MLP,1,0.0,True
+German Credit,LR,7,-0.013333,True
+German Credit,RF,7,0.01,True
+German Credit,XGB,7,0.023333,True
+German Credit,LGB,7,0.053333,True
+German Credit,MLP,7,0.0,True
+German Credit,LR,13,0.03037,True
+German Credit,RF,13,0.024074,True
+German Credit,XGB,13,0.001852,True
+German Credit,LGB,13,0.050741,True
+German Credit,MLP,13,-0.01,True
+German Credit,LR,21,0.01119,True
+German Credit,RF,21,-0.033333,True
+German Credit,XGB,21,0.010238,True
+German Credit,LGB,21,0.034762,True
+German Credit,MLP,21,0.0,True
+German Credit,LR,37,-0.004286,True
+German Credit,RF,37,0.008571,True
+German Credit,XGB,37,-0.017143,True
+German Credit,LGB,37,0.029048,True
+German Credit,MLP,37,0.006667,True
+German Credit,LR,55,-0.020877,True
+German Credit,RF,55,-0.032456,True
+German Credit,XGB,55,0.08193,True
+German Credit,LGB,55,0.046842,True
+German Credit,MLP,55,0.0,True
+German Credit,LR,99,0.013333,True
+German Credit,RF,99,0.026032,True
+German Credit,XGB,99,0.026032,True
+German Credit,LGB,99,0.040952,True
+German Credit,MLP,99,0.0,True

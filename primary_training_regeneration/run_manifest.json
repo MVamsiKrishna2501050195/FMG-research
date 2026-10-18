@@ -1,0 +1,110 @@
+{
+  "status": "completed",
+  "created_utc": "2026-10-18T08:58:46.692560+00:00",
+  "run_type": "full primary notebook training rerun with per-seed checkpoints",
+  "source_notebook": "cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb",
+  "source_notebook_sha256": "89c56a864ff817135574277f0fe3df50a0c6b3a8b2b5dd98c6898e4b1fba8498",
+  "rows": 800,
+  "expected_rows": 800,
+  "input_files": {
+    "adult.data": {
+      "sha256": "5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d",
+      "source": "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
+    },
+    "compas-scores-two-years.csv": {
+      "sha256": "c451db85908b2f7fef1d83203bedf6b71ecda0d5af468d82ae62178f91d0cc7d",
+      "source": "https://raw.githubusercontent.com/propublica/compas-analysis/master/compas-scores-two-years.csv"
+    },
+    "taiwan_credit_csv": {
+      "sha256": "a0f0ab49d6326671d6cd83be5c88dcf18007025fe9a53ecd699119c871176ca1",
+      "source": "user-provided original Colab upload"
+    }
+  },
+  "openml_cache_files_sha256": {
+    "openml\\openml.org\\api\\v1\\json\\data\\31.gz": "7c4a50bdcbbcdf9597b397492461893496120e26a4412998038a3610fd2098c2",
+    "openml\\openml.org\\api\\v1\\json\\data\\features\\31.gz": "bf2fe97dcae312bb5dafdeef3fdc8c836483d484813fb5d518a21add4daa6e98",
+    "openml\\openml.org\\api\\v1\\json\\data\\qualities\\31.gz": "e41e2c324bb11d405fcdec4c0fd0be343c7e199478f369ca4f8b9efd4ca9bb34",
+    "openml\\openml.org\\data\\v1\\download\\31.gz": "a42c7d580d3415586b230a4315c118c93d787aaf2a145d0fd81e7e3efeb85be1"
+  },
+  "dataset_fingerprints": {
+    "Adult Income": {
+      "rows": 32561,
+      "feature_count": 13,
+      "feature_names_sha256": "a43f04f68ff6cfccfddae3dee7e88398bb4a12ca5490f2b719ec55367c689271",
+      "group_counts": {
+        "0": 10771,
+        "1": 21790
+      },
+      "positive_counts_by_group": {
+        "0": 1179,
+        "1": 6662
+      },
+      "exploratory": false
+    },
+    "COMPAS": {
+      "rows": 5278,
+      "feature_count": 9,
+      "feature_names_sha256": "df6ecc73b0b5d4d967c790c30e712149ed09d2c54108bbcc888deb047b3e3e0a",
+      "group_counts": {
+        "0": 3175,
+        "1": 2103
+      },
+      "positive_counts_by_group": {
+        "0": 1773,
+        "1": 874
+      },
+      "exploratory": false
+    },
+    "Taiwan Credit": {
+      "rows": 30000,
+      "feature_count": 22,
+      "feature_names_sha256": "37e425eda2efa06c22fc893a375623bad2bbf6892a88060ebddf5eca171b4c00",
+      "group_counts": {
+        "0": 18112,
+        "1": 11888
+      },
+      "positive_counts_by_group": {
+        "0": 3763,
+        "1": 2873
+      },
+      "exploratory": false
+    },
+    "German Credit": {
+      "rows": 1000,
+      "feature_count": 19,
+      "feature_names_sha256": "84199a770b9bdf0a9ce2b41761d3dd041d820b42a93b3c168c3980b13c747490",
+      "group_counts": {
+        "0": 310,
+        "1": 690
+      },
+      "positive_counts_by_group": {
+        "0": 201,
+        "1": 499
+      },
+      "exploratory": true
+    }
+  },
+  "runtime": {
+    "python": "3.11.15",
+    "packages": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scipy": "1.15.2",
+      "scikit-learn": "1.6.1",
+      "xgboost": "3.2.0",
+      "lightgbm": "4.6.0",
+      "shap": "0.51.0",
+      "matplotlib": "3.10.3",
+      "seaborn": "0.13.2"
+    },
+    "hardware": {
+      "platform": "Windows-10-10.0.19045-SP0",
+      "processor": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+      "machine": "AMD64",
+      "logical_cpu_count": 4,
+      "total_ram_bytes": 8316063744,
+      "available_ram_bytes_at_start": 1548759040
+    }
+  },
+  "historical_colab_hardware": "not recorded in original notebook; this manifest describes only the new rerun"
+}

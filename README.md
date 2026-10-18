@@ -52,7 +52,17 @@ validate saved results; they do not retrain models. Run
 two primary MCAR figures and the seed-distribution plot from the archived
 `results_raw_10seeds.csv`; the script stores outputs and hashes in
 `primary_plot_regeneration/`. This is a plotting reproducibility check, not a
-fresh experiment run.
+fresh experiment run. To rerun the complete 800-row primary training pipeline
+from the canonical notebook, install the notebook's scientific dependencies
+and run `python rerun_primary_training_from_source_notebook.py --taiwan-csv
+<path-to-UCI_Credit_Card.csv>`. The wrapper executes the notebook's
+preprocessing, training, masking, and scoring code with ten fixed seeds over
+four datasets and five classifiers; it checkpoints each dataset/seed block and
+writes a separate, non-destructive output package to
+`primary_training_regeneration/`. That package contains regenerated
+results/statistics/plots and `run_manifest.json`, which records input hashes,
+dataset fingerprints, software versions, and hardware observed for this
+rerun. It does not replace the archived root-level results.
 
 Analysis conventions
 --------------------
@@ -146,18 +156,26 @@ are not bundled here, so exact reruns also require matching input data files.
 
 Independent regeneration status
 --------------------------------
-The primary outputs have been checked from the archived result tables, and the
-primary plots have now been regenerated from that archived CSV. The full
-primary training loop has **not yet been independently regenerated from raw
-inputs**. The archived run contains no raw
-dataset snapshot, and the Taiwan Credit CSV was uploaded manually in Colab.
-The official UCI download endpoint was not reachable from the current execution
-environment during the attempted rerun. A fresh run must use the original
-Taiwan CSV (or document a verified replacement snapshot), pin the runtime
-dependencies, and compare the regenerated tables and plots against the archived
-outputs before changing any manuscript claims. The historical Colab hardware
-allocation was not captured and cannot be reconstructed reliably after the
-fact; hardware details should be recorded for any new run instead.
+The complete primary training loop was rerun from the canonical notebook using
+the user-provided Taiwan Credit CSV and the notebook's Adult, COMPAS, and German
+Credit sources. The fresh run produced 800 rows (4 datasets x 5 models x 10
+seeds x 4 conditions including clean baseline) and regenerated the primary
+statistics and plots in `primary_training_regeneration/`. Its 800-row result
+table matches the archived `results_raw_10seeds.csv` exactly at the archived
+six-decimal precision for accuracy, focus-group recall, comparison-group recall,
+and FMG (zero absolute difference for each metric). This supports reproducibility
+of the saved benchmark results under the documented inputs and rerun
+environment; it does not establish independent deployment-population evidence.
+The run manifest records SHA-256 fingerprints for the uploaded Taiwan CSV and
+the downloaded inputs, dataset/group fingerprints, Python/package versions, and
+the observed local hardware (Windows 10, 4 logical CPUs, approximately 7.74 GiB
+RAM). These are details of the new rerun, not the historical Colab execution.
+The original Colab hardware allocation was not recorded and cannot be
+reconstructed reliably after the fact. The notebook's primary-training
+dependency versions are documented in the manifest; they may differ from the
+original Colab runtime. The historical environment therefore remains only
+partially specified even though the primary result table has now been
+independently regenerated and matched.
 
 The root-level `mar_probe_results.csv`, `mar_probe_statistics.csv`, and
 `fig3_mar_vs_mcar.png` are retained for provenance as the earlier exploratory
