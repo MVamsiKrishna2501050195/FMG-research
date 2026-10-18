@@ -1,0 +1,25 @@
+{
+  "run_type": "plot regeneration from archived result table; no model retraining",
+  "notebook_cells": [
+    3,
+    13,
+    14,
+    33
+  ],
+  "python": "3.11.15",
+  "numpy": "2.4.6",
+  "pandas": "3.0.5",
+  "matplotlib": "3.11.0",
+  "input_sha256": {
+    "cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb": "89c56a864ff817135574277f0fe3df50a0c6b3a8b2b5dd98c6898e4b1fba8498",
+    "results_raw_10seeds.csv": "224b4707b834a3b2a17e39d5a4f1f04d0463361b58a92e37f46c07d1ad4d48af"
+  },
+  "output_sha256": {
+    "fig1_masking_gap_curves.pdf": "df4d85c6f7ede9e0a52e31531bd4c637a7a0ec8ba7274b6239c7699209c844e6",
+    "fig1_masking_gap_curves.png": "643eb581f7993c06adc0b093ae6d36bac3926e6e56f7aa9492c8167cb82f607e",
+    "fig2_acc_vs_recall.pdf": "0094a941feb089a6584e75a472782dc5460c6d666ed74c4df4311583bbe6e36b",
+    "fig2_acc_vs_recall.png": "938ecfe53ecda8ac0dc4e0ab7844e58619c511363703088e8cfe4fc0cf017215",
+    "fmg_bootstrap_ci_primary.csv": "8fca52c1b3039a8793c7b018334e5fb6badf847142daa235c7c7dee8f32e5eaf",
+    "fmg_primary_seed_distributions.png": "5d8bb4f21bdc20cc9a098f4f70088034a1bdfcc622c5eed1d26ad2fa9274f90f"
+  }
+}

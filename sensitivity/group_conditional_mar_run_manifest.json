@@ -1,0 +1,36 @@
+{
+  "analysis": "group-conditional MAR stress-test sensitivity",
+  "design": {
+    "datasets": ["Adult Income", "COMPAS", "Taiwan Credit"],
+    "models": ["RF", "XGB", "LGB", "MLP"],
+    "seeds": [42, 123, 456, 1, 7, 13, 21, 37, 55, 99],
+    "nominal_missingness_rates": [0.1, 0.2],
+    "per_seed_rows": 240,
+    "summary_tests": 24,
+    "test": "paired exact two-sided Wilcoxon signed-rank; Holm adjusted within rate over 12 dataset/model comparisons"
+  },
+  "implementation": {
+    "group_conditioning": "Mask probability depends on the fully observed sensitive-group audit variable; that variable is excluded from the model feature matrix.",
+    "masking_scope": "Test features only",
+    "classifier": "Trained on clean training data and held unchanged during clean and masked evaluation",
+    "preprocessing_and_imputation": "Fit on training data only",
+    "interpretation_limit": "One constructed group-conditional MAR mechanism; not all MAR mechanisms and not a deployment population study"
+  },
+  "colab_runtime_recorded_versions": {
+    "python": "3.11 (notebook kernel metadata)",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.6.1",
+    "xgboost": "3.2.0",
+    "lightgbm": "4.6.0",
+    "shap": "0.51.0",
+    "scipy": "not recorded in executed notebook",
+    "hardware": "not recorded in executed notebook"
+  },
+  "sha256": {
+    "expanded_group_conditional_mar_colab_executed.ipynb": "8aa91b781631a371e277e781d82ca7f23809ae99d28720ec1b31dce2f553d833",
+    "group_conditional_mar_per_seed.csv": "ce1f8bf14113bbbfdfb25d32359ef9481c6d4cf2b30113db69b94d8e948cd2be",
+    "group_conditional_mar_statistics.csv": "38cbdeae2314abc58818c29ff82fc0516f01e1d8e8073dd72adb00047a82c660",
+    "group_conditional_mar_delta_mg.png": "bc31de117ad76bfbaf42c78802e0ccb9a80d2aca7945bb063f22cef534ff5cd5"
+  }
+}

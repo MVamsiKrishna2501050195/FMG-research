@@ -2,13 +2,16 @@ Masking Gap reproducibility package
 
 Canonical source
 ----------------
-cc3_masking_gap_publication_ready.ipynb is the canonical notebook for the
-reported results. Earlier alignment notebooks are not part of this package.
+`cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb` is the current
+canonical notebook for the reported results. Earlier alignment notebooks are
+not part of this package.
 
 Included material
 -----------------
 - Primary and supplementary result CSV files
 - subgroup_denominators_per_seed.csv
+- `fmg_bootstrap_ci_primary.csv` with descriptive seed-level bootstrap
+  intervals (not population-level confidence guarantees)
 - Numbered figures for the revised manuscript, plus the additional primary
   seed-distribution plot
 
@@ -44,9 +47,12 @@ Wilcoxon p-values, effect sizes, denominator checks, and type-aware sensitivity
 summary checks. Run `python sensitivity/verify_group_conditional_mar.py` after
 installing NumPy, pandas, and SciPy to independently verify the expanded
 group-conditional sensitivity tables and statistical tests. These checks
-validate the saved results; they do not retrain all primary models or
-regenerate every figure from scratch. The executed notebooks and archived
-figure files are provided for that full workflow.
+validate saved results; they do not retrain models. Run
+`python regenerate_primary_plots_from_archived_results.py` to regenerate the
+two primary MCAR figures and the seed-distribution plot from the archived
+`results_raw_10seeds.csv`; the script stores outputs and hashes in
+`primary_plot_regeneration/`. This is a plotting reproducibility check, not a
+fresh experiment run.
 
 Analysis conventions
 --------------------
@@ -138,6 +144,21 @@ version. The notebook downloads Adult and COMPAS from their upstream sources
 and requires the user to upload the Taiwan Credit CSV; those source snapshots
 are not bundled here, so exact reruns also require matching input data files.
 
+Independent regeneration status
+--------------------------------
+The primary outputs have been checked from the archived result tables, and the
+primary plots have now been regenerated from that archived CSV. The full
+primary training loop has **not yet been independently regenerated from raw
+inputs**. The archived run contains no raw
+dataset snapshot, and the Taiwan Credit CSV was uploaded manually in Colab.
+The official UCI download endpoint was not reachable from the current execution
+environment during the attempted rerun. A fresh run must use the original
+Taiwan CSV (or document a verified replacement snapshot), pin the runtime
+dependencies, and compare the regenerated tables and plots against the archived
+outputs before changing any manuscript claims. The historical Colab hardware
+allocation was not captured and cannot be reconstructed reliably after the
+fact; hardware details should be recorded for any new run instead.
+
 The root-level `mar_probe_results.csv`, `mar_probe_statistics.csv`, and
 `fig3_mar_vs_mcar.png` are retained for provenance as the earlier exploratory
 cellwise heterogeneous-rate probe. They are not the expanded group-conditional
@@ -154,6 +175,5 @@ Repository and manuscript
 This release is publicly available at:
 https://github.com/MVamsiKrishna2501050195/FMG-research
 
-The IJMLC-compliant manuscript in this repository cites the same repository in
-its Data Availability statement. Before journal submission, archive this
-release in a persistent service such as Zenodo if the journal requires a DOI.
+Before journal submission, archive this release in a persistent service such
+as Zenodo if the journal requires a DOI.
