@@ -22,7 +22,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-NOTEBOOK = ROOT / "cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb"
+NOTEBOOK = ROOT / "FMG_research_final.ipynb"
 OUTPUT = ROOT / "primary_training_regeneration"
 INPUT_CACHE = Path(tempfile.gettempdir()) / "fmg-primary-rerun-inputs"
 DATA_CACHE = INPUT_CACHE / "openml"

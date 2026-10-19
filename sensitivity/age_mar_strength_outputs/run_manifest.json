@@ -1,0 +1,82 @@
+{
+  "analysis": "age-conditioned MAR versus matched-eligible-feature MCAR sensitivity",
+  "status": "completed",
+  "n_per_seed_rows": 720,
+  "n_summaries": 72,
+  "seeds": [
+    42,
+    123,
+    456,
+    1,
+    7,
+    13,
+    21,
+    37,
+    55,
+    99
+  ],
+  "datasets": [
+    "Adult Income",
+    "COMPAS",
+    "Taiwan Credit"
+  ],
+  "models": [
+    "RF",
+    "XGB",
+    "LGB",
+    "MLP"
+  ],
+  "rates": [
+    0.1,
+    0.2
+  ],
+  "age_odds_ratios_per_sd": [
+    1.5,
+    2.0,
+    4.0
+  ],
+  "masking": "test-only; age is observed in both conditions; all other feature cells eligible",
+  "mar_mechanism": "cellwise Bernoulli with logit propensity intercept calibrated to nominal expected rate; log-odds increase by ln(OR) per SD of observed age for each requested OR",
+  "preprocessing": "train-only label encoding/scaling; median imputer fitted on training matrix only; cleaned analysis-frame SHA-256 values identify the dataset snapshots used",
+  "classifier": "trained on clean training split once per dataset/seed/model and kept frozen during both stress conditions",
+  "inference": "paired exact two-sided Wilcoxon over ten seed-specific FMG contrasts; Holm adjustment within each nominal rate across all 36 dataset-model-propensity-strength comparisons",
+  "runtime_seconds": 202.9,
+  "python": "3.11.15 (main, Jun 23 2026, 15:20:37) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "cpu_model": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+  "logical_cpu_count": 4,
+  "package_versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.9.1",
+    "xgboost": "3.2.0",
+    "lightgbm": "4.7.0"
+  },
+  "input_hashes": {
+    "Adult Income": {
+      "source_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data",
+      "cleaned_analysis_frame_sha256": "39ec5fcc8f159e210c87ec6940a4909506020332ef81fbaa40150edd2b9c7ba0"
+    },
+    "COMPAS": {
+      "source_url": "https://raw.githubusercontent.com/propublica/compas-analysis/master/compas-scores-two-years.csv",
+      "cleaned_analysis_frame_sha256": "7cf56a9150ac983cd83cdf0bdc2e2e8a6658fb65fbbaf0b204b1ad40f3eb217d"
+    },
+    "Taiwan Credit": {
+      "source_url": "user-supplied UCI_Credit_Card.csv",
+      "cleaned_analysis_frame_sha256": "aacf21c53a3e182de2ea7d48cf646bc36d9740b2e62e318295a12248c13ff743",
+      "path": "E:\\EVEN SEM\\P1\\UCI_Credit_Card.csv",
+      "source_file_sha256": "a0f0ab49d6326671d6cd83be5c88dcf18007025fe9a53ecd699119c871176ca1"
+    }
+  },
+  "outputs": {
+    "per_seed_csv": "age_conditional_mar_per_seed.csv",
+    "summary_csv": "age_conditional_mar_statistics.csv"
+  },
+  "limitations": [
+    "one observed covariate (age) and one logistic propensity form, evaluated at specified strengths",
+    "not evidence for all MAR or MNAR mechanisms",
+    "benchmark seeds are repeated splits, not independent populations",
+    "exploratory sensitivity, no deployment validation"
+  ]
+}

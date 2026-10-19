@@ -1,0 +1,67 @@
+{
+  "analysis": "age-conditioned MAR versus matched-eligible-feature MCAR sensitivity",
+  "status": "completed",
+  "n_per_seed_rows": 240,
+  "n_summaries": 24,
+  "seeds": [
+    42,
+    123,
+    456,
+    1,
+    7,
+    13,
+    21,
+    37,
+    55,
+    99
+  ],
+  "datasets": [
+    "Adult Income",
+    "COMPAS",
+    "Taiwan Credit"
+  ],
+  "models": [
+    "RF",
+    "XGB",
+    "LGB",
+    "MLP"
+  ],
+  "rates": [
+    0.1,
+    0.2
+  ],
+  "masking": "test-only; age is observed in both conditions; all other feature cells eligible",
+  "mar_mechanism": "cellwise Bernoulli with logit propensity intercept calibrated to nominal expected rate; log-odds increase ln(2) per SD of observed age",
+  "preprocessing": "train-only label encoding/scaling; median imputer fitted on training matrix only",
+  "classifier": "trained on clean training split once per dataset/seed/model and kept frozen during both stress conditions",
+  "inference": "paired exact two-sided Wilcoxon over ten seed-specific FMG contrasts; Holm adjustment within rate across 12 dataset-model comparisons",
+  "runtime_seconds": 126.69,
+  "python": "3.11.15 (main, Jun 23 2026, 15:20:37) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "cpu_model": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+  "logical_cpu_count": 4,
+  "package_versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.9.1",
+    "xgboost": "3.2.0",
+    "lightgbm": "4.7.0"
+  },
+  "input_hashes": {
+    "Taiwan Credit": {
+      "path": "E:\\EVEN SEM\\P1\\UCI_Credit_Card.csv",
+      "sha256": "a0f0ab49d6326671d6cd83be5c88dcf18007025fe9a53ecd699119c871176ca1"
+    }
+  },
+  "outputs": {
+    "per_seed_csv": "age_conditional_mar_per_seed.csv",
+    "summary_csv": "age_conditional_mar_statistics.csv"
+  },
+  "limitations": [
+    "one observed covariate (age) and one specified propensity form",
+    "not evidence for all MAR or MNAR mechanisms",
+    "benchmark seeds are repeated splits, not independent populations",
+    "exploratory sensitivity, no deployment validation"
+  ]
+}

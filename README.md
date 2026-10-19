@@ -2,9 +2,10 @@ Masking Gap reproducibility package
 
 Canonical source
 ----------------
-`cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb` is the current
-canonical notebook for the reported results. Earlier alignment notebooks are
-not part of this package.
+`FMG_research_final.ipynb` is the release notebook for the reported results,
+including the empirical diagnostic-discordance analysis. The earlier
+`cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb` filename is
+retained for compatibility; its code cells mirror the release notebook.
 
 Included material
 -----------------
@@ -51,8 +52,13 @@ validate saved results; they do not retrain models. Run
 `python regenerate_primary_plots_from_archived_results.py` to regenerate the
 two primary MCAR figures and the seed-distribution plot from the archived
 `results_raw_10seeds.csv`; the script stores outputs and hashes in
-`primary_plot_regeneration/`. This is a plotting reproducibility check, not a
-fresh experiment run. To rerun the complete 800-row primary training pipeline
+`primary_plot_regeneration/`. All eight quantitative plot-producing notebook
+cells (Figures 1–7 and the seed-distribution plot) have also been rerun from the
+archived primary and supplementary CSV tables. Their outputs and SHA-256 hashes
+are in `primary_plot_regeneration/independent_full_plot_set/` and its
+`plot_regeneration_manifest.json`. This plotting check does not refit models or
+independently rerun supplementary sensitivity analyses. To rerun the complete
+800-row primary training pipeline
 from the canonical notebook, install the notebook's scientific dependencies
 and run `python rerun_primary_training_from_source_notebook.py --taiwan-csv
 <path-to-UCI_Credit_Card.csv>`. The wrapper executes the notebook's
@@ -114,6 +120,26 @@ results in `results_raw_10seeds.csv`:
   executed Colab notebook used to produce those outputs. It records cell
   outputs and package versions. `sensitivity/group_conditional_mar_delta_mg.png`
   visualizes the paired seed-level change in FMG.
+- `sensitivity/age_conditional_mar_outputs/` contains the initial exploratory
+  age-conditioned MAR versus matched-eligible-feature MCAR run at an odds ratio
+  of 2 per standard deviation of age. Its 240 per-seed rows and 24 summaries
+  preserve the original fixed-strength analysis.
+- `sensitivity/age_mar_strength_outputs/` contains the expanded propensity-
+  strength sensitivity at age odds ratios 1.5, 2, and 4 per standard
+  deviation. Age remains observed in both conditions; all other test-feature
+  cells are eligible for masking. The frozen-model analysis covers three
+  datasets, four primary model families, ten fixed seeds, and 10%/20% rates
+  (720 per-seed rows and 72 summaries). Exact two-sided Wilcoxon tests compare
+  paired age-MAR versus matched-eligible-feature MCAR FMG; Holm correction is
+  applied within each rate across all 36 dataset/model/strength comparisons.
+  No contrast remains below .05 after this correction (minimum adjusted
+  p=.0703). This is exploratory, mechanism-specific benchmark evidence—not
+  evidence for all MAR mechanisms, MNAR, independent populations, deployment
+  benefit, or causal effects. Details and runtime are in that folder's README
+  and `run_manifest.json`; reproduce with
+  `python sensitivity/run_age_conditional_mar_sensitivity.py --taiwan-csv
+  <path-to-UCI_Credit_Card.csv> --age-odds-ratios 1.5 2 4 --output-dir
+  sensitivity/age_mar_strength_outputs`.
 - `sensitivity/group_conditional_mar_run_manifest.json` records the design,
   captured runtime versions, known environment omissions, and SHA-256 hashes
   for the notebook and generated outputs.

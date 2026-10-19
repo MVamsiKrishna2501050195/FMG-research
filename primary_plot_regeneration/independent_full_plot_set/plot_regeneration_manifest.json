@@ -1,0 +1,54 @@
+{
+  "run_type": "all notebook plot cells rerun from saved primary and supplementary CSVs; no model fitting",
+  "source_notebook": "FMG_research_final.ipynb",
+  "source_notebook_sha256": "78aeaaa6e0e476b85a0616826f15b88036615a9adc01de52c339f16d163d1fcc",
+  "plot_cells": [
+    13,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    33
+  ],
+  "python": "3.11.15 (main, Jun 23 2026, 15:20:37) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.4.6",
+  "pandas": "3.0.5",
+  "matplotlib": "3.11.0",
+  "scipy": "1.17.1",
+  "outputs": {
+    "fig1_masking_gap_curves.png": {
+      "bytes": 279133,
+      "sha256": "643eb581f7993c06adc0b093ae6d36bac3926e6e56f7aa9492c8167cb82f607e"
+    },
+    "fig2_acc_vs_recall.png": {
+      "bytes": 77224,
+      "sha256": "938ecfe53ecda8ac0dc4e0ab7844e58619c511363703088e8cfe4fc0cf017215"
+    },
+    "fig6_shap_shifts.png": {
+      "bytes": 95055,
+      "sha256": "7450ea88d7768e7b02c11dd37aa2cfeb1935e6cd8f06ba04632137489f30bc4c"
+    },
+    "fig7_imputation_ablation.png": {
+      "bytes": 75172,
+      "sha256": "26c47a62651357d8738fa70700123c3fbe2165a3527fc2dd14fd286ca4a09f72"
+    },
+    "fig3_mar_vs_mcar.png": {
+      "bytes": 90556,
+      "sha256": "9ddfb3b42d27202e14d0a827c13674106381e158d6108196add4131b01314b07"
+    },
+    "fig4_class_imbalance.png": {
+      "bytes": 138713,
+      "sha256": "1baab45733db75875973eb8c5c0fda73246b6afb42863b8ae1a152db1ef3f9b3"
+    },
+    "fig5_compas_extended_seeds.png": {
+      "bytes": 119101,
+      "sha256": "ab6bd7f58ed9ac8f6fc4db62eaff2a5ad757c64807c17cdc5ff67c9a615a205e"
+    },
+    "fmg_primary_seed_distributions.png": {
+      "bytes": 155337,
+      "sha256": "5d8bb4f21bdc20cc9a098f4f70088034a1bdfcc622c5eed1d26ad2fa9274f90f"
+    }
+  }
+}

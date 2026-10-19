@@ -21,7 +21,7 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parent
-NOTEBOOK = ROOT / "cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb"
+NOTEBOOK = ROOT / "FMG_research_final.ipynb"
 RESULTS = ROOT / "results_raw_10seeds.csv"
 OUTPUT = ROOT / "primary_plot_regeneration"
 OUTPUT.mkdir(exist_ok=True)
