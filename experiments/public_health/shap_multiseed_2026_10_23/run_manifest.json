@@ -1,0 +1,51 @@
+{
+  "analysis": "supplementary paired TreeSHAP shift; descriptive only",
+  "protocol": {
+    "datasets": [
+      "BRFSS2024",
+      "UCI_Diabetes130"
+    ],
+    "models": [
+      "RF",
+      "XGB",
+      "LGB"
+    ],
+    "seeds": [
+      42,
+      123,
+      456
+    ],
+    "split": "80/20; patient-disjoint grouped stratified split for UCI Diabetes",
+    "mask": "test-only 20% MCAR, one deterministic mask per dataset/model/seed",
+    "sample": "up to 20 observations per audit group, shared clean/stress rows",
+    "explanation": "RF/XGB use approximate TreeSHAP (Saabas, no exact SHAP consistency guarantee); LGB uses exact TreeSHAP because SHAP does not support approximate=True for LightGBM. Effects are compared within each model, not across model output scales.",
+    "note": "not causal, not a stability guarantee, and not part of primary FMG results"
+  },
+  "input_sha256": {
+    "BRFSS2024 source XPT (main_data_brfss_2024.XPT)": "7d53cf088f858e02bcc029a51cf0408cc68f40a0ebeb02a3c0f73058aab36b1c",
+    "UCI Diabetes source archive (diabetes+130-us-hospitals.zip)": "f82ac129da2ddd2299391ff6fbae3a6a58b3edcf59ac9d7bd480c00fe453112a"
+  },
+  "input_path_redaction": "Local absolute paths removed before repository packaging; hashes still identify the exact inputs.",
+  "script_sha256": "ea2f60e674e5578c6b7a3869f6c1573a606e3372fab3f028606e0e898e4b0edf",
+  "audit_script_sha256": "5884890cde5bf51c20305a6e3aee0c679bf4d24649adb8da37e6d1355531dca2",
+  "software": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "shap": "0.51.0",
+    "xgboost": "3.2.0",
+    "lightgbm": "4.7.0"
+  },
+  "python": "3.11.15 (main, Jun 23 2026, 15:20:37) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "elapsed_seconds": 333.59210910007823,
+  "completed_dataset_seed_units": 6,
+  "expected_units": 6,
+  "completed_model_seed_dataset_units": 18,
+  "expected_model_seed_dataset_units": 18,
+  "rows": 5430,
+  "output_sha256": "a15e0fef2ea5f297466a40b89e80ac1446caadcce13e21a8547363d81591fda7",
+  "output_bytes": 1513719,
+  "top_feature_summary_sha256": "178baafd10f029629b893f14decff308eaa4a0b2068c41788e61982ff69e5d43",
+  "summary_script_sha256": "77afe108519a79e318b0d7115c5cc0f3f4bb564f5edc9a432d89b84929a35dd9"
+}
