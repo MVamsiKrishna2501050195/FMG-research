@@ -1,0 +1,77 @@
+{
+  "release_tag": "fmg-final-release-2026-10-25",
+  "created_utc": "2026-10-25",
+  "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 23656,
+      "sha256": "636ba927ce80b8db64267e52c383e1eb591e17146bf4c33d35aa921202665b65"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 221,
+      "sha256": "b8f165b2588079c5b4a58f81a5116d29107af51abf66a7d0b63791a454341523"
+    },
+    {
+      "path": "FMG_research_final_REVIEWER_FIXED.ipynb",
+      "bytes": 107478,
+      "sha256": "b02fe0bb8c9ffa8c81ff87918a24160d748d6efe20426af527db00af86f05d4a"
+    },
+    {
+      "path": "run_manifest_20261025.json",
+      "bytes": 6097,
+      "sha256": "2b7d0a4d565e054728e81c892b79cda077782f1615b182d2d61d2beb0e92cee7"
+    },
+    {
+      "path": "reproducibility/FMG_research_final_REVIEWER_FIXED_EXECUTED_2026-10-25.ipynb",
+      "bytes": 1215652,
+      "sha256": "7a0a10276076ac7279fdbb819718f76ae0c9384cdd9cb0029dedb32ca52235fa"
+    },
+    {
+      "path": "reproducibility/FMG_full_run_outputs_2026-10-25.zip",
+      "bytes": 29734,
+      "sha256": "ab42e43e895a6a7569351536f882b3f0dd41093659804b75ff1cfed97d19fa0b"
+    },
+    {
+      "path": "manuscript/FMG_manuscript_final_release_2026-10-25.docx",
+      "bytes": 2256956,
+      "sha256": "f21a6b4dd0e866b40bc12ff514f1f8d93886ce7c7db8578e3668bba1c09c943d"
+    },
+    {
+      "path": "manuscript/FMG_supplementary_adult_sensitivities_reconciled.docx",
+      "bytes": 41965,
+      "sha256": "a7be099f4ab1622692a58bdfdbca45c7e4d1c2600d53943553f81f56078e5341"
+    },
+    {
+      "path": "adult_corrected_rerun/run_manifest.json",
+      "bytes": 4345,
+      "sha256": "174c17a6a8050c70e3c45ede9ad8982e89bcb2897a4a25fe6bad80ad84db3e9c"
+    },
+    {
+      "path": "adult_corrected_rerun/adult_corrected_table3_components.csv",
+      "bytes": 820,
+      "sha256": "2ebb5c23d508cf360b65c17f630d1a8c054b0514b4f52f2485d931d095322268"
+    },
+    {
+      "path": "adult_corrected_rerun/age_conditional_mar_summary_reconciled_latest.csv",
+      "bytes": 18488,
+      "sha256": "161997fa71e0b7a21a264e29f9a34695eacd38398728c7fcb6424b81a936dc3c"
+    },
+    {
+      "path": "adult_corrected_rerun/complementary_group_summary_corrected_adult.csv",
+      "bytes": 741,
+      "sha256": "f873616260c7d7c286787c5176690f7f8f8095b6d940202c9d4cd77a83cc5924"
+    },
+    {
+      "path": "adult_corrected_rerun/baseline_recall_summary_corrected_adult.csv",
+      "bytes": 732,
+      "sha256": "e50d9a9ad80e8847e51ef86d66fc96aecc9e658dc3a0aee69501c8c3a063bc70"
+    },
+    {
+      "path": "adult_corrected_rerun/typeaware_imputation_summary_reconciled_latest.csv",
+      "bytes": 1155,
+      "sha256": "6a4ec4476f585c33b85c46db4df5aa1796b7032aaa67dba29257e476d512ae42"
+    }
+  ]
+}

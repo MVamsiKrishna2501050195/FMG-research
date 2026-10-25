@@ -1,5 +1,12 @@
 Masking Gap reproducibility package
 
+Release snapshot: `fmg-final-release-2026-10-25`. The canonical analysis
+notebook is `FMG_research_final_REVIEWER_FIXED.ipynb`; the current manuscript
+is `manuscript/FMG_manuscript_final_release_2026-10-25.docx`.
+The submission bundle and SHA-256 inventory are
+`FMG_final_submission_release_2026-10-25.zip` and
+`FMG_final_submission_release_2026-10-25_manifest.json`.
+
 Canonical source
 ----------------
 `FMG_research_final.ipynb` is the historical source notebook for the archived
@@ -29,8 +36,8 @@ notebook and numbered files under `figures/` for current work.
 
 Manuscript package
 ------------------
-- `manuscript/FMG_manuscript_adult_sensitivities_reconciled.docx` is the latest
-  corrected manuscript; `manuscript/FMG_supplementary_adult_sensitivities_reconciled.docx`
+- `manuscript/FMG_manuscript_final_release_2026-10-25.docx` is the current
+  release manuscript; `manuscript/FMG_supplementary_adult_sensitivities_reconciled.docx`
   is its Adult-harmonized supplement. Both include the corrected Adult primary
   results and rerun Adult-dependent age-conditioned and imputation sensitivities.
 - `manuscript/FMG_manuscript_reviewer_comments_with_multiseed_shap_final_revisions.docx`
