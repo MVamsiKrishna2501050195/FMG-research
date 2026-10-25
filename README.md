@@ -22,8 +22,10 @@ were not recorded. All 10 CSV output hashes and byte counts match the manifest.
 The corrected Adult parser excludes rows with `?` as missing, leaving 30,162
 records from the 32,561-row UCI training file. The primary 20%-MCAR summaries
 were recalculated from the raw rows and match the revised manuscript table.
-The earlier `cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb`
-is retained as an archival notebook.
+The superseded `cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb`
+and legacy root-level figure PNGs have been removed from the current package;
+their prior versions remain recoverable from Git history. Use the corrected
+notebook and numbered files under `figures/` for current work.
 
 Manuscript package
 ------------------
@@ -67,8 +69,7 @@ Figure map for the revised manuscript
 | Fig. 9 Multi-seed type-aware imputation sensitivity | `figures/fig09_imputation_ablation.png` |
 | Additional primary seed-level FMG distributions | `figures/fmg_primary_seed_distributions.png` |
 
-The legacy root-level `fig3_mar_vs_mcar.png` is the earlier narrow RF/two-dataset
-probe and is retained for provenance only; it is not revised-manuscript Fig. 5.
+The superseded root-level figure PNGs are not part of the current figure set.
 Figures 3–6 and 8–9 are regenerated using the corrected Adult rows. The legacy
 Adult SHAP panel is intentionally not reused.
 
@@ -355,10 +356,10 @@ This is distinct from the historical CPU-based Colab run, whose exact backend
 CPU model/count and memory allocation remain unknown, and from the earlier
 local run. Earlier root-level CSV versions are preserved in Git history.
 
-The root-level `mar_probe_results.csv`, `mar_probe_statistics.csv`, and
-`fig3_mar_vs_mcar.png` are retained for provenance as the earlier exploratory
-cellwise heterogeneous-rate probe. They are not the expanded group-conditional
-MAR results above and should not be cited as a formal MAR analysis.
+The root-level `mar_probe_results.csv` and `mar_probe_statistics.csv` are
+retained for provenance as the earlier exploratory cellwise heterogeneous-rate
+probe. They are not the expanded group-conditional MAR results above and should
+not be cited as a formal MAR analysis.
 
 The type-aware sensitivity uses the original ten split seeds and a shared
 20%-MCAR cell mask across imputation strategies within each dataset and seed.
