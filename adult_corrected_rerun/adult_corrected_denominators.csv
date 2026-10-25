@@ -1,0 +1,11 @@
+dataset,seed,g0_total,g0_positive,g1_total,g1_positive
+Adult Income,42,2905,347,6144,1905
+Adult Income,123,2963,342,6086,1910
+Adult Income,456,2897,332,6152,1920
+Adult Income,1,2964,343,6085,1909
+Adult Income,7,2918,332,6131,1920
+Adult Income,13,2925,327,6124,1925
+Adult Income,21,2952,334,6097,1918
+Adult Income,37,2941,316,6108,1936
+Adult Income,55,2998,338,6051,1914
+Adult Income,99,2922,317,6127,1935

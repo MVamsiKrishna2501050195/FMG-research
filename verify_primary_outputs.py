@@ -1,15 +1,14 @@
-"""Check saved primary FMG outputs against their per-seed components.
+"""Check corrected saved primary and type-aware FMG outputs.
 
 Run from any directory with NumPy and pandas installed:
     python verify_primary_outputs.py
 
-This validates archived results; it does not rerun model fitting or regenerate
+This validates saved results; it does not rerun model fitting or regenerate
 figures from the notebook.
 """
 
 from __future__ import annotations
 
-import itertools
 from pathlib import Path
 
 import numpy as np
@@ -23,21 +22,13 @@ def read(name: str) -> pd.DataFrame:
     return pd.read_csv(ROOT / name)
 
 
-def exact_positive_wilcoxon(values: np.ndarray) -> float:
-    ranks = pd.Series(np.abs(values)).rank(method="average").to_numpy()
-    observed = float(ranks[values > 0].sum())
-    totals = (
-        float(sum(rank for rank, bit in zip(ranks, bits) if bit))
-        for bits in itertools.product((0, 1), repeat=len(values))
-    )
-    return sum(total >= observed - 1e-12 for total in totals) / (2 ** len(values))
-
-
 def main() -> None:
     raw = read("results_raw_10seeds.csv")
-    stats = read("stats_results_10seeds.csv")
+    summaries = read("descriptive_primary_summaries.csv")
+    main_stats = summaries[
+        summaries["Main"].astype(str).str.lower().isin(["true", "1"])
+    ]
     primary = raw[(raw["dataset"] != "German Credit") & (raw["model"] != "LR")]
-    main_stats = stats[stats["Main"].astype(str).str.lower().isin(["true", "1"])]
     checked = 0
 
     for (dataset, model), group in primary.groupby(["dataset", "model"]):
@@ -53,19 +44,19 @@ def main() -> None:
 
         match = main_stats[(main_stats.Dataset == dataset) & (main_stats.Model == model)]
         if len(match) != 1:
-            raise AssertionError(f"Missing/duplicate summary: {dataset}/{model}")
+            raise AssertionError(f"Missing/duplicate archived descriptive row: {dataset}/{model}")
         row = match.iloc[0]
         expected = {
             "Acc Drop mean": float(np.mean(accuracy_drop)),
             "Recall Drop mean": float(np.mean(recall_drop)),
-            "MG mean": float(np.mean(fmg)),
-            "MG std": float(np.std(fmg, ddof=1)),
-            "p2 (MG test)": exact_positive_wilcoxon(fmg),
-            "MG Cohen's dz": float(np.mean(fmg) / np.std(fmg, ddof=1)),
+            "FMG mean": float(np.mean(fmg)),
+            "FMG SD": float(np.std(fmg, ddof=1)),
         }
+        # Recompute descriptive statistics directly from raw paired records.
+        # Historical p-value/effect-size columns in the archived summary are
+        # intentionally excluded from validation and interpretation.
         for column, value in expected.items():
-            tolerance = 5e-4 if column == "MG Cohen's dz" else 5e-6
-            if abs(float(row[column]) - value) > tolerance:
+            if abs(float(row[column]) - value) > 5e-6:
                 raise AssertionError(f"{column} mismatch for {dataset}/{model}")
         checked += 1
 
@@ -95,11 +86,31 @@ def main() -> None:
     ):
         raise AssertionError("Subgroup denominator checks failed")
 
+    bootstrap = read("fmg_bootstrap_ci_primary.csv")
+    components = read("adult_corrected_rerun/table3_primary_components_corrected.csv")
+    bootstrap_check = bootstrap.merge(
+        components, on=["dataset", "model"], suffixes=("_csv", "_table")
+    )
+    if len(bootstrap_check) != 12:
+        raise AssertionError("Primary bootstrap/Table 3 pairs are incomplete")
+    for csv_column, table_column in [
+        ("mean_fmg", "fmg_mean"),
+        ("bootstrap_ci95_low", "fmg_bootstrap_ci_lower"),
+        ("bootstrap_ci95_high", "fmg_bootstrap_ci_upper"),
+    ]:
+        if not np.allclose(
+            bootstrap_check[csv_column],
+            bootstrap_check[table_column],
+            atol=5e-6,
+            rtol=0,
+        ):
+            raise AssertionError(f"Bootstrap/Table 3 mismatch: {csv_column}")
+
     sensitivity = pd.read_csv(
-        ROOT / "sensitivity" / "typeaware_imputation_sensitivity_per_seed.csv"
+        ROOT / "adult_corrected_rerun" / "typeaware_imputation_per_seed_reconciled_latest.csv"
     )
     sensitivity_summary = pd.read_csv(
-        ROOT / "sensitivity" / "typeaware_imputation_sensitivity_summary.csv"
+        ROOT / "adult_corrected_rerun" / "typeaware_imputation_summary_reconciled_latest.csv"
     )
     if len(sensitivity) != 90 or len(sensitivity_summary) != 9:
         raise AssertionError("Type-aware sensitivity row counts do not match")
@@ -133,8 +144,10 @@ def main() -> None:
         raise AssertionError("Missing/empty figure files: " + ", ".join(missing))
 
     print("PASS: 12 primary summaries match the saved per-seed metric components.")
-    print("PASS: exact one-sided Wilcoxon p-values, standard deviations, and Cohen's dz recompute.")
+    print("PASS: paired FMG identities and descriptive statistics recompute from raw rows.")
+    print("NOTE: legacy inferential-test columns are not validated or interpreted.")
     print(f"PASS: all {len(denominators)} subgroup denominator records reconcile.")
+    print("PASS: bootstrap intervals reconcile with Table 3 at displayed precision.")
     print("PASS: 90 type-aware sensitivity rows reconcile with 9 summaries.")
     print("PASS: all 9 numbered manuscript figures and the additional seed plot are present.")
     print("LIMIT: this checks saved outputs; it does not rerun primary training or regenerate figures.")

@@ -2,10 +2,46 @@ Masking Gap reproducibility package
 
 Canonical source
 ----------------
-`FMG_research_final.ipynb` is the release notebook for the reported results,
-including the empirical diagnostic-discordance analysis. The earlier
-`cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb` filename is
-retained for compatibility; its code cells mirror the release notebook.
+`FMG_research_final.ipynb` is the historical source notebook for the archived
+release results. `FMG_research_final_REVIEWER_FIXED.ipynb` is the corrected
+source notebook. It fixes Adult missing-token parsing, the group-conditional
+MAR mechanism, stale dataset/runtime descriptions, and the frozen-model check;
+it also exports a run manifest with input/frame hashes, package versions,
+hardware/runtime information, design settings, and output hashes. The executed
+Colab notebook copy is preserved at
+`reproducibility/FMG_research_final_REVIEWER_FIXED_EXECUTED_2026-10-25.ipynb`;
+all 34 code cells have execution counts and there are no error outputs. The
+submitted ZIP is preserved at `reproducibility/FMG_full_run_outputs_2026-10-25.zip`,
+with its extracted contents and manifest in `incoming_run_outputs_20261025/`.
+The archive contains
+the 800-row primary result table for four datasets (German Credit exploratory),
+five classifiers, ten seeds, and clean/5%/10%/20% evaluation conditions. The
+manifest reports Python 3.13.16 on Linux x86_64 with two logical CPUs and a
+runtime of about 2,033 seconds. The exact Colab CPU model and memory allocation
+were not recorded. All 10 CSV output hashes and byte counts match the manifest.
+The corrected Adult parser excludes rows with `?` as missing, leaving 30,162
+records from the 32,561-row UCI training file. The primary 20%-MCAR summaries
+were recalculated from the raw rows and match the revised manuscript table.
+The earlier `cc3_masking_gap_fmg_audit_method_methodological_revised.ipynb`
+is retained as an archival notebook.
+
+Manuscript package
+------------------
+- `manuscript/FMG_manuscript_adult_sensitivities_reconciled.docx` is the latest
+  corrected manuscript; `manuscript/FMG_supplementary_adult_sensitivities_reconciled.docx`
+  is its Adult-harmonized supplement. Both include the corrected Adult primary
+  results and rerun Adult-dependent age-conditioned and imputation sensitivities.
+- `manuscript/FMG_manuscript_reviewer_comments_with_multiseed_shap_final_revisions.docx`
+  is preserved as the immediately preceding draft for traceability.
+- `manuscript/FMG_supplementary_reviewer_comments_with_multiseed_shap.docx`
+  is the preceding supplement. It has **not** yet been harmonized with the
+  corrected Adult sample and must not be submitted alongside the corrected
+  manuscript until its Adult-dependent results are updated or removed.
+  Historical p-value columns in archived sensitivity CSVs remain provenance
+  only and are not interpreted as inferential evidence.
+- `manuscript/reviewer_comment_response_matrix.md` records which comments are
+  addressed in text, partly addressed, or still require evidence outside this
+  benchmark.
 
 Included material
 -----------------
@@ -27,12 +63,14 @@ Figure map for the revised manuscript
 | Fig. 5 Group-conditional MAR-like versus MCAR sensitivity | `figures/fig05_group_conditional_vs_mcar.png` |
 | Fig. 6 Class-rate matched-subsample analysis | `figures/fig06_class_imbalance.png` |
 | Fig. 7 Supplementary COMPAS extended-seed analysis | `figures/fig07_compas_extended_seeds.png` |
-| Fig. 8 Subgroup SHAP shifts | `figures/fig08_shap_shifts.png` |
-| Fig. 9 Single-seed imputation ablation | `figures/fig09_imputation_ablation.png` |
+| Fig. 8 COMPAS-only exploratory SHAP shifts | `figures/fig08_shap_shifts.png` |
+| Fig. 9 Multi-seed type-aware imputation sensitivity | `figures/fig09_imputation_ablation.png` |
 | Additional primary seed-level FMG distributions | `figures/fmg_primary_seed_distributions.png` |
 
 The legacy root-level `fig3_mar_vs_mcar.png` is the earlier narrow RF/two-dataset
 probe and is retained for provenance only; it is not revised-manuscript Fig. 5.
+Figures 3–6 and 8–9 are regenerated using the corrected Adult rows. The legacy
+Adult SHAP panel is intentionally not reused.
 
 Denominator schema
 ------------------
@@ -42,42 +80,162 @@ recall denominator, no-positive-label indicator, and exploratory status.
 
 Output verification
 ------------------
+Use the pinned environment in `requirements.txt` for a reproducible local
+setup. The primary rerun manifest records pandas 2.2.3; categorical column
+assignment in the reviewer-fix notebook is also written to avoid the pandas
+3.x `.loc` assignment incompatibility.
+
 Run `python verify_primary_outputs.py` after installing NumPy and pandas to
-recompute the twelve primary seed-level FMG summaries, exact one-sided
-Wilcoxon p-values, effect sizes, denominator checks, and type-aware sensitivity
-summary checks. Run `python sensitivity/verify_group_conditional_mar.py` after
-installing NumPy, pandas, and SciPy to independently verify the expanded
-group-conditional sensitivity tables and statistical tests. These checks
-validate saved results; they do not retrain models. Run
-`python regenerate_primary_plots_from_archived_results.py` to regenerate the
-two primary MCAR figures and the seed-distribution plot from the archived
-`results_raw_10seeds.csv`; the script stores outputs and hashes in
-`primary_plot_regeneration/`. All eight quantitative plot-producing notebook
-cells (Figures 1–7 and the seed-distribution plot) have also been rerun from the
-archived primary and supplementary CSV tables. Their outputs and SHA-256 hashes
-are in `primary_plot_regeneration/independent_full_plot_set/` and its
-`plot_regeneration_manifest.json`. This plotting check does not refit models or
-independently rerun supplementary sensitivity analyses. To rerun the complete
-800-row primary training pipeline
-from the canonical notebook, install the notebook's scientific dependencies
-and run `python rerun_primary_training_from_source_notebook.py --taiwan-csv
-<path-to-UCI_Credit_Card.csv>`. The wrapper executes the notebook's
-preprocessing, training, masking, and scoring code with ten fixed seeds over
-four datasets and five classifiers; it checkpoints each dataset/seed block and
-writes a separate, non-destructive output package to
-`primary_training_regeneration/`. That package contains regenerated
-results/statistics/plots and `run_manifest.json`, which records input hashes,
-dataset fingerprints, software versions, and hardware observed for this
-rerun. It does not replace the archived root-level results.
+recompute the current root-level corrected full-run seed-level summaries. Run
+`python sensitivity/verify_group_conditional_mar.py` after installing NumPy,
+pandas, and SciPy to check the expanded group-conditional sensitivity tables
+and recompute descriptive summaries. These checks validate saved results; they
+do not retrain models. Seed-level p-values in archived CSVs are not used as
+inferential support because repeated splits reuse observations.
+`python regenerate_primary_plots_from_archived_results.py` reproduces plots
+from the current root `results_raw_10seeds.csv`. Corrected manuscript figures
+and their lineage are in `adult_corrected_rerun/corrected_figures/`. The
+previous independent plot-set manifest documents figures regenerated from
+saved CSVs; it does not refit models. To rerun the complete
+The legacy `rerun_primary_training_from_source_notebook.py` wrapper points to
+`FMG_research_final.ipynb`, which is the historical notebook and does not
+include the corrected Adult parsing. Do not use that wrapper to reproduce the
+final manuscript results. The corrected full run was executed from
+`FMG_research_final_REVIEWER_FIXED.ipynb`; its executed notebook, manifest, and
+outputs are preserved in the locations listed above. A rerun from the
+corrected notebook should use the same pinned environment and matching input
+files, and write to a new output directory rather than replacing the archived
+results.
+
+Adult correction and traceability
+---------------------------------
+The supplied UCI Adult archive was parsed from its `adult.data` member only;
+`adult.test` was not appended. The archive SHA-256 is
+`7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb`. Of
+32,561 source rows, 2,399 contained at least one `?` missing marker. Under the
+existing complete-case protocol, 30,162 rows remain. The corrected Adult-only
+rerun evaluated five models × ten seeds × clean, 5%, 10%, and 20% MCAR
+conditions, yielding 200 rows and a separate manifest in
+`adult_corrected_rerun/`. It was followed by a complete corrected notebook
+rerun; see `incoming_run_outputs_20261025/` and the Independent regeneration
+status below. The corrected full-run outputs in the repository root are the
+current canonical primary CSVs and match the 2026-10-25 run manifest; they
+replace the pre-correction Adult outputs previously tracked there. Earlier
+versions remain available in Git history.
+
+The correction package includes Adult primary metrics and denominators,
+Table 3 components, matched-subsample results, group-conditional MAR
+rows/summaries, type-aware imputation sensitivity, and corrected figures. The
+type-aware results remain limited to RF, three datasets, ten repeated splits,
+and 20% MCAR. The completed full rerun also generated an Adult and COMPAS
+primary SHAP output for RF seed 42; these single-seed attributions remain
+exploratory and are not evidence of attribution stability. The manuscript's
+separate multi-model, multi-seed SHAP sensitivity concerns the public-health
+extension and is not interchangeable with this output.
+
+Adult-dependent age-conditioned MAR and type-aware imputation sensitivities
+were rerun using the corrected `adult.data` sample. Per-seed and summary files
+ending in `_reconciled_latest.csv` combine the new Adult rows with retained,
+unchanged COMPAS and Taiwan Credit rows. Across 72 age-conditioned
+dataset/model/rate/strength contrasts, mean FMG differences range from
+-0.0092 to 0.0318; the maximum is COMPAS/XGB at 20% expected missingness and
+age odds ratio 4, positive in 10/10 splits. Corrected Adult type-aware mean
+FMG ranges from 0.026972 to 0.032747 across the three tested strategies. The
+current KNN result used scikit-learn 1.9.1, while the earlier output used
+1.6.1; the manuscript reports this modest version sensitivity and avoids
+describing KNN/mode and median/mode as tied.
+
+The latest submission files are
+`manuscript/FMG_manuscript_adult_sensitivities_reconciled.docx` and
+`manuscript/FMG_supplementary_adult_sensitivities_reconciled.docx`. The
+abstract and introduction explicitly state that FMG is not a between-group
+disparity and that g0 recall loss exceeded g1 in only 4/12 primary
+dataset-model pairs. Notebook cell 35 is documented as median/mode only;
+KNN/mode and iterative/mode results come from the separate type-aware script.
 
 Analysis conventions
 --------------------
 - Test-time MCAR masking is applied after model training.
 - The same trained model is evaluated on clean and stressed test data.
 - Preprocessing and imputation are fitted using training data only.
+- Across MCAR rates, the same seeded uniform draws create nested masks; within
+  a split, that mask is shared across model families for paired comparisons.
+- The constructed group-conditional sensitivity uses the observed audit-group
+  label to set row-level cell-mask probabilities. It is one simulated MAR
+  mechanism, not a representative model of every MAR or MNAR process.
+- FMG compares positive-class recall loss with aggregate accuracy loss; a
+  positive FMG does not by itself establish greater loss for the focus group
+  than for the comparison group. The two subgroup recall losses must be
+  compared directly for that claim.
 - Recall uses the implementation's zero_division=0 convention.
 - Primary seeds are 42, 123, 456, 1, 7, 13, 21, 37, 55, and 99.
 - Primary masking rates are 5%, 10%, and 20%.
+
+New public-health extension (separate from primary results)
+------------------------------------------------------------
+`experiments/public_health/` contains a pre-specified supplemental audit for
+CDC 2024 BRFSS and UCI Diabetes 130-US Hospitals. It adds no result to the
+primary benchmark until the new pipeline has been run, checked, and the
+manuscript revised from verified outputs. The extension includes LR, RF, XGB,
+LGB, and MLP; patient-disjoint grouping for UCI; BRFSS survey-weighted held-out
+metrics and stratum/PSU bootstrap intervals; MCAR plus explicitly constructed
+group-conditional MAR and value-conditional MNAR; 5%, 10%, and 20% rates;
+descriptive threshold sensitivity; and optional fixed-sample TreeSHAP shifts.
+
+Its full protocol, task/group definitions, data attributions, limitations,
+dependencies, and run instructions are in
+`experiments/public_health/README.md`. Downloaded datasets belong under the
+ignored `.local_data/` folder. The extension writes only to the ignored
+`experiments/public_health/outputs/` folder and records hashes and environment
+details in a run manifest. The completed full run is archived at
+`experiments/public_health/outputs_full_2026_10_23/FMG_public_health_full_outputs.zip`.
+It contains 2,700 metric rows and all 60 denominator records; its input-member,
+code, and output hashes were checked against the manifest. At 80/20 and 20%
+MCAR, mean FMG ranged from 0.0272 to 0.0455 across BRFSS models, while it
+ranged from 0.0000 to 0.0038 across UCI Diabetes models. The extension is
+included separately in the revised manuscript and supplement, without changing
+archived primary results. It is a retrospective benchmark, not deployment or
+clinical validation.
+
+### Multi-model, multi-seed TreeSHAP sensitivity
+
+`experiments/public_health/run_multiseed_tree_shap.py` adds a separate
+exploratory attribution sensitivity for the two public-health datasets. It
+re-fits RF, XGBoost, and LightGBM under the extension's 80/20 split,
+preprocessing, and hyperparameters for seeds 42, 123, and 456, then compares
+positive-class attributions for the same up-to-20 test records per audit group
+under clean and one deterministic 20% MCAR masked condition. Because the
+original Colab estimator objects were not serialized, this is a controlled
+re-fit rather than an explanation of those exact stored objects. The local
+runtime and its package versions are recorded in the run manifest.
+
+RF and XGBoost use approximate Saabas TreeExplainer values; LightGBM uses exact
+TreeSHAP because the installed SHAP API does not support the approximation
+option for LightGBM. The methods and raw output scales differ, so attribution
+magnitudes are interpreted within each model only. The analysis is descriptive,
+uses a small fixed subgroup sample, and does not establish causal drivers or
+explanation stability. It does not change primary benchmark results.
+
+The completed run is in
+`experiments/public_health/shap_multiseed_2026_10_23/`:
+`multiseed_tree_shap_shifts.csv` contains per-feature/per-seed rows,
+`top_feature_summary.csv` contains the top two features per dataset/model/group,
+and `run_manifest.json` records design, software, input hashes, and output hash.
+Reproduce with:
+
+```powershell
+python experiments/public_health/run_multiseed_tree_shap.py `
+  --brfss <path-to-2024-BRFSS-XPT> `
+  --diabetes-zip .local_data/diabetes+130-us-hospitals.zip `
+  --seeds 42 123 456 --sample-size 20 `
+  --output-dir experiments/public_health/shap_multiseed_rerun
+```
+
+Then regenerate the compact summary with
+`python experiments/public_health/summarize_multiseed_tree_shap.py
+<input-csv> <summary-csv> --top-k 2`.
+Verify the archived run and its hashes with
+`python experiments/public_health/verify_multiseed_tree_shap.py`.
 
 Post-review sensitivity analyses
 --------------------------------
@@ -129,11 +287,11 @@ results in `results_raw_10seeds.csv`:
   deviation. Age remains observed in both conditions; all other test-feature
   cells are eligible for masking. The frozen-model analysis covers three
   datasets, four primary model families, ten fixed seeds, and 10%/20% rates
-  (720 per-seed rows and 72 summaries). Exact two-sided Wilcoxon tests compare
-  paired age-MAR versus matched-eligible-feature MCAR FMG; Holm correction is
-  applied within each rate across all 36 dataset/model/strength comparisons.
-  No contrast remains below .05 after this correction (minimum adjusted
-  p=.0703). This is exploratory, mechanism-specific benchmark evidence—not
+  (720 per-seed rows and 72 summaries). This mechanism-specific contrast is
+  summarized descriptively with paired means and positive-split counts. Earlier
+  archived test outputs are retained for provenance but are not interpreted as
+  inferential evidence because repeated splits reuse observations. This is
+  exploratory benchmark evidence—not
   evidence for all MAR mechanisms, MNAR, independent populations, deployment
   benefit, or causal effects. Details and runtime are in that folder's README
   and `run_manifest.json`; reproduce with
@@ -143,11 +301,11 @@ results in `results_raw_10seeds.csv`:
 - `sensitivity/group_conditional_mar_run_manifest.json` records the design,
   captured runtime versions, known environment omissions, and SHA-256 hashes
   for the notebook and generated outputs.
-- `sensitivity/verify_group_conditional_mar.py` independently checks the
-  archived per-seed and summary tables, recomputes FMG identities, descriptive
-  statistics, exact paired Wilcoxon tests, and Holm-adjusted p-values. Run it
-  with `python sensitivity/verify_group_conditional_mar.py` after installing
-  NumPy, pandas, and SciPy.
+- `sensitivity/verify_group_conditional_mar.py` checks the archived per-seed
+  and summary tables, recomputes FMG identities and descriptive statistics, and
+  ignores historical inferential-test columns. Run it with
+  `python sensitivity/verify_group_conditional_mar.py` after installing NumPy
+  and pandas.
 
 Group-conditional MAR implementation note
 -----------------------------------------
@@ -163,17 +321,17 @@ Random masks are applied only to test features. Each classifier is fitted on
 clean training data and remains unchanged during both clean and masked scoring;
 preprocessing/imputation is training-fitted. The paired comparison is the
 group-conditional MAR FMG minus MCAR FMG for the same dataset, model, seed, and
-nominal rate. Two-sided exact Wilcoxon tests are reported, with Holm adjustment
-across the 12 dataset/model comparisons within each rate. The directional
-test is supplemental. Repeated seeds are benchmark resampling conditions, not
-independent deployment populations.
+nominal rate. Repeated seeds are benchmark resampling conditions, not
+independent deployment populations. Results are summarized with paired means,
+standard deviations, and positive-split counts; archived test-statistic and
+p-value columns are retained only for provenance and are not interpreted as
+inferential evidence.
 
 In this run, 12/12 mean paired contrasts were positive at 10% and 11/12 at
-20%; 9/12 comparisons at each rate had Holm-adjusted two-sided p < .05. These
-are sensitivity-analysis findings under this specific constructed mechanism;
-they do not establish robustness to all MAR mechanisms or universal subgroup
-behavior.
-The executed notebook output reports Python 3.11 (kernel metadata), NumPy
+20%. These descriptive sensitivity findings apply only to this constructed
+mechanism; they do not establish robustness to all MAR mechanisms or universal
+subgroup behavior.
+The executed public-health extension notebook output reports Python 3.11 (kernel metadata), NumPy
 2.1.3, pandas 2.2.3, scikit-learn 1.6.1, XGBoost 3.2.0, LightGBM 4.6.0, and
 SHAP 0.51.0. The original run used a Google Colab CPU runtime, but the exact
 CPU model/count, memory allocation, and SciPy version were not recorded. The
@@ -183,27 +341,19 @@ are not bundled here, so exact reruns also require matching input data files.
 
 Independent regeneration status
 --------------------------------
-The complete primary training loop was rerun from the canonical notebook using
-the user-provided Taiwan Credit CSV and the notebook's Adult, COMPAS, and German
-Credit sources. The fresh run produced 800 rows (4 datasets x 5 models x 10
-seeds x 4 conditions including clean baseline) and regenerated the primary
-statistics and plots in `primary_training_regeneration/`. Its 800-row result
-table matches the archived `results_raw_10seeds.csv` exactly at the archived
-six-decimal precision for accuracy, focus-group recall, comparison-group recall,
-and FMG (zero absolute difference for each metric). This supports reproducibility
-of the saved benchmark results under the documented inputs and rerun
-environment; it does not establish independent deployment-population evidence.
-The run manifest records SHA-256 fingerprints for the uploaded Taiwan CSV and
-the downloaded inputs, dataset/group fingerprints, Python/package versions, and
-the observed local hardware (Windows 10, 4 logical CPUs, approximately 7.74 GiB
-RAM). These are details of the new rerun, not the historical Colab execution.
-The original run is known to have used Google Colab on CPU; its exact CPU model,
-CPU count, and RAM allocation were not recorded and cannot be reconstructed
-reliably after the fact. The notebook's primary-training
-dependency versions are documented in the manifest; they may differ from the
-original Colab runtime. The historical environment therefore remains only
-partially specified even though the primary result table has now been
-independently regenerated and matched.
+A previous 800-row run in `primary_training_regeneration/` used an Adult parser
+that did not treat `?` as missing; its Adult results have been superseded. The
+corrected notebook has now been rerun end-to-end, and its manifest and outputs
+are in `incoming_run_outputs_20261025/`; the executed notebook copy and original
+ZIP are preserved in `reproducibility/`. The 800 raw result rows include the
+corrected 30,162-record Adult cohort, and each archived CSV's SHA-256 and byte
+count match the run manifest. Recalculation of the 12 primary dataset-model
+summaries at 20% MCAR reproduces the revised manuscript values at the displayed
+precision. The manifest identifies this fresh run as Linux x86_64 / Python
+3.13.16 / two logical CPUs; it does not report a CPU model or memory allocation.
+This is distinct from the historical CPU-based Colab run, whose exact backend
+CPU model/count and memory allocation remain unknown, and from the earlier
+local run. Earlier root-level CSV versions are preserved in Git history.
 
 The root-level `mar_probe_results.csv`, `mar_probe_statistics.csv`, and
 `fig3_mar_vs_mcar.png` are retained for provenance as the earlier exploratory

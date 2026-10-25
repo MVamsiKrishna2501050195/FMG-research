@@ -13,6 +13,7 @@ import tempfile
 import urllib.request
 import zipfile
 import ctypes
+import argparse
 from io import BytesIO
 from pathlib import Path
 
@@ -41,20 +42,28 @@ def get_bytes(url: str) -> bytes:
         return response.read()
 
 
-def load_datasets():
+def load_datasets(adult_zip=None, adult_only=False):
     adult_cols = [
         "age", "workclass", "fnlwgt", "education", "education-num",
         "marital-status", "occupation", "relationship", "race", "sex",
         "capital-gain", "capital-loss", "hours-per-week", "native-country", "income",
     ]
-    adult = pd.read_csv(
-        "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data",
-        header=None, names=adult_cols, na_values=" ?", skipinitialspace=True,
-    ).dropna().reset_index(drop=True)
+    if adult_zip is None:
+        adult = pd.read_csv(
+            "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data",
+            header=None, names=adult_cols, na_values=["?", " ?"], skipinitialspace=True,
+        ).dropna().reset_index(drop=True)
+    else:
+        with zipfile.ZipFile(adult_zip) as archive:
+            member = next(n for n in archive.namelist() if n.lower().endswith("adult.data"))
+            adult = pd.read_csv(archive.open(member), header=None, names=adult_cols,
+                                na_values=["?", " ?"], skipinitialspace=True).dropna().reset_index(drop=True)
     adult["label"] = (adult["income"].str.strip().str.replace(".", "", regex=False) == ">50K").astype(int)
     adult["sensitive"] = (adult["sex"].str.strip() == "Male").astype(int)
     adult = adult.drop(columns=["income", "sex"])
     adult_features = [c for c in adult.columns if c not in ("label", "sensitive")]
+    if adult_only:
+        return {"Adult Income": (adult, adult_features, "sensitive", "label", None)}
 
     compas = pd.read_csv(
         "https://raw.githubusercontent.com/propublica/compas-analysis/master/compas-scores-two-years.csv"
@@ -153,7 +162,16 @@ def score(model, X, y, group):
 
 
 def main():
-    datasets = load_datasets()
+    global OUT
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--adult-zip", type=Path, help="Corrected local UCI Adult archive.")
+    parser.add_argument("--adult-only", action="store_true", help="Run only Adult; skip remote COMPAS/Taiwan data.")
+    parser.add_argument("--output-dir", type=Path, default=OUT)
+    args = parser.parse_args()
+    OUT = args.output_dir.expanduser().resolve()
+    OUT.mkdir(parents=True, exist_ok=True)
+    adult_zip = args.adult_zip.expanduser().resolve() if args.adult_zip else None
+    datasets = load_datasets(adult_zip=adult_zip, adult_only=args.adult_only)
     results = []
     for dataset_name, (df, features, sensitive_col, target_col, declared_categorical) in datasets.items():
         print(f"\nBeginning {dataset_name}: rows={len(df)} features={len(features)}", flush=True)

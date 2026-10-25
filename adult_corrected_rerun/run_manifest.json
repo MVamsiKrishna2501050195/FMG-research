@@ -1,0 +1,122 @@
+{
+  "status": "completed",
+  "run_type": "Adult-only corrected primary rerun; archived Adult values preserved",
+  "dataset": "UCI Adult training member adult.data from user-supplied adult.zip",
+  "input_file": "C:\\Users\\mvk80\\Downloads\\adult.zip",
+  "input_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+  "zip_member": "adult.data",
+  "raw_rows": 32561,
+  "rows_with_any_missing": 2399,
+  "clean_rows": 30162,
+  "features": 13,
+  "seeds": [
+    42,
+    123,
+    456,
+    1,
+    7,
+    13,
+    21,
+    37,
+    55,
+    99
+  ],
+  "models": [
+    "LR",
+    "RF",
+    "XGB",
+    "LGB",
+    "MLP"
+  ],
+  "rates": [
+    0.0,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "evaluation": "30% stratified holdout per seed; train-fitted label mappings, MinMaxScaler and median imputer; MCAR applied to test features only; classifier trained on clean training data and evaluated unchanged",
+  "mask_design": "same seed yields nested MCAR masks across rates; shared across models for the same split",
+  "historical_colab_hardware": "CPU runtime was used; exact historical model/allocation not recorded",
+  "this_rerun_hardware": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+    "logical_cpu_count": 4
+  },
+  "runtime_seconds": 71.63999533653259,
+  "software": {
+    "python": "3.11.15",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.15.2",
+    "scikit_learn": "1.6.1",
+    "xgboost": "3.2.0",
+    "lightgbm": "4.6.0"
+  },
+  "output_files": {
+    "results": "adult_corrected_results_10seeds.csv",
+    "denominators": "adult_corrected_denominators.csv",
+    "table3": "adult_corrected_table3_components.csv"
+  },
+  "analysis_outputs": {
+    "adult_corrected_results_10seeds.csv": {
+      "sha256": "2fcbe9a8c3e743119f58d2431f4bd6f15d9a5fef003a3e2a24c5d9d5ec4bca03",
+      "bytes": 15989
+    },
+    "adult_corrected_denominators.csv": {
+      "sha256": "d223fe794d1a9a32552c3c34bd25accb1aa29b6e9faaaa4cf73cf68548d6fca3",
+      "bytes": 416
+    },
+    "adult_corrected_table3_components.csv": {
+      "sha256": "2ebb5c23d508cf360b65c17f630d1a8c054b0514b4f52f2485d931d095322268",
+      "bytes": 820
+    },
+    "adult_corrected_typeaware_per_seed.csv": {
+      "sha256": "3521ba7b58c0ee5e0613d713cd736a62ba83bd5ddeb9c75cb85519520ef03543",
+      "bytes": 6549
+    },
+    "adult_corrected_typeaware_summary.csv": {
+      "sha256": "efda1346ea1c5065c2dc49d905c1ead77a6f8d636b95d3bda980ef3824b5d876",
+      "bytes": 616
+    },
+    "adult_corrected_matched_subsample_per_seed.csv": {
+      "sha256": "58b11a5a8b7630ce21b0ad7086cbb7aa2c54491e38331083e90f96f7e9d97226",
+      "bytes": 1017
+    },
+    "adult_corrected_matched_subsample_summary.csv": {
+      "sha256": "8803497c0102b33fbfa4253d655e4e83ab92d613a6d53337b1701161b3041376",
+      "bytes": 308
+    },
+    "adult_corrected_group_conditional_mar_per_seed.csv": {
+      "sha256": "c625d2cfe94f5879f2386049d67e9689f9e129a5f4325a8a61e23a623aa29710",
+      "bytes": 16924
+    },
+    "adult_corrected_group_conditional_mar_summary.csv": {
+      "sha256": "22d6b5f98453ee698de66c8039dafb76cffbd06037ab04bf44aff95c89aae3a9",
+      "bytes": 1199
+    },
+    "results_raw_10seeds_with_corrected_adult.csv": {
+      "sha256": "818e4539d6dbb54bb64b8af413115c05f90ee1258edf9fbd558149560996a0d5",
+      "bytes": 52435
+    },
+    "subgroup_denominators_with_corrected_adult.csv": {
+      "sha256": "4903322778bb255c6413a39c1b409953723bee6c53ed929694fb9c2e91c34410",
+      "bytes": 3300
+    },
+    "table3_primary_components_corrected.csv": {
+      "sha256": "537e4d358d2a22738b547dccdcfc758c32173587bfa05aff4994df52a68346f2",
+      "bytes": 1755
+    },
+    "group_conditional_mar_per_seed_with_corrected_adult.csv": {
+      "sha256": "73e9334296d87be1d20d509adc42c85d7cff0b41ecafe0df6391a43976c17af8",
+      "bytes": 50105
+    },
+    "group_conditional_mar_descriptive_summary_with_corrected_adult.csv": {
+      "sha256": "6160f0e400da40d645a7da7fe396de7cc0372c3f1323d7ebaaff828781fe5503",
+      "bytes": 3154
+    },
+    "typeaware_imputation_summary_with_corrected_adult.csv": {
+      "sha256": "908f797ec596bc543796c7e154af29790f106d445e4e34e0a6a8865d6f8ffe26",
+      "bytes": 1227
+    }
+  }
+}

@@ -1,8 +1,8 @@
 dataset,model,n_seeds,mean_fmg,bootstrap_ci95_low,bootstrap_ci95_high,interval_scope
-Adult Income,LGB,10,0.0953354,0.08743738000000001,0.1038497,descriptive repeated-seed benchmark
-Adult Income,MLP,10,0.0383294,0.0268801875,0.0490269625,descriptive repeated-seed benchmark
-Adult Income,RF,10,0.0907493,0.0764128875,0.10312444750000001,descriptive repeated-seed benchmark
-Adult Income,XGB,10,0.0971128,0.08743318000000001,0.10607926749999998,descriptive repeated-seed benchmark
+Adult Income,LGB,10,0.0977492,0.086178525,0.1086370925,descriptive repeated-seed benchmark
+Adult Income,MLP,10,0.0616416,0.047202302499999994,0.076272095,descriptive repeated-seed benchmark
+Adult Income,RF,10,0.08653059999999999,0.07256138000000001,0.09902469249999998,descriptive repeated-seed benchmark
+Adult Income,XGB,10,0.0890011,0.0726624925,0.10484539999999999,descriptive repeated-seed benchmark
 COMPAS,LGB,10,0.0010046999999999996,-0.0154020525,0.019155624999999992,descriptive repeated-seed benchmark
 COMPAS,MLP,10,0.029296599999999996,0.019983665000000005,0.0390888675,descriptive repeated-seed benchmark
 COMPAS,RF,10,0.004686999999999999,-0.008957557500000001,0.01892455,descriptive repeated-seed benchmark

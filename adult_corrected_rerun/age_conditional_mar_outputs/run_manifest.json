@@ -1,0 +1,72 @@
+{
+  "analysis": "age-conditioned MAR versus matched-eligible-feature MCAR sensitivity",
+  "status": "completed",
+  "n_per_seed_rows": 240,
+  "n_summaries": 24,
+  "seeds": [
+    42,
+    123,
+    456,
+    1,
+    7,
+    13,
+    21,
+    37,
+    55,
+    99
+  ],
+  "datasets": [
+    "Adult Income"
+  ],
+  "models": [
+    "RF",
+    "XGB",
+    "LGB",
+    "MLP"
+  ],
+  "rates": [
+    0.1,
+    0.2
+  ],
+  "age_odds_ratios_per_sd": [
+    1.5,
+    2.0,
+    4.0
+  ],
+  "masking": "test-only; age is observed in both conditions; all other feature cells eligible",
+  "mar_mechanism": "cellwise Bernoulli with logit propensity intercept calibrated to nominal expected rate; log-odds increase by ln(OR) per SD of observed age for each requested OR",
+  "preprocessing": "train-only label encoding/scaling; median imputer fitted on training matrix only; cleaned analysis-frame SHA-256 values identify the dataset snapshots used",
+  "classifier": "trained on clean training split once per dataset/seed/model and kept frozen during both stress conditions",
+  "inference": "paired exact two-sided Wilcoxon over ten seed-specific FMG contrasts; Holm adjustment within rate across the comparisons included in this run",
+  "runtime_seconds": 113.7,
+  "python": "3.11.15 (main, Jun 23 2026, 15:20:37) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "cpu_model": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+  "logical_cpu_count": 4,
+  "package_versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.9.1",
+    "xgboost": "3.2.0",
+    "lightgbm": "4.7.0"
+  },
+  "input_hashes": {
+    "Adult Income": {
+      "cleaned_analysis_frame_sha256": "bc774f6734978d4b06e4741b9299f180fecc482d2a3abe74a9525602beb932bc",
+      "source_url": null,
+      "path": "C:\\Users\\mvk80\\Downloads\\adult.zip",
+      "source_file_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"
+    }
+  },
+  "outputs": {
+    "per_seed_csv": "age_conditional_mar_per_seed.csv",
+    "summary_csv": "age_conditional_mar_statistics.csv"
+  },
+  "limitations": [
+    "one observed covariate (age) and one logistic propensity form, evaluated at specified strengths",
+    "not evidence for all MAR or MNAR mechanisms",
+    "benchmark seeds are repeated splits, not independent populations",
+    "exploratory sensitivity, no deployment validation"
+  ]
+}

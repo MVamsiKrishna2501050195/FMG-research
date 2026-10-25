@@ -1,0 +1,12 @@
+{
+  "scope": "Adult-only corrected primary rerun merged with unchanged archived non-Adult rows; not a full pipeline rerun",
+  "adult_input_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+  "figures": [
+    "fig03_masking_gap_curves_corrected_adult.png",
+    "fig04_accuracy_vs_recall_corrected_adult.png",
+    "fig05_group_conditional_vs_mcar_corrected_adult.png",
+    "fig06_class_imbalance_corrected_adult.png",
+    "fig08_compas_shap_only.png",
+    "fig09_type_aware_imputation_corrected_adult.png"
+  ]
+}

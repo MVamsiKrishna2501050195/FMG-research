@@ -1,0 +1,3 @@
+condition,mean_fmg,sd_fmg,positive_splits,n_splits,mean_accuracy_drop,mean_g0_recall_drop,mean_g1_recall_drop
+corrected_original,0.08653063559,0.02254252504,10,10,0.02141673113,0.1079473667,0.1403277569
+corrected_matched_subsample,0.09326776392,0.02039391018,10,10,0.02100784617,0.1142756101,0.1413853898

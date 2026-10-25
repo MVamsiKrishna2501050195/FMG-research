@@ -1,0 +1,192 @@
+{
+  "status": "completed",
+  "scope": "fresh notebook run; repeated seeds are benchmark splits, not independent populations",
+  "runtime_seconds_from_primary_start": 2032.9213047027588,
+  "environment": {
+    "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "processor_reported": "x86_64",
+    "logical_cpu_count": 2,
+    "packages": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scipy": "1.15.2",
+      "scikit-learn": "1.6.1",
+      "xgboost": "3.2.0",
+      "lightgbm": "4.6.0",
+      "shap": "0.51.0",
+      "matplotlib": "3.10.3",
+      "seaborn": "0.13.2"
+    }
+  },
+  "design": {
+    "seeds": [
+      42,
+      123,
+      456,
+      1,
+      7,
+      13,
+      21,
+      37,
+      55,
+      99
+    ],
+    "mcar_rates": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "models": [
+      "LR",
+      "RF",
+      "XGB",
+      "LGB",
+      "MLP"
+    ],
+    "primary_datasets": [
+      "Adult Income",
+      "COMPAS",
+      "Taiwan Credit"
+    ]
+  },
+  "adult_parser": {
+    "missing_markers": [
+      "?",
+      " ?"
+    ],
+    "complete_case_rows": 30162,
+    "observed_raw_rows": 32561,
+    "observed_missing_rows": 2399
+  },
+  "datasets": {
+    "Adult Income": {
+      "source": "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data",
+      "file_sha256": null,
+      "rows_after_dataset_cleaning": 30162,
+      "columns_after_dataset_cleaning": 15,
+      "cleaned_frame_sha256": "1282357de5ecdbadeca5690df0645d06ada386be0f805a597b5c2349c79ba3fd",
+      "exploratory": false,
+      "raw_rows": 32561,
+      "rows_with_missing": 2399
+    },
+    "COMPAS": {
+      "source": "ProPublica COMPAS analysis CSV URL",
+      "file_sha256": null,
+      "rows_after_dataset_cleaning": 5278,
+      "columns_after_dataset_cleaning": 13,
+      "cleaned_frame_sha256": "e0bc1e4e36bb2dc9b85d87b6e256c140d23e2d29181b37009d48a39f4c97a99d",
+      "exploratory": false
+    },
+    "Taiwan Credit": {
+      "source": "UCI_Credit_Card.csv",
+      "file_sha256": "a0f0ab49d6326671d6cd83be5c88dcf18007025fe9a53ecd699119c871176ca1",
+      "rows_after_dataset_cleaning": 30000,
+      "columns_after_dataset_cleaning": 24,
+      "cleaned_frame_sha256": "53dfbed14d2509802f4e9fddfed0a679d1927f17eedc58913beacbb0924b806e",
+      "exploratory": false
+    },
+    "German Credit": {
+      "source": "OpenML data_id=31 (credit-g)",
+      "file_sha256": null,
+      "rows_after_dataset_cleaning": 1000,
+      "columns_after_dataset_cleaning": 21,
+      "cleaned_frame_sha256": "56906e350677dd959484312d0b3c7773efccb646fed86d8d6d41386365f3f79d",
+      "exploratory": true
+    }
+  },
+  "outputs": {
+    "descriptive_primary_summaries.csv": {
+      "sha256": "4b41d8f38a191f4151bbf928ec7c2f0677bd1f19d619075df9d88a5764a38db4",
+      "bytes": 2236
+    },
+    "eog_results_10seeds.csv": {
+      "sha256": "0529431b484dde39cea929706089d333614e55b1bd100872314e5457cc5c4304",
+      "bytes": 994
+    },
+    "extended_seeds_n30_results.csv": {
+      "sha256": "c58fa13821006025a60f35360885ddaeca9d1f668aa78eb280f4416ae9f6d0cb",
+      "bytes": 1434
+    },
+    "group_conditional_mar_full_descriptive_summary.csv": {
+      "sha256": "b82cb02a9f2c2c076d4c1a62b061030d25a419da83d5c65de85cf4e0b0ae09c3",
+      "bytes": 2298
+    },
+    "group_conditional_mar_full_per_seed.csv": {
+      "sha256": "a939c7a50205a5377d0774117fa798c0adde1c5d474c9a914a54567ed5bcf435",
+      "bytes": 32231
+    },
+    "imputation_ablation_results.csv": {
+      "sha256": "44cb6682ed7a21bf9c1fb077f517030b2556f7e0823b21c01f3a7ef305ad5507",
+      "bytes": 611
+    },
+    "masking_gap_per_seed.csv": {
+      "sha256": "f4194ee55f553132510fbb4b78f5fa2370c7f3463658838e4ad5c1ee10bceb2a",
+      "bytes": 6673
+    },
+    "matched_subsample_results.csv": {
+      "sha256": "7b99445466804e916dd96a827ae0ce8bc22d0fd972e51e806ae93f2dfa2d0b11",
+      "bytes": 136
+    },
+    "results_raw_10seeds.csv": {
+      "sha256": "8f3f0dd57dfbc13e3a51f42d9d0bc118ab66ce0faf7724c87a77bcdec80e3cc2",
+      "bytes": 49560
+    },
+    "shap_subgroup_results.csv": {
+      "sha256": "6f6d44f71d7da817d843abc896d01a426f38838f30e7031324c8f50e7fc60aea",
+      "bytes": 2506
+    },
+    "fig1_masking_gap_curves.png": {
+      "sha256": "82b3981a8582866a6a47c86e98f24bd513e9a5012bce4617651c1716fb9b83b9",
+      "bytes": 285361
+    },
+    "fig2_acc_vs_recall.png": {
+      "sha256": "bb400026eb7f86c5d79589074e3e388ec4f3b7d6369e3e74aecbf2c72a66018b",
+      "bytes": 80206
+    },
+    "fig3_mar_vs_mcar.png": {
+      "sha256": "e930f9f4b7049f74be8c85b4b19057f3e33aba52af41c601a9306d7b18d37915",
+      "bytes": 123420
+    },
+    "fig4_class_imbalance.png": {
+      "sha256": "8c2ab7cd67a9717a8ffc3c8b21e6fe5479264c2c810752e03c2589330a073f52",
+      "bytes": 168731
+    },
+    "fig5_compas_extended_seeds.png": {
+      "sha256": "21e71d2b4f9bde9f67882de0ea6da7c9618d27fb5831c3fe89b0bf3f952f842a",
+      "bytes": 103877
+    },
+    "fig6_shap_shifts.png": {
+      "sha256": "50bfcfedd4d186808320f0ed1ff485d9787566e789eb9d6f1a90fcf66608e676",
+      "bytes": 109537
+    },
+    "fig7_imputation_ablation.png": {
+      "sha256": "05bd1d8ce9d68e665c8afc7d3b9084be520b91b468b64805ad19c86e990fd208",
+      "bytes": 86902
+    },
+    "fig1_masking_gap_curves.pdf": {
+      "sha256": "3e15cb84c14587ffe64a9299888bc8c9df977526cc826933471299d17b7149b4",
+      "bytes": 49348
+    },
+    "fig2_acc_vs_recall.pdf": {
+      "sha256": "bd357012baf12be3172d1d9948b4c09c7b2beb2c86e9f24f7f1f8351ace398b6",
+      "bytes": 26237
+    },
+    "fig3_mar_vs_mcar.pdf": {
+      "sha256": "4fec6f2bfe03a47577e4d408c2a832aa1c8c6ad58b90800257a43f05265f2cb7",
+      "bytes": 21875
+    },
+    "fig4_class_imbalance.pdf": {
+      "sha256": "0f4b2d4a83338c056d527268a0661285dcaa21668e97ead44f1fef23d65f65c0",
+      "bytes": 37814
+    },
+    "fig6_shap_shifts.pdf": {
+      "sha256": "602e3adb32aed765ddb638cf1c65e26e57b847f62712ed1d0f6b0d92a28581e3",
+      "bytes": 30174
+    },
+    "fig7_imputation_ablation.pdf": {
+      "sha256": "303e8a65a7ffbc517f6bc56e35d1f21adde2c02ab981d5253245b91d0551a516",
+      "bytes": 28046
+    }
+  }
+}

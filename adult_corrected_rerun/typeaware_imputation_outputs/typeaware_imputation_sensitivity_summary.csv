@@ -1,0 +1,4 @@
+dataset,imputation_strategy,n_seeds,mean_fmg_g0,sd_fmg_g0,positive_fmg_g0_seeds,mean_accuracy_drop,mean_recall_drop_g0,mean_fmg_g1,positive_fmg_g1_seeds,min_g0_positive_denominator,max_g0_positive_denominator
+Adult Income,iterative_numeric_mode,10,0.02697230,0.02927755,7,0.01942756,0.04639986,0.02088841,9,316,347
+Adult Income,knn_numeric_mode,10,0.03274660,0.02481337,9,0.02255498,0.05530158,0.02676951,10,316,347
+Adult Income,median_mode,10,0.03176306,0.02705164,9,0.02048845,0.05225151,0.02472561,10,316,347

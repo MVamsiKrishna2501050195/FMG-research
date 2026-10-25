@@ -18,6 +18,7 @@ import platform
 import sys
 import time
 from pathlib import Path
+import zipfile
 
 import numpy as np
 import pandas as pd
@@ -59,12 +60,18 @@ def sha256_frame(df: pd.DataFrame) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
-def load_adult() -> tuple[pd.DataFrame, list[str], str, str]:
-    url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
+def load_adult(archive_path: Path | None = None) -> tuple[pd.DataFrame, list[str], str, str]:
     cols = ["age", "workclass", "fnlwgt", "education", "education-num",
             "marital-status", "occupation", "relationship", "race", "sex",
             "capital-gain", "capital-loss", "hours-per-week", "native-country", "income"]
-    df = pd.read_csv(url, header=None, names=cols, na_values=" ?", skipinitialspace=True)
+    if archive_path is None:
+        df = pd.read_csv(DATASET_URLS["Adult Income"], header=None, names=cols,
+                         na_values=["?", " ?"], skipinitialspace=True)
+    else:
+        with zipfile.ZipFile(archive_path) as archive:
+            member = next(n for n in archive.namelist() if n.lower().endswith("adult.data"))
+            df = pd.read_csv(archive.open(member), header=None, names=cols,
+                             na_values=["?", " ?"], skipinitialspace=True)
     df.dropna(inplace=True)
     df.reset_index(drop=True, inplace=True)
     df["label"] = (df["income"].str.strip().str.replace(".", "", regex=False) == ">50K").astype(int)
@@ -210,21 +217,29 @@ def holm_adjust(p_values: list[float]) -> list[float]:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--taiwan-csv", required=True, type=Path)
+    parser.add_argument("--taiwan-csv", type=Path)
+    parser.add_argument("--adult-zip", type=Path,
+                        help="Use a corrected local UCI Adult archive instead of downloading Adult.")
+    parser.add_argument("--adult-only", action="store_true",
+                        help="Run only Adult and avoid fetching COMPAS and Taiwan sources.")
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).resolve().parent / "age_conditional_mar_outputs")
     parser.add_argument("--age-odds-ratios", nargs="+", type=float, default=DEFAULT_AGE_ODDS_RATIOS,
                         help="Per-SD age odds ratios for cell masking; default 2.0 reproduces the original run.")
     args = parser.parse_args()
     if any(value <= 1.0 for value in args.age_odds_ratios):
         parser.error("Each age odds ratio must exceed 1.0.")
-    args.taiwan_csv = args.taiwan_csv.expanduser().resolve()
+    if not args.adult_only and args.taiwan_csv is None:
+        parser.error("--taiwan-csv is required unless --adult-only is set.")
+    if args.taiwan_csv is not None:
+        args.taiwan_csv = args.taiwan_csv.expanduser().resolve()
+    if args.adult_zip is not None:
+        args.adult_zip = args.adult_zip.expanduser().resolve()
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
-    datasets = {
-        "Adult Income": (*load_adult(), None),
-        "COMPAS": (*load_compas(), None),
-        "Taiwan Credit": (*load_taiwan(args.taiwan_csv), args.taiwan_csv),
-    }
+    datasets = {"Adult Income": (*load_adult(args.adult_zip), args.adult_zip)}
+    if not args.adult_only:
+        datasets["COMPAS"] = (*load_compas(), None)
+        datasets["Taiwan Credit"] = (*load_taiwan(args.taiwan_csv), args.taiwan_csv)
     per_seed = []
     started = time.time()
     for ds_name, (df, features, sensitive_col, target_col, source_path) in datasets.items():
@@ -325,18 +340,24 @@ def main():
     summary_path = args.output_dir / "age_conditional_mar_statistics.csv"
     summary_df.to_csv(summary_path, index=False)
 
-    input_hashes = {
-        ds_name: {
-            "source_url": DATASET_URLS[ds_name],
-            "cleaned_analysis_frame_sha256": sha256_frame(dataset[0]),
-        }
-        for ds_name, dataset in datasets.items()
-    }
-    input_hashes["Taiwan Credit"]["path"] = str(args.taiwan_csv)
-    input_hashes["Taiwan Credit"]["source_file_sha256"] = sha256_file(args.taiwan_csv)
+    input_hashes = {}
+    for ds_name, dataset in datasets.items():
+        info = {"cleaned_analysis_frame_sha256": sha256_frame(dataset[0])}
+        source_path = dataset[4]
+        if ds_name == "Adult Income":
+            info["source_url"] = DATASET_URLS[ds_name] if source_path is None else None
+            if source_path is not None:
+                info["path"] = str(source_path)
+                info["source_file_sha256"] = sha256_file(source_path)
+        elif ds_name == "Taiwan Credit":
+            info["path"] = str(source_path)
+            info["source_file_sha256"] = sha256_file(source_path)
+        else:
+            info["source_url"] = DATASET_URLS[ds_name]
+        input_hashes[ds_name] = info
     manifest = {
         "analysis": "age-conditioned MAR versus matched-eligible-feature MCAR sensitivity",
-        "status": "completed" if len(per_seed_df) == 240 * len(args.age_odds_ratios) else "incomplete",
+        "status": "completed" if len(per_seed_df) == 80 * len(datasets) * len(args.age_odds_ratios) else "incomplete",
         "n_per_seed_rows": len(per_seed_df), "n_summaries": len(summary_df),
         "seeds": SEEDS, "datasets": list(datasets), "models": MODELS, "rates": RATES,
         "age_odds_ratios_per_sd": args.age_odds_ratios,
@@ -344,7 +365,7 @@ def main():
         "mar_mechanism": "cellwise Bernoulli with logit propensity intercept calibrated to nominal expected rate; log-odds increase by ln(OR) per SD of observed age for each requested OR",
         "preprocessing": "train-only label encoding/scaling; median imputer fitted on training matrix only; cleaned analysis-frame SHA-256 values identify the dataset snapshots used",
         "classifier": "trained on clean training split once per dataset/seed/model and kept frozen during both stress conditions",
-        "inference": "paired exact two-sided Wilcoxon over ten seed-specific FMG contrasts; Holm adjustment within each nominal rate across all 36 dataset-model-propensity-strength comparisons",
+        "inference": "paired exact two-sided Wilcoxon over ten seed-specific FMG contrasts; Holm adjustment within rate across the comparisons included in this run",
         "runtime_seconds": round(time.time() - started, 2),
         "python": sys.version, "platform": platform.platform(), "cpu_model": platform.processor(),
         "logical_cpu_count": __import__("os").cpu_count(),
