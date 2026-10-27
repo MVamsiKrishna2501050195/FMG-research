@@ -1,0 +1,30 @@
+{
+  "status": "partial_validation_only",
+  "note": "No result table was written after the reconstruction check failed.",
+  "attempts": [
+    {
+      "command": ".venv\\Scripts\\python.exe analysis\\extend_public_health_s7.py --diabetes-zip .local_data\\diabetes+130-us-hospitals.zip",
+      "status": "stopped_before_output",
+      "dataset": "UCI_Diabetes130",
+      "condition": "80_20, seed 42, LR, MCAR, 5%",
+      "regenerated_FMG_focus": 0.0,
+      "archived_FMG": 0.0003015075376884,
+      "comparison_tolerance": 1e-12,
+      "reason": "The regenerated metric did not match the saved public-health metric. The script stopped and did not write an S7-style CSV.",
+      "input_sha256": "f82ac129da2ddd2299391ff6fbae3a6a58b3edcf59ac9d7bd480c00fe453112a"
+    },
+    {
+      "analysis": "primary decomposition and primary threshold sensitivity",
+      "status": "not_run",
+      "reasons": [
+        "Installed primary package versions differ from run_manifest_20261025.json; scripts enforce exact pins.",
+        "Primary Adult, COMPAS, and Taiwan raw input files were not provided as local paths."
+      ]
+    },
+    {
+      "analysis": "BRFSS 2024 extension",
+      "status": "not_run",
+      "reason": "The BRFSS raw XPT/ZIP input was not supplied."
+    }
+  ]
+}
