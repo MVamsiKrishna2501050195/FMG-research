@@ -107,9 +107,9 @@
     "analysis/tests/test_analysis_helpers.py": "921960fe4d9eb8af804e22a587dfe2469948691fa2b713570167e1c41fbcab4f",
     "analysis/README_new_results.md": "b99eb2f297143081b3412b6db629969533890e2fbb38f9dbe8ebf018959be1e8",
     "analysis/outputs/validation_attempts.json": "fd1320ead074a1f631b8e878af1b9e38dab10c35481f7d1dd543a17b6c98ba57",
-    "analysis/fmg_additive_analysis_archive.zip": "7f190729992104b2ce2b32ac4b7fd76be8cef0f3352f4490948a44323d523f9b",
+    "analysis/fmg_additive_analysis_archive.zip": "bdb6933633e5bcf4350891e6a5358cd3e24c760123413e1d678bee032f579e41",
     "analysis/FMG_additional_analyses_runner.ipynb": "5e30321f168102af28a3af24923292eb81de672cfea43583a09dbad4f92007a7",
-    "analysis/FMG_Colab_runner.ipynb": "a091a5a6a4a208e7afcc9b203c6fab52d7462e49db3ce5ef48ef15b825c7b0b8"
+    "analysis/FMG_Colab_runner.ipynb": "d6154de442924fba745da27c865e43fc3db5d610697a83a90201f4716066b6db"
   },
   "outputs": {
     "analysis/outputs/validation_attempts.json": "Generated evidence log; no empirical S7/decomposition/threshold CSV was saved.",
