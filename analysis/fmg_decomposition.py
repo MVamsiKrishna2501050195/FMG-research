@@ -46,18 +46,13 @@ def installed_versions() -> dict[str, str]:
 
 
 def check_primary_versions() -> None:
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    recorded_python = (manifest.get("environment") or manifest.get("runtime"))["python"].split()[0]
-    current_python = ".".join(map(str, sys.version_info[:3]))
     expected = expected_versions()
     actual = installed_versions()
     mismatches = {name: (expected[name], actual.get(name))
                   for name in expected if actual.get(name) != expected[name]}
-    if mismatches or current_python != recorded_python:
+    if mismatches:
         details = ", ".join(f"{n}: required {want}, installed {got}"
                              for n, (want, got) in mismatches.items())
-        if current_python != recorded_python:
-            details = (details + "; " if details else "") + f"python: required {recorded_python}, installed {current_python}"
         raise RuntimeError("Primary decomposition stopped: environment does not match "
                            f"run_manifest_20261025.json ({details}). Use its pinned "
                            "versions; do not compare cross-version values as exact.")

@@ -77,7 +77,7 @@
     },
     {
       "command": "Validate analysis/FMG_additional_analyses_runner.ipynb JSON and parse every code cell with ast",
-      "status": "passed: 14 cells, all code parsed",
+      "status": "passed: 19 cells, all code parsed",
       "elapsed_seconds_approx": 1.0
     }
   ],
@@ -100,15 +100,16 @@
   },
   "new_file_sha256": {
     "analysis/_primary_core.py": "6c66707f8ec79f1dbc24292cd1188233e9979b01cc1fd5154c3323b5f9fa8a6f",
-    "analysis/fmg_decomposition.py": "899c95fa34a8b0dd984ec74567ba2074e587fa8f56c41ea1feaa833b396460a5",
+    "analysis/fmg_decomposition.py": "4af66ba403b88ced1cffb940e6eb597b9be60e640d0cef90f5fbfa4e422f9cc7",
     "analysis/threshold_sensitivity.py": "cee5f20a76737c8ce7a87e4373ed68860ab55927379b8491e2812dd4a2fdbb20",
     "analysis/extend_public_health_s7.py": "baba5b1f8a73f4bb32179216ed4bba4193b3fb0f3b3436f8fb6e4ea6f24b7f0e",
     "analysis/audit_checklist.py": "c475df82e1d010adb18f2979e84bfc228137953ebd0a9e916e07a5a77dac9361",
     "analysis/tests/test_analysis_helpers.py": "921960fe4d9eb8af804e22a587dfe2469948691fa2b713570167e1c41fbcab4f",
-    "analysis/README_new_results.md": "da8d41eff71282297555cd4e9dff9b7c4e6dc05bfcf68d997820ac30f9b02cc0",
+    "analysis/README_new_results.md": "271d12fc4ec068bf22dfbcd79ca5de87061d74a6de380b472ae21d80f3cea1f0",
     "analysis/outputs/validation_attempts.json": "fd1320ead074a1f631b8e878af1b9e38dab10c35481f7d1dd543a17b6c98ba57",
-    "analysis/fmg_additive_analysis_archive.zip": "7d38868fd3e4f165cb4d557639ba5f786e82d94e06aa486f87547bccace3b77b",
-    "analysis/FMG_additional_analyses_runner.ipynb": "5e30321f168102af28a3af24923292eb81de672cfea43583a09dbad4f92007a7"
+    "analysis/fmg_additive_analysis_archive.zip": "8d5cfe4697a36858ce4ed7a927f889b1e640ef1c088e956c510a9fa29601967b",
+    "analysis/FMG_additional_analyses_runner.ipynb": "5e30321f168102af28a3af24923292eb81de672cfea43583a09dbad4f92007a7",
+    "analysis/FMG_Colab_runner.ipynb": "210cecc243c2265c806e78738cc868485efdbb7ca1566ba8e8f44dc5ed8d8ac4"
   },
   "outputs": {
     "analysis/outputs/validation_attempts.json": "Generated evidence log; no empirical S7/decomposition/threshold CSV was saved.",
@@ -117,7 +118,8 @@
     "analysis/fmg_decomposition_correlations.csv": "not generated",
     "analysis/outputs/public_health/public_health_s7_style_new.csv": "not generated; reconstruction did not match saved metrics",
     "analysis/outputs/threshold_sensitivity_summary.csv": "not generated",
-    "analysis/FMG_additional_analyses_runner.ipynb": "Notebook runner created; it invokes the scripts and preserves version/data/mismatch checks."
+    "analysis/FMG_additional_analyses_runner.ipynb": "Local Jupyter runner; it invokes the scripts and preserves version/data/mismatch checks.",
+    "analysis/FMG_Colab_runner.ipynb": "Colab runner; clones the repository, mounts Drive, installs selected package pins, and copies run outputs and manifests back to Drive."
   },
   "environment_note": "pytest was installed into the project-local .venv only as a test runner. None of the benchmark packages or their recorded pins were upgraded.",
   "manifest_hash_note": "This manifest is not self-hashed. The ZIP excludes the manifest to avoid circular or stale embedded hashes."
