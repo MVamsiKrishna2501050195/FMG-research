@@ -27,7 +27,9 @@ MANIFEST = ROOT / "run_manifest_20261025.json"
 PRIMARY_RESULTS = ROOT / "results_raw_10seeds.csv"
 MAR_RESULTS = ROOT / "group_conditional_mar_full_per_seed.csv"
 IDENTITY_TOL = 1e-12
-ARCHIVE_TOL = 1e-9
+# Archived primary CSVs are written with df.round(6); validate at that same
+# published precision rather than demanding equality to unrounded recomputation.
+ARCHIVE_DECIMALS = 6
 
 
 def expected_versions() -> dict[str, str]:
@@ -157,11 +159,15 @@ def assert_archived_match(rows: pd.DataFrame) -> None:
     if len(merged) != len(mc):
         missing = len(mc) - len(merged)
         raise AssertionError(f"Archived MCAR matching rows missing: {missing}")
-    error = np.abs(merged["FMG_g0"] - merged["masking_gap"])
-    if len(error) and float(error.max()) > ARCHIVE_TOL:
-        failing = merged.loc[error > ARCHIVE_TOL, keys + ["FMG_g0", "masking_gap"]]
-        raise AssertionError("FMG_g0 did not reproduce archived masking_gap within 1e-9 "
-                             f"precision (max error {float(error.max()):.3g}).\n{failing.head(10)}")
+    rounded_fmg = merged["FMG_g0"].round(ARCHIVE_DECIMALS)
+    mismatch = rounded_fmg.ne(merged["masking_gap"].round(ARCHIVE_DECIMALS))
+    if mismatch.any():
+        failing = merged.loc[mismatch, keys + ["FMG_g0", "masking_gap"]].copy()
+        failing["FMG_g0_rounded"] = rounded_fmg[mismatch]
+        raise AssertionError(
+            f"FMG_g0 did not reproduce archived masking_gap at the archive's "
+            f"{ARCHIVE_DECIMALS}-decimal precision.\n{failing.head(10)}"
+        )
     if MAR_RESULTS.exists():
         mar = rows[rows["mechanism"] == "MAR_group_conditional"].copy()
         archived_mar = pd.read_csv(MAR_RESULTS)
@@ -178,10 +184,16 @@ def assert_archived_match(rows: pd.DataFrame) -> None:
         )
         if len(mar) != mar_count:
             raise AssertionError(f"Group-conditional MAR archive missing {mar_count-len(mar)} paired results")
-        mar_error = np.abs(mar["FMG_g0"] - mar["mg_mar"])
-        if len(mar_error) and float(mar_error.max()) > ARCHIVE_TOL:
-            raise AssertionError("Group-conditional MAR FMG_g0 failed the archived "
-                                 f"per-seed check; max error {float(mar_error.max()):.3g}")
+        mar_mismatch = mar["FMG_g0"].round(ARCHIVE_DECIMALS).ne(
+            mar["mg_mar"].round(ARCHIVE_DECIMALS)
+        )
+        if mar_mismatch.any():
+            failing = mar.loc[mar_mismatch,
+                              ["dataset", "model", "seed", "rate", "FMG_g0", "mg_mar"]]
+            raise AssertionError(
+                "Group-conditional MAR FMG_g0 failed the archived check at the "
+                f"archive's {ARCHIVE_DECIMALS}-decimal precision.\n{failing.head(10)}"
+            )
 
 
 def summarize(rows: pd.DataFrame) -> pd.DataFrame:
@@ -246,8 +258,9 @@ def main() -> int:
     args = parser.parse_args()
     check_primary_versions()
     datasets, skipped = load_available(args)
-    if skipped and not args.allow_partial_data:
-        raise SystemExit("Missing primary dataset inputs; supply all paths or pass --allow-partial-data.\n" + "\n".join(skipped))
+    required_missing = [item for item in skipped if not item.startswith("German Credit:")]
+    if required_missing and not args.allow_partial_data:
+        raise SystemExit("Missing primary dataset inputs; supply all paths or pass --allow-partial-data.\n" + "\n".join(required_missing))
     if not datasets:
         raise SystemExit("No primary dataset could be loaded.\n" + "\n".join(skipped))
     start = time.perf_counter()

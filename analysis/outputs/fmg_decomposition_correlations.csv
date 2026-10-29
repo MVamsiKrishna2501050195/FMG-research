@@ -1,0 +1,37 @@
+dataset,rate,mechanism,correlation,value,n
+Adult Income,0.1,MAR_group_conditional,corr_FMG_all_dPPR,0.94277672848,40
+Adult Income,0.1,MAR_group_conditional,corr_FMG_g0_dPPR,0.706411584737,40
+Adult Income,0.1,MAR_group_conditional,corr_DiD_dPPR_g0_minus_g1,0.466373656203,40
+Adult Income,0.1,MCAR,corr_FMG_all_dPPR,0.948703826768,40
+Adult Income,0.1,MCAR,corr_FMG_g0_dPPR,0.380157889303,40
+Adult Income,0.1,MCAR,corr_DiD_dPPR_g0_minus_g1,0.544013373541,40
+Adult Income,0.2,MAR_group_conditional,corr_FMG_all_dPPR,0.969445834665,40
+Adult Income,0.2,MAR_group_conditional,corr_FMG_g0_dPPR,0.774617814611,40
+Adult Income,0.2,MAR_group_conditional,corr_DiD_dPPR_g0_minus_g1,0.590165810196,40
+Adult Income,0.2,MCAR,corr_FMG_all_dPPR,0.953034632898,40
+Adult Income,0.2,MCAR,corr_FMG_g0_dPPR,0.6394056247,40
+Adult Income,0.2,MCAR,corr_DiD_dPPR_g0_minus_g1,0.490979731252,40
+COMPAS,0.1,MAR_group_conditional,corr_FMG_all_dPPR,0.99999937634,40
+COMPAS,0.1,MAR_group_conditional,corr_FMG_g0_dPPR,0.933984016657,40
+COMPAS,0.1,MAR_group_conditional,corr_DiD_dPPR_g0_minus_g1,0.713681108955,40
+COMPAS,0.1,MCAR,corr_FMG_all_dPPR,0.99999935353,40
+COMPAS,0.1,MCAR,corr_FMG_g0_dPPR,0.893942367587,40
+COMPAS,0.1,MCAR,corr_DiD_dPPR_g0_minus_g1,0.724016565048,40
+COMPAS,0.2,MAR_group_conditional,corr_FMG_all_dPPR,0.99999957468,40
+COMPAS,0.2,MAR_group_conditional,corr_FMG_g0_dPPR,0.971735536969,40
+COMPAS,0.2,MAR_group_conditional,corr_DiD_dPPR_g0_minus_g1,0.751314425195,40
+COMPAS,0.2,MCAR,corr_FMG_all_dPPR,0.9999996782,40
+COMPAS,0.2,MCAR,corr_FMG_g0_dPPR,0.954735298775,40
+COMPAS,0.2,MCAR,corr_DiD_dPPR_g0_minus_g1,0.696981962614,40
+Taiwan Credit,0.1,MAR_group_conditional,corr_FMG_all_dPPR,0.940829308648,40
+Taiwan Credit,0.1,MAR_group_conditional,corr_FMG_g0_dPPR,0.722877431672,40
+Taiwan Credit,0.1,MAR_group_conditional,corr_DiD_dPPR_g0_minus_g1,0.849532421675,40
+Taiwan Credit,0.1,MCAR,corr_FMG_all_dPPR,0.948340829033,40
+Taiwan Credit,0.1,MCAR,corr_FMG_g0_dPPR,0.7277952268,40
+Taiwan Credit,0.1,MCAR,corr_DiD_dPPR_g0_minus_g1,0.850228669351,40
+Taiwan Credit,0.2,MAR_group_conditional,corr_FMG_all_dPPR,0.939016023305,40
+Taiwan Credit,0.2,MAR_group_conditional,corr_FMG_g0_dPPR,0.80934438658,40
+Taiwan Credit,0.2,MAR_group_conditional,corr_DiD_dPPR_g0_minus_g1,0.818060052419,40
+Taiwan Credit,0.2,MCAR,corr_FMG_all_dPPR,0.928597706312,40
+Taiwan Credit,0.2,MCAR,corr_FMG_g0_dPPR,0.786711763169,40
+Taiwan Credit,0.2,MCAR,corr_DiD_dPPR_g0_minus_g1,0.853193063372,40

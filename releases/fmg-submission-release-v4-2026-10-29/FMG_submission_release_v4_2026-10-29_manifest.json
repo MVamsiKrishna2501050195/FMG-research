@@ -1,0 +1,266 @@
+{
+  "release_tag": "fmg-submission-release-v4-2026-10-29",
+  "created_date": "2026-10-29",
+  "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
+  "manuscript": "manuscript/FMG_Subgroup_Recall_Audit_Polished_submission_v4.docx",
+  "supplement": "manuscript/FMG_supplementary_final_release_2026-10-28.docx",
+  "raw_public_health_data_included": false,
+  "manifest_hash_note": "RELEASE_MANIFEST.json is excluded from its own file-hash list.",
+  "files": [
+    {
+      "path": "adult_corrected_rerun/adult_corrected_table3_components.csv",
+      "bytes": 815,
+      "sha256": "fe9077bce86be97867f3e332210043fbee5f116f1760f4453ae2046c7a05ceb9"
+    },
+    {
+      "path": "adult_corrected_rerun/age_conditional_mar_summary_reconciled_latest.csv",
+      "bytes": 18415,
+      "sha256": "8877537ac21461a8e1bbc36d084966a3fe976879310d51df6f8d6c03086c847b"
+    },
+    {
+      "path": "adult_corrected_rerun/baseline_recall_summary_corrected_adult.csv",
+      "bytes": 719,
+      "sha256": "0ea8884b0793f432568e8627e91bf7d217441ed1796fe41c0107e0625dcb4241"
+    },
+    {
+      "path": "adult_corrected_rerun/complementary_group_summary_corrected_adult.csv",
+      "bytes": 728,
+      "sha256": "1c26b01cdabd72372f8c31a1818dfaa777f78266cdd3db4897358c3b0c2a47ea"
+    },
+    {
+      "path": "adult_corrected_rerun/run_manifest.json",
+      "bytes": 4224,
+      "sha256": "abccfe176e8c0e6c23173639ee6c85e39f1ab61ce872463b52afb032f3894dc0"
+    },
+    {
+      "path": "adult_corrected_rerun/typeaware_imputation_summary_reconciled_latest.csv",
+      "bytes": 1145,
+      "sha256": "c4949a69c5e80b954353104365bdf57fdcfc38a831ce46da6a0c0acdbbd9325e"
+    },
+    {
+      "path": "analysis/_primary_core.py",
+      "bytes": 8764,
+      "sha256": "6c66707f8ec79f1dbc24292cd1188233e9979b01cc1fd5154c3323b5f9fa8a6f"
+    },
+    {
+      "path": "analysis/fmg_decomposition.py",
+      "bytes": 13714,
+      "sha256": "be5315013bcba452c5469b2446fa5b2abf3637a92f664ba7752d8728b600965c"
+    },
+    {
+      "path": "analysis/outputs/fmg_decomposition_correlations.csv",
+      "bytes": 2450,
+      "sha256": "80e2b1e161dc95e8cff214f836c123cce2b082d0cfdb7ace8af902519e9457e9"
+    },
+    {
+      "path": "analysis/outputs/fmg_decomposition_per_seed.csv",
+      "bytes": 134838,
+      "sha256": "65e075b9bc3487701de820140993da85ed1644d60d9b2a44213ff8298d4bb774"
+    },
+    {
+      "path": "analysis/outputs/fmg_decomposition_summary.csv",
+      "bytes": 9312,
+      "sha256": "8457400cddbc6facfb488e2b1cffb9bd7ed505dca290ca272fc19da6df6a6953"
+    },
+    {
+      "path": "analysis/outputs/metric_decomposition_manifest.json",
+      "bytes": 3331,
+      "sha256": "bf19cb2810290b0429339cec49cd919714089a7ece29b36394bf20baf2926f7e"
+    },
+    {
+      "path": "analysis/write_metric_decomposition_manifest.py",
+      "bytes": 4259,
+      "sha256": "2c46b48f8a1d370222605b5bf7f6290838767178899604e9b143d4242a45255b"
+    },
+    {
+      "path": "experiments/public_health/FMG_public_health_full_run_Colab.ipynb",
+      "bytes": 51678,
+      "sha256": "f1b616ad2bf988967fb3c48a3c8c141955e1aa8f3c643eb4db16a2b5b4c9d014"
+    },
+    {
+      "path": "experiments/public_health/outputs_full_2026_10_23/FMG_public_health_full_outputs.zip",
+      "bytes": 455505,
+      "sha256": "75072a2bb81dbc390ce42cde04cc6ed888b72eb3b7ce8121e9ec79d57aa846ad"
+    },
+    {
+      "path": "experiments/public_health/README.md",
+      "bytes": 11504,
+      "sha256": "cb74518a7c024715a5d73625510cc0e51fa301cd0313cfb0ef7e26905891cfe0"
+    },
+    {
+      "path": "experiments/public_health/requirements.txt",
+      "bytes": 284,
+      "sha256": "25356f91a9446fa82c5c4188af2facf54f7547d957eb01d8ff5752056e419ae9"
+    },
+    {
+      "path": "experiments/public_health/run_full_public_health.ps1",
+      "bytes": 1039,
+      "sha256": "138a1edcfb65e7dddef50af41f6e099cfd5d838524c4a19c8061482f03ca035f"
+    },
+    {
+      "path": "experiments/public_health/run_multiseed_tree_shap.py",
+      "bytes": 9525,
+      "sha256": "ea2f60e674e5578c6b7a3869f6c1573a606e3372fab3f028606e0e898e4b0edf"
+    },
+    {
+      "path": "experiments/public_health/run_public_health_fmg_audit.py",
+      "bytes": 50841,
+      "sha256": "5884890cde5bf51c20305a6e3aee0c679bf4d24649adb8da37e6d1355531dca2"
+    },
+    {
+      "path": "experiments/public_health/shap_multiseed_2026_10_23/multiseed_tree_shap_shifts.csv",
+      "bytes": 1508288,
+      "sha256": "ea211c52c00a4c3e9048a59a1a3091b72a528c789cb09a28c81051918b3a1c42"
+    },
+    {
+      "path": "experiments/public_health/shap_multiseed_2026_10_23/run_manifest.json",
+      "bytes": 2258,
+      "sha256": "8ff1ca5328708513020d6c1948023cd075a0aa99623e012dab14d3fff0871541"
+    },
+    {
+      "path": "experiments/public_health/shap_multiseed_2026_10_23/top_feature_summary.csv",
+      "bytes": 2809,
+      "sha256": "8738b8fa82f766af13e77fa235bd8b8d0f0d5e82540f540abee8aca3013088e8"
+    },
+    {
+      "path": "experiments/public_health/summarize_multiseed_tree_shap.py",
+      "bytes": 2158,
+      "sha256": "77afe108519a79e318b0d7115c5cc0f3f4bb564f5edc9a432d89b84929a35dd9"
+    },
+    {
+      "path": "experiments/public_health/test_audit_primitives.py",
+      "bytes": 3528,
+      "sha256": "137719294e121a979352971ff3b58a7f45f432092edfc0baf167f2630bf114c3"
+    },
+    {
+      "path": "experiments/public_health/validation_status.md",
+      "bytes": 2912,
+      "sha256": "e52915a21389f431fb47b1808b0258744849834af53069d928cbe630c80d97e2"
+    },
+    {
+      "path": "experiments/public_health/verify_multiseed_tree_shap.py",
+      "bytes": 3275,
+      "sha256": "89609c0e51b5d695cd5180fa681345cfdbfd8e52eb96b000a32a1f591413bce9"
+    },
+    {
+      "path": "figures/fig01_architecture_clean.png",
+      "bytes": 248007,
+      "sha256": "2908380937570a97b90176f22d2075a9f706b2e72b574f8095631009c0c7dd78"
+    },
+    {
+      "path": "figures/fig02_data_flow_clean.png",
+      "bytes": 345366,
+      "sha256": "91f30e7ee74144d7febef742524bedd1e97e102a2fcd9dae15dd2b68a4ea83c1"
+    },
+    {
+      "path": "figures/fig03_masking_gap_curves.pdf",
+      "bytes": 35658,
+      "sha256": "7eddd4d3f0676e530c4e92444800115e3b5788c557f4abcb3a5f081881ba9c31"
+    },
+    {
+      "path": "figures/fig03_masking_gap_curves.png",
+      "bytes": 341452,
+      "sha256": "64a26b934567a91f7c9afe2c67c388ce6ab8b82d41e579ebfbf35aa043c197b7"
+    },
+    {
+      "path": "figures/fig04_accuracy_vs_recall.pdf",
+      "bytes": 21462,
+      "sha256": "29b79637a05201166341129bee636c4fdfe762ae5581ef18e2f8d8696c76f79d"
+    },
+    {
+      "path": "figures/fig04_accuracy_vs_recall.png",
+      "bytes": 121747,
+      "sha256": "2d02059375dfd83cdb377cec9ff24dcacf5f82b326da22457c7e5ebd496d2f15"
+    },
+    {
+      "path": "figures/fig05_group_conditional_vs_mcar.pdf",
+      "bytes": 24835,
+      "sha256": "64eadb880a90f985860967b307ce3c74ad1237940d9339b731d4d23429e0736d"
+    },
+    {
+      "path": "figures/fig05_group_conditional_vs_mcar.png",
+      "bytes": 155522,
+      "sha256": "f1ce9d292437f68f4f0543e20ca24eb3abced6f18d25d631706f6f8fdef76a75"
+    },
+    {
+      "path": "figures/fig06_class_imbalance.pdf",
+      "bytes": 24644,
+      "sha256": "65f65d78659684ee82f3ffdf9696be19877e8ccf8d55c04d61c2f3511b1f97e5"
+    },
+    {
+      "path": "figures/fig06_class_imbalance.png",
+      "bytes": 185829,
+      "sha256": "fe0adefc602561b12a6d523e4a0deeeaea1e719e2c25643443ee79e8cff119cc"
+    },
+    {
+      "path": "figures/fig07_compas_extended_seeds.png",
+      "bytes": 126784,
+      "sha256": "3dd743263f843bde3120d3637485076a7fd3bc1cbca2f64f27106ed47c17a449"
+    },
+    {
+      "path": "figures/fig08_shap_shifts.pdf",
+      "bytes": 18608,
+      "sha256": "7bda0af1e9488110d606b43b8fbc75de373af8dbdd3db52efc8d03aeb352fb57"
+    },
+    {
+      "path": "figures/fig08_shap_shifts.png",
+      "bytes": 69557,
+      "sha256": "6de54d2052914920b0953c34c7be255def955e612e03444ea163bdc665e8c21c"
+    },
+    {
+      "path": "figures/fig09_imputation_ablation.pdf",
+      "bytes": 21878,
+      "sha256": "6050fa50e7b8d8962e680bbfea2c7539fdafc8e508dfa063b8e95d1ce2627d4b"
+    },
+    {
+      "path": "figures/fig09_imputation_ablation.png",
+      "bytes": 108873,
+      "sha256": "02e8a7943026dbf1e1860d86eeab683c4d4eecf4d49612ae4c0b31a5c2c5f7df"
+    },
+    {
+      "path": "figures/fmg_primary_seed_distributions.png",
+      "bytes": 155337,
+      "sha256": "5d8bb4f21bdc20cc9a098f4f70088034a1bdfcc622c5eed1d26ad2fa9274f90f"
+    },
+    {
+      "path": "FMG_research_final_REVIEWER_FIXED.ipynb",
+      "bytes": 105241,
+      "sha256": "91cebfc833f61289d340d20db3e52efb288868f0dd6e220422f4a7d1a9e9a712"
+    },
+    {
+      "path": "manuscript/FMG_Subgroup_Recall_Audit_Polished_submission_v4.docx",
+      "bytes": 637618,
+      "sha256": "fbef33d0d0b8275fc2665d83f9eb921549447fec3010e69d3a0bd7d94c986907"
+    },
+    {
+      "path": "manuscript/FMG_supplementary_final_release_2026-10-28.docx",
+      "bytes": 46291,
+      "sha256": "c858e7023be33427498edd7862e65084565d91084f260bda7e05eddde8fb66d3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 24184,
+      "sha256": "0cabe60cd0c63666b8bd1daaa0f659a4bb2a8ded5647740c8ae3d645c0b14dd4"
+    },
+    {
+      "path": "reproducibility/FMG_full_run_outputs_2026-10-25.zip",
+      "bytes": 29734,
+      "sha256": "ab42e43e895a6a7569351536f882b3f0dd41093659804b75ff1cfed97d19fa0b"
+    },
+    {
+      "path": "reproducibility/FMG_research_final_REVIEWER_FIXED_EXECUTED_2026-10-25.ipynb",
+      "bytes": 1215652,
+      "sha256": "7a0a10276076ac7279fdbb819718f76ae0c9384cdd9cb0029dedb32ca52235fa"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 221,
+      "sha256": "b8f165b2588079c5b4a58f81a5116d29107af51abf66a7d0b63791a454341523"
+    },
+    {
+      "path": "run_manifest_20261025.json",
+      "bytes": 6097,
+      "sha256": "2b7d0a4d565e054728e81c892b79cda077782f1615b182d2d61d2beb0e92cee7"
+    }
+  ]
+}

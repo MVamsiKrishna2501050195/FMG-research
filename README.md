@@ -384,3 +384,8 @@ https://github.com/MVamsiKrishna2501050195/FMG-research/tree/fmg-submission-rele
 
 Before journal submission, archive this release in a persistent service such
 as Zenodo if the journal requires a DOI.
+
+
+## Submission release v4 (2026-10-29)
+
+This version is identified by Git tag `fmg-submission-release-v4-2026-10-29`. The single manuscript for this release is `manuscript/FMG_Subgroup_Recall_Audit_Polished_submission_v4.docx` and its supplementary material is `manuscript/FMG_supplementary_final_release_2026-10-28.docx`. The canonical executed/source notebooks, benchmark outputs, figures, public-health extension, and run manifests from v2 are retained. Metric-decomposition code and per-seed/summary outputs are added under `analysis/`; raw public-health and benchmark inputs are not redistributed. See `RELEASE_MANIFEST.json` for SHA-256 hashes and exact file inventory.

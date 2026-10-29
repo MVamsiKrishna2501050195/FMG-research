@@ -1,0 +1,107 @@
+{
+  "analysis": "Frozen-classifier metric decomposition",
+  "run_date": "2026-10-27",
+  "runtime_seconds": 432.7,
+  "status": "completed",
+  "scope": "Descriptive repeated benchmark splits; not independent populations.",
+  "environment": {
+    "python": "3.11.15 (main, Jun 23 2026, 15:20:37) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+    "logical_cpu_count": 4,
+    "packages": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scipy": "1.15.2",
+      "scikit-learn": "1.6.1",
+      "xgboost": "3.2.0",
+      "lightgbm": "4.6.0",
+      "matplotlib": "3.10.3",
+      "seaborn": "0.13.2"
+    }
+  },
+  "design": {
+    "datasets": [
+      "Adult Income",
+      "COMPAS",
+      "Taiwan Credit"
+    ],
+    "models": [
+      "LGB",
+      "MLP",
+      "RF",
+      "XGB"
+    ],
+    "seeds": [
+      1,
+      7,
+      13,
+      21,
+      37,
+      42,
+      55,
+      99,
+      123,
+      456
+    ],
+    "masking_rates": [
+      0.1,
+      0.2
+    ],
+    "mechanisms": [
+      "MAR_group_conditional",
+      "MCAR"
+    ],
+    "rows": 480,
+    "archive_precision_decimals": 6
+  },
+  "source_code": {
+    "analysis/fmg_decomposition.py": "be5315013bcba452c5469b2446fa5b2abf3637a92f664ba7752d8728b600965c",
+    "analysis/_primary_core.py": "6c66707f8ec79f1dbc24292cd1188233e9979b01cc1fd5154c3323b5f9fa8a6f",
+    "analysis/write_metric_decomposition_manifest.py": "2c46b48f8a1d370222605b5bf7f6290838767178899604e9b143d4242a45255b",
+    "scripts/add_metric_decomposition_to_manuscripts.py": "459fb3a54af06532d1967b5b48539f1ed2d67129f4b55e8f29a70bd3e9f36f95"
+  },
+  "source_archives": {
+    "results_raw_10seeds.csv": "8f3f0dd57dfbc13e3a51f42d9d0bc118ab66ce0faf7724c87a77bcdec80e3cc2",
+    "group_conditional_mar_full_per_seed.csv": "a939c7a50205a5377d0774117fa798c0adde1c5d474c9a914a54567ed5bcf435"
+  },
+  "input_data_not_redistributed": {
+    "adult": {
+      "filename": "adult.zip",
+      "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"
+    },
+    "compas": {
+      "filename": "compas-scores-two-years.csv",
+      "sha256": "c451db85908b2f7fef1d83203bedf6b71ecda0d5af468d82ae62178f91d0cc7d"
+    },
+    "taiwan_credit": {
+      "filename": "UCI_Credit_Card.csv",
+      "sha256": "a0f0ab49d6326671d6cd83be5c88dcf18007025fe9a53ecd699119c871176ca1"
+    }
+  },
+  "outputs": {
+    "analysis/outputs/fmg_decomposition_per_seed.csv": {
+      "sha256": "18e9714752ffb00e19e3b48f3b14af5c02020b8cf57e20e52412eda000397998",
+      "bytes": 135319,
+      "rows": 480
+    },
+    "analysis/outputs/fmg_decomposition_summary.csv": {
+      "sha256": "e8f748acb2094448bca8a1371db53d905be34273763a81ceb8187035b6882f83",
+      "bytes": 9361,
+      "rows": 48
+    },
+    "analysis/outputs/fmg_decomposition_correlations.csv": {
+      "sha256": "b1c8f86db9812b7b1aee09f36636d1aa391c75d90f12607cb0b2d550f49f0885",
+      "bytes": 2487,
+      "rows": 36
+    },
+    "manuscript/FMG_manuscript_final_release_2026-10-28.docx": {
+      "sha256": "d186ae920837e58983ab4adbe17d6d19fe580d71da80e5a824cd61df0ca40fdc",
+      "bytes": 2257776
+    },
+    "manuscript/FMG_supplementary_final_release_2026-10-28.docx": {
+      "sha256": "c858e7023be33427498edd7862e65084565d91084f260bda7e05eddde8fb66d3",
+      "bytes": 46291
+    }
+  }
+}
