@@ -1,5 +1,11 @@
 Masking Gap reproducibility package
 
+## Current public release
+
+The current submission release is [`fmg-submission-release-v4-2026-10-29`](https://github.com/MVamsiKrishna2501050195/FMG-research/tree/fmg-submission-release-v4-2026-10-29). It supersedes the v2 and v3 release tags; use v4 for the current reproducibility package rather than the historical materials described below. The v4 tag tree and release ZIP were checked from a fresh clone against all 51 SHA-256 manifest entries.
+
+## Historical v2 snapshot (superseded by v4)
+
 Release snapshot: `fmg-submission-release-v2-2026-10-25`. The canonical analysis
 notebook is `FMG_research_final_REVIEWER_FIXED.ipynb`; the current manuscript
 is `manuscript/FMG_manuscript_final_release_2026-10-25.docx`.
