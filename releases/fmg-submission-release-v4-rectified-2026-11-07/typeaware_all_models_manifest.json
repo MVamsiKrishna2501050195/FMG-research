@@ -1,0 +1,37 @@
+{
+  "protocol": {
+    "rate": 0.2,
+    "seeds": [
+      42,
+      123,
+      456,
+      1,
+      7,
+      13,
+      21,
+      37,
+      55,
+      99
+    ],
+    "models": [
+      "RF",
+      "XGB",
+      "LGB",
+      "MLP"
+    ],
+    "strategies": [
+      "median_mode",
+      "knn_mode",
+      "iterative_mode"
+    ],
+    "test_only_raw_cell_mask": true,
+    "training_fitted_imputation": true,
+    "rows_expected": 360
+  },
+  "environment": {
+    "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "numpy": "2.4.6"
+  },
+  "output": "/content/outputs/typeaware_all_models/typeaware_all_models_per_seed.csv"
+}
