@@ -389,3 +389,7 @@ as Zenodo if the journal requires a DOI.
 ## Submission release v4 (2026-10-29)
 
 This version is identified by Git tag `fmg-submission-release-v4-2026-10-29`. The single manuscript for this release is `manuscript/FMG_Subgroup_Recall_Audit_Polished_submission_v4.docx` and its supplementary material is `manuscript/FMG_supplementary_final_release_2026-10-28.docx`. The canonical executed/source notebooks, benchmark outputs, figures, public-health extension, and run manifests from v2 are retained. Metric-decomposition code and per-seed/summary outputs are added under `analysis/`; raw public-health and benchmark inputs are not redistributed. See `RELEASE_MANIFEST.json` for SHA-256 hashes and exact file inventory.
+
+## Rectified submission package (2026-11-07)
+
+The rectified candidate package is in `releases/fmg-submission-release-v4-rectified-2026-11-07/`. It contains the corrected manuscript, the completed all-model type-aware sensitivity, the native missing-value baseline, the ReMasker comparison outputs, resumable Colab notebooks, and the adversarial audit record. The manuscript now describes seed-level bootstrap variability accurately, uses a hard-decision formulation for Proposition 1, removes unsupported stress-test claims, and reports reproducible threshold-discordance counts. Upload this branch and verify the release contents before journal submission.
