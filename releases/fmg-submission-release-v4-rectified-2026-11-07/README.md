@@ -9,11 +9,12 @@ This package contains the rectified manuscript and the supplementary files neede
 - Removed unsupported synthetic stress-test and enumeration claims that were not present in the verified public release.
 - Added a reproducible threshold-discordance analysis based on the saved primary outputs and narrowed the FMG claim to a paired monitoring diagnostic.
 - Added a retrospective alert-coverage analysis quantifying how often an accuracy-only threshold captured subgroup-recall alerts, with explicit non-deployment-utility limits.
+- Corrected ReMasker and DiffPuter metadata with CoChat-verified arXiv DOI records; clarified Proposition 2 population-mass assumptions and the UCI recall-floor interpretation.
 - Clarified that the all-model type-aware, native missing-value, FDA/ReMasker, and related supplementary outputs must be uploaded to the public repository before submission.
 
 ## Files
 
-- `JAISCR_FMG_submission_q2_q3_ready_rectified_revision3.docx` — latest revised manuscript, adding retrospective alert coverage; revision2 and the earlier rectified DOCX are retained for traceability.
+- `JAISCR_FMG_submission_q2_q3_ready_rectified_revision4.docx` — latest revised manuscript with CoChat-verified reference metadata and final mathematical/interpretive clarifications; earlier revisions are retained for traceability.
 - `typeaware_all_models_per_seed.csv` and its manifest — all-model type-aware sensitivity outputs.
 - `native_missing_per_seed.csv` and its manifest — native missing-value baseline outputs.
 - ReMasker CSV/JSON/statistics files — stronger external comparison outputs.
