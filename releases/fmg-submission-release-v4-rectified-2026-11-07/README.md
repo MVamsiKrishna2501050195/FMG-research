@@ -15,6 +15,7 @@ This package contains the rectified manuscript and the supplementary files neede
 ## Files
 
 - `JAISCR_FMG_submission_q2_q3_ready_rectified_revision4.docx` — latest revised manuscript with CoChat-verified reference metadata and final mathematical/interpretive clarifications; earlier revisions are retained for traceability.
+- `JAISCR_FMG_submission_q2_q3_ready_Q2_candidate.docx` — Q2-positioning candidate foregrounding the existing matched feature-decrement augmentation baseline; it explicitly remains distinct from an exact ATLLM reproduction.
 - `typeaware_all_models_per_seed.csv` and its manifest — all-model type-aware sensitivity outputs.
 - `native_missing_per_seed.csv` and its manifest — native missing-value baseline outputs.
 - ReMasker CSV/JSON/statistics files — stronger external comparison outputs.
