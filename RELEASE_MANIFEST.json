@@ -1,5 +1,5 @@
 {
-  "release_tag": "fmg-submission-release-v7-2026-11-20",
+  "release_tag": "fmg-submission-release-v8-2026-11-20",
   "title": "Auditing Subgroup Sensitivity to Test-Time Feature Degradation",
   "created_date": "2026-11-20",
   "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 31504,
-      "sha256": "0ed0d5987389fdea2ae6d48285e053a225aeea7a099698d26901239a39f1162d"
+      "bytes": 31673,
+      "sha256": "0b39fb8b662ec0fb75deddb9876ae38ae2a133b4c223d88417ef47ab31437c9d"
     },
     {
       "path": "adult_corrected_rerun/adult_corrected_table3_components.csv",
@@ -370,43 +370,43 @@
     },
     {
       "path": "figures/fig03_masking_gap_curves.pdf",
-      "bytes": 35658,
-      "sha256": "7eddd4d3f0676e530c4e92444800115e3b5788c557f4abcb3a5f081881ba9c31"
+      "bytes": 322148,
+      "sha256": "50b5e037e0a200e9cb1d679edd214f05397035b8208e79bf0c766d7b20b0269c"
     },
     {
       "path": "figures/fig03_masking_gap_curves.png",
-      "bytes": 341452,
-      "sha256": "64a26b934567a91f7c9afe2c67c388ce6ab8b82d41e579ebfbf35aa043c197b7"
+      "bytes": 293620,
+      "sha256": "e80ccc8ec811cb4f38c95a503560cb8f518e5577f258d9c7846cde81820dd0ad"
     },
     {
       "path": "figures/fig04_accuracy_vs_recall.pdf",
-      "bytes": 21462,
-      "sha256": "29b79637a05201166341129bee636c4fdfe762ae5581ef18e2f8d8696c76f79d"
+      "bytes": 166688,
+      "sha256": "69330bfa9a1daf8059cb2958363fccf9cb276f43331b8a4e7f26d0cab8c07c0b"
     },
     {
       "path": "figures/fig04_accuracy_vs_recall.png",
-      "bytes": 121747,
-      "sha256": "2d02059375dfd83cdb377cec9ff24dcacf5f82b326da22457c7e5ebd496d2f15"
+      "bytes": 88288,
+      "sha256": "4470b13b978cd55e45fa22c731358b13b88d55a6bb8d7e23e216fb154e9f89d1"
     },
     {
       "path": "figures/fig05_group_conditional_vs_mcar.pdf",
-      "bytes": 24835,
-      "sha256": "64eadb880a90f985860967b307ce3c74ad1237940d9339b731d4d23429e0736d"
+      "bytes": 198237,
+      "sha256": "8a6311ccac60ec04db4f7ff524b7c933e5c978c914d740507838486404b16e8b"
     },
     {
       "path": "figures/fig05_group_conditional_vs_mcar.png",
-      "bytes": 155522,
-      "sha256": "f1ce9d292437f68f4f0543e20ca24eb3abced6f18d25d631706f6f8fdef76a75"
+      "bytes": 135061,
+      "sha256": "8befed8afa681221e252e81a3c57964d1a0e0528c619674fd03a0518b255a75e"
     },
     {
       "path": "figures/fig06_class_imbalance.pdf",
-      "bytes": 24644,
-      "sha256": "65f65d78659684ee82f3ffdf9696be19877e8ccf8d55c04d61c2f3511b1f97e5"
+      "bytes": 173657,
+      "sha256": "94e5b1a2031ed3807f3936f58cca8e0c6bb77d382cf5dea435289a7ba7afdf47"
     },
     {
       "path": "figures/fig06_class_imbalance.png",
-      "bytes": 185829,
-      "sha256": "fe0adefc602561b12a6d523e4a0deeeaea1e719e2c25643443ee79e8cff119cc"
+      "bytes": 170077,
+      "sha256": "26566ccabcfcf519be7015d1ade608c6f2a0758deede16d8b6c0a89e42f9d7e6"
     },
     {
       "path": "figures/fig07_compas_extended_seeds.png",
@@ -415,28 +415,28 @@
     },
     {
       "path": "figures/fig07_compas_extended_seeds_clean.png",
-      "bytes": 97866,
-      "sha256": "410afd0f4479ae90b7919f747ec94a4d8f6af83b257deb303b80906556165eae"
+      "bytes": 85753,
+      "sha256": "7aa87095a0366f0af1b8ccdf8230f34aeeb109689c7f123108773e98100fca08"
     },
     {
       "path": "figures/fig08_shap_shifts.pdf",
-      "bytes": 18608,
-      "sha256": "7bda0af1e9488110d606b43b8fbc75de373af8dbdd3db52efc8d03aeb352fb57"
+      "bytes": 78780,
+      "sha256": "13d062b4b51145a30d4de485d2eea8d5e4d5f5052d50a6bcb67dffbd33dd8b99"
     },
     {
       "path": "figures/fig08_shap_shifts.png",
-      "bytes": 69557,
-      "sha256": "6de54d2052914920b0953c34c7be255def955e612e03444ea163bdc665e8c21c"
+      "bytes": 51802,
+      "sha256": "0eef01c697139f930286a65beef94a53b2722e70fc3554f16327835946a53738"
     },
     {
       "path": "figures/fig09_imputation_ablation.pdf",
-      "bytes": 21878,
-      "sha256": "6050fa50e7b8d8962e680bbfea2c7539fdafc8e508dfa063b8e95d1ce2627d4b"
+      "bytes": 140540,
+      "sha256": "332d298532b8c2ac3faab0335c3f073baad1ee57fb745ddf665742587f7983e6"
     },
     {
       "path": "figures/fig09_imputation_ablation.png",
-      "bytes": 108873,
-      "sha256": "02e8a7943026dbf1e1860d86eeab683c4d4eecf4d49612ae4c0b31a5c2c5f7df"
+      "bytes": 90238,
+      "sha256": "c6bea4084586acd1feb0940bb7858dc42f5c03b3f0e8728d4d706ae0d3573594"
     },
     {
       "path": "figures/fmg_primary_seed_distributions.png",
@@ -465,13 +465,13 @@
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.docx",
-      "bytes": 13658078,
-      "sha256": "466305dbc409904bcd5cadf6d0dfcbd4ef01f28e562fe60943dfb86711cfedf8"
+      "bytes": 13513038,
+      "sha256": "4f75f53b4f73d31735d39efa143b350711f50690486625cdc155e84d17a0c2da"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.pdf",
-      "bytes": 1175173,
-      "sha256": "d4452df847d28a0f2fd31c134fb33aa82258d77f1e33784426d381e78efab441"
+      "bytes": 1131939,
+      "sha256": "534fff9fc7d596901bc6213e23087fa00993eef19cb9f5374d1646a878f8970b"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx",
@@ -512,6 +512,11 @@
       "path": "manuscript/TCSST_IRO_FMG_revision_R9_operational_screening.pdf",
       "bytes": 1538119,
       "sha256": "4e089bb5e60332a07aeb36a8de26dcf49243b7e91d27eebbb8f2b6fe25f27426"
+    },
+    {
+      "path": "remove_embedded_figure_titles.py",
+      "bytes": 2304,
+      "sha256": "d21ed458e4248164eb3bb8046c9558cbe4da70cde7b35c50bca494d17bf3c393"
     },
     {
       "path": "repair_r12.py",
