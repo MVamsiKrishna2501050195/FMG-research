@@ -152,9 +152,8 @@ versions remain available in Git history.
 
 The correction package includes Adult primary metrics and denominators,
 Table 3 components, matched-subsample results, group-conditional MAR
-rows/summaries, type-aware imputation sensitivity, and corrected figures. The
-type-aware results remain limited to RF, three datasets, ten repeated splits,
-and 20% MCAR. The completed full rerun also generated an Adult and COMPAS
+rows/summaries, the earlier RF-focused type-aware imputation sensitivity, and
+corrected figures. The completed full rerun also generated an Adult and COMPAS
 primary SHAP output for RF seed 42; these single-seed attributions remain
 exploratory and are not evidence of attribution stability. The manuscript's
 separate multi-model, multi-seed SHAP sensitivity concerns the public-health
@@ -428,6 +427,26 @@ https://github.com/MVamsiKrishna2501050195/FMG-research/tree/fmg-submission-rele
 
 Before journal submission, archive this release in a persistent service such
 as Zenodo if the journal requires a DOI.
+
+## Submission repair R12 (2026-11-20)
+
+R12 reconciles the Adult-dependent supplementary analyses with the corrected
+Adult rerun in `adult_corrected_rerun/`. Supplementary Tables S1--S5 now use
+the corrected Adult rows; the missing aggregate decomposition is included as
+Supplementary Table S10; and the duplicate supplementary caption headings
+have been removed. The public-health extension remains Supplementary Tables
+S6--S7 and the ReMasker comparison remains Supplementary Table S11.
+
+The separate all-model raw-feature type-aware output used for the Adult
+LightGBM sensitivity sentence is archived under
+`analysis/outputs/typeaware_all_models/`. It contains the per-seed CSV, its
+run manifest, and a generated summary. This output is a distinct runner and
+estimand from the 1,080-row cross-mechanism run; the two Adult LightGBM
+values are not pooled. The manuscript reports this distinction explicitly.
+
+The R12 manuscript and supplement are the canonical submission documents:
+`manuscript/TCSST_IRO_FMG_revision_R11_final.docx` and
+`manuscript/FMG_supplementary_public_health_extension_R1.docx`.
 
 
 ## Submission release v4 (2026-10-29)
