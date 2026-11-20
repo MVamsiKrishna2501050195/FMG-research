@@ -1,5 +1,5 @@
 {
-  "release_tag": "fmg-submission-release-v6-2026-11-20",
+  "release_tag": "fmg-submission-release-v7-2026-11-20",
   "title": "Auditing Subgroup Sensitivity to Test-Time Feature Degradation",
   "created_date": "2026-11-20",
   "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 31505,
-      "sha256": "ecb95711873e563e3aed981340080255082f7bfa3daa377c2f6ba55ebc038f45"
+      "bytes": 31504,
+      "sha256": "0ed0d5987389fdea2ae6d48285e053a225aeea7a099698d26901239a39f1162d"
     },
     {
       "path": "adult_corrected_rerun/adult_corrected_table3_components.csv",
@@ -455,23 +455,23 @@
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.docx",
-      "bytes": 44353,
-      "sha256": "27c667865ab68ca8b2e250b5e60606a7778e4cf80db472122be3fe966f54b485"
+      "bytes": 44350,
+      "sha256": "337587138cdb854a3c98e9f1e8f1fa651f8f41ea06cba76dda560b9bc272fc44"
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.pdf",
-      "bytes": 276306,
-      "sha256": "d6938af8c2bc60a6bd71f1cef0c0428e08dccb3c194a07395ba7cbc8a8d2c041"
+      "bytes": 276776,
+      "sha256": "0e110a274756606ba9c04fee337b70838aa32b37a21658701e3b06a1a81521dc"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.docx",
-      "bytes": 13658099,
-      "sha256": "4babdfcb1103866a1f08edf6b2df17e43a591270142dc242faa8835591e11afc"
+      "bytes": 13658078,
+      "sha256": "466305dbc409904bcd5cadf6d0dfcbd4ef01f28e562fe60943dfb86711cfedf8"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.pdf",
-      "bytes": 1174994,
-      "sha256": "f2e3f4e8efe22fa68a743676b729b02863a675c263f3ec6c917e1e5bbe619a5c"
+      "bytes": 1175173,
+      "sha256": "d4452df847d28a0f2fd31c134fb33aa82258d77f1e33784426d381e78efab441"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx",
@@ -522,6 +522,11 @@
       "path": "repair_r13.py",
       "bytes": 1478,
       "sha256": "400f5a82d72480a2d3367bee09f3f177930b43c8bb45d24a5cca7172942b6e15"
+    },
+    {
+      "path": "repair_r14.py",
+      "bytes": 2101,
+      "sha256": "ab3222b05c57714e732798996339c898df4a08fa52ec95536d3af3f9a1ee94d5"
     },
     {
       "path": "reproducibility/FMG_full_run_outputs_2026-10-25.zip",

@@ -21,7 +21,7 @@ the LightGBM, limitations, and future-work wording.
 The current final manuscript is `manuscript/TCSST_IRO_FMG_revision_R11_final.docx`
 with rendered PDF `manuscript/TCSST_IRO_FMG_revision_R11_final.pdf`.
 Table 7 was moved to `manuscript/FMG_supplementary_public_health_extension_R1.docx`
-as Supplementary Table S11 to preserve the 25-page main-manuscript limit.
+as Supplementary Table S9 to preserve the 25-page main-manuscript limit.
 
 Canonical source
 ----------------
@@ -433,9 +433,9 @@ as Zenodo if the journal requires a DOI.
 R12 reconciles the Adult-dependent supplementary analyses with the corrected
 Adult rerun in `adult_corrected_rerun/`. Supplementary Tables S1--S5 now use
 the corrected Adult rows; the missing aggregate decomposition is included as
-Supplementary Table S10; and the duplicate supplementary caption headings
+Supplementary Table S8; and the duplicate supplementary caption headings
 have been removed. The public-health extension remains Supplementary Tables
-S6--S7 and the ReMasker comparison remains Supplementary Table S11.
+S6--S7 and the ReMasker comparison remains Supplementary Table S9.
 
 The separate all-model raw-feature type-aware output used for the Adult
 LightGBM sensitivity sentence is archived under
@@ -455,7 +455,7 @@ This version is identified by Git tag `fmg-submission-release-v4-2026-10-29`. Th
 
 ## Submission release v5 (2026-11-20)
 
-This revision is identified by Git tag `fmg-submission-release-v6-2026-11-20`. The highlighted manuscript is `manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx`. It adds the calibration and ranking sensitivity computed from existing row-level probabilities: Brier score, equal-width 10-bin ECE, and average precision/PR-AUC for clean and 20% MCAR-masked inputs across median-imputation and ReMasker conditions. The per-seed, paired-change, ECE-bin, summary, and manifest files are under `analysis/outputs/`; the executable analysis is `analysis/run_calibration_prauc_analysis.py`. Figure 7 is also supplied as `figures/fig07_compas_extended_seeds_clean.png` without embedded p-values or PASS/FAIL labels. These outputs reuse existing predictions and do not claim prospective deployment benefit.
+This revision is identified by Git tag `fmg-submission-release-v7-2026-11-20`. The highlighted manuscript is `manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx`. It adds the calibration and ranking sensitivity computed from existing row-level probabilities: Brier score, equal-width 10-bin ECE, and average precision/PR-AUC for clean and 20% MCAR-masked inputs across median-imputation and ReMasker conditions. The per-seed, paired-change, ECE-bin, summary, and manifest files are under `analysis/outputs/`; the executable analysis is `analysis/run_calibration_prauc_analysis.py`. Figure 7 is also supplied as `figures/fig07_compas_extended_seeds_clean.png` without embedded p-values or PASS/FAIL labels. These outputs reuse existing predictions and do not claim prospective deployment benefit.
 
 The calibration script expects the archived row-level prediction export as an external input because the 232 MB file is not duplicated in this release. Run it with `python analysis/run_calibration_prauc_analysis.py <mcrg_candidate_row_predictions.csv> --output-dir analysis/outputs/calibration_prauc_rerun`.
 
@@ -472,4 +472,5 @@ The calibration script expects the archived row-level prediction export as an ex
 `analysis/outputs/all_models_mechanisms/` contains the completed all-model extension: 3 datasets × 4 classifier families × 10 seeds × 3 masking rates × 3 mechanisms = 1,080 evaluations. It uses the median/mode pipeline for RF, XGBoost, LightGBM, and MLP. The manuscript reports these results as conditional sensitivity evidence, not as universal architecture-invariant behavior. The runner is `analysis/run_all_models_mechanisms.py`.
 
 `analysis/outputs/brfss_weight_sensitivity/` contains a compact BRFSS survey-weight sensitivity check using RF, the 80/20 split, 20% MCAR, and seeds 42, 123, and 456. It compares unweighted versus CDC-person-weighted training while applying CDC weights during held-out evaluation in both arms. The result is descriptive and does not establish design-unbiased survey estimation. The runner is `analysis/run_brfss_weight_training_sensitivity.py`.
+
 
