@@ -1,5 +1,5 @@
 {
-  "release_tag": "fmg-submission-release-v5-2026-11-20",
+  "release_tag": "fmg-submission-release-v6-2026-11-20",
   "title": "Auditing Subgroup Sensitivity to Test-Time Feature Degradation",
   "created_date": "2026-11-20",
   "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 31503,
-      "sha256": "52b8e4a69a78876256a8788e5a2912e6e3e971a6067b2e628cf9c031d8d0daa8"
+      "bytes": 31505,
+      "sha256": "ecb95711873e563e3aed981340080255082f7bfa3daa377c2f6ba55ebc038f45"
     },
     {
       "path": "adult_corrected_rerun/adult_corrected_table3_components.csv",
@@ -465,13 +465,13 @@
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.docx",
-      "bytes": 13658034,
-      "sha256": "b7a2a570d87dc527b389eea9471c7170a8ac6cb7d4ea494d70b4d7968b090e24"
+      "bytes": 13658099,
+      "sha256": "4babdfcb1103866a1f08edf6b2df17e43a591270142dc242faa8835591e11afc"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.pdf",
-      "bytes": 1174730,
-      "sha256": "cd030f7d9c34530e1ccab9ca114e09e2589917ebf37141ef337d2ad208aef38b"
+      "bytes": 1174994,
+      "sha256": "f2e3f4e8efe22fa68a743676b729b02863a675c263f3ec6c917e1e5bbe619a5c"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx",
@@ -517,6 +517,11 @@
       "path": "repair_r12.py",
       "bytes": 11482,
       "sha256": "857dab212cf97bba246940e2421857b747ad5b126148da0345d107627ab01e4b"
+    },
+    {
+      "path": "repair_r13.py",
+      "bytes": 1478,
+      "sha256": "400f5a82d72480a2d3367bee09f3f177930b43c8bb45d24a5cca7172942b6e15"
     },
     {
       "path": "reproducibility/FMG_full_run_outputs_2026-10-25.zip",
