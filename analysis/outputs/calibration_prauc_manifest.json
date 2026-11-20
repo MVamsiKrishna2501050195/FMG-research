@@ -1,0 +1,45 @@
+{
+  "input": "C:\\Users\\mvk80\\Downloads\\mcrg_candidate_row_predictions.csv",
+  "mask_rate": 0.2,
+  "conditions": [
+    "clean",
+    "masked"
+  ],
+  "methods": [
+    "median_imputation",
+    "remasker"
+  ],
+  "models": [
+    "LGB",
+    "MLP",
+    "RF",
+    "XGB"
+  ],
+  "datasets": [
+    "Adult Income",
+    "COMPAS",
+    "Taiwan Credit"
+  ],
+  "seeds": [
+    1,
+    7,
+    13,
+    21,
+    37,
+    42,
+    55,
+    99,
+    123,
+    456
+  ],
+  "metrics": {
+    "brier": "brier_score_loss",
+    "ece10": "equal-width 10-bin expected calibration error",
+    "pr_auc": "average_precision_score (average precision / PR-AUC)"
+  },
+  "subgroup_scopes": [
+    "all",
+    "focus_g0"
+  ],
+  "note": "Computed from existing row-level probability outputs; no model retraining."
+}

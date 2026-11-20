@@ -1,0 +1,1 @@
+Retrospective operational screening simulation using exported row-level predictions. Hidden event = focus-group recall loss >= threshold and aggregate accuracy loss < threshold. Accuracy-only alert = accuracy loss >= threshold. FMG-supported alert = FMG >= threshold. This is not a human-in-the-loop, prospective deployment, clinical validation, or proof of operational benefit.

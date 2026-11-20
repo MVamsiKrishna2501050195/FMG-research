@@ -1,0 +1,1 @@
+BRFSS 80/20 split; seeds 42,123,456; RF; 20% MCAR; CDC survey weights used for held-out evaluation in both arms; training compared unweighted vs survey-weighted. Compact sensitivity check.

@@ -1,0 +1,3 @@
+Five-seed, 20% MCAR native-NaN routing pilot. Models: LightGBM 4.7.0 and XGBoost 3.4.1.
+Categorical features are train-fitted ordinal encoded only to provide numeric model input; masked test cells remain NaN.
+Supplemental pilot; not a matched reproduction of the primary four-model protocol.

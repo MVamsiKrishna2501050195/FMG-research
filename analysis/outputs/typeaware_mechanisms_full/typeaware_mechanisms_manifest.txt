@@ -1,0 +1,3 @@
+Rates: 5%, 10%, 20%. Mechanisms: MCAR; constructed MAR stress scenario; constructed MNAR stress scenario.
+Classifier: 100-tree Random Forest, ten fixed seeds. Strategy: numeric median + categorical mode.
+MAR/MNAR are simulations, not evidence about naturally occurring missingness.

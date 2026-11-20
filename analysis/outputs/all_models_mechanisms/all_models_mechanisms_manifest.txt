@@ -1,0 +1,3 @@
+10 seeds; RF/XGBoost/LightGBM/MLP; 5%, 10%, 20%; MCAR and constructed MAR/MNAR.
+Median numeric + mode categorical imputation; MLP additionally standardized after transformation.
+MAR/MNAR are constructed stress scenarios and are not natural missingness validation.

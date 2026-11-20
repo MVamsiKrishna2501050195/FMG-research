@@ -1,0 +1,2 @@
+UCI Myocardial Infarction Complications, 1,700 records; target FIBR_PREDS; sex is audit group (female focus=0, male comparison=1).
+Observed feature missingness is retained and measured before train-fitted median imputation. Results compare lower- versus higher-missingness test strata split at the per-seed median missing-feature count; this is not a causal intervention or synthetic-mask experiment.

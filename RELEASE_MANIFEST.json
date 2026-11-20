@@ -1,8 +1,9 @@
 {
-  "release_tag": "fmg-submission-release-v4-2026-10-29",
-  "created_date": "2026-10-29",
+  "release_tag": "fmg-submission-release-v5-2026-11-20",
+  "title": "Auditing Subgroup Sensitivity to Test-Time Feature Degradation",
+  "created_date": "2026-11-20",
   "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
-  "manuscript": "manuscript/FMG_Subgroup_Recall_Audit_Polished_submission_v4.docx",
+  "manuscript": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx",
   "supplement": "manuscript/FMG_supplementary_final_release_2026-10-28.docx",
   "raw_public_health_data_included": false,
   "manifest_hash_note": "RELEASE_MANIFEST.json is excluded from its own file-hash list.",
@@ -239,8 +240,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 24184,
-      "sha256": "0cabe60cd0c63666b8bd1daaa0f659a4bb2a8ded5647740c8ae3d645c0b14dd4"
+      "bytes": 30473,
+      "sha256": "f5e54387bdc1082c4a7a077b274be779ff48d72705a4e490edaf5045d328616e"
     },
     {
       "path": "reproducibility/FMG_full_run_outputs_2026-10-25.zip",
@@ -261,6 +262,256 @@
       "path": "run_manifest_20261025.json",
       "bytes": 6097,
       "sha256": "2b7d0a4d565e054728e81c892b79cda077782f1615b182d2d61d2beb0e92cee7"
+    },
+    {
+      "path": "analysis/run_calibration_prauc_analysis.py",
+      "bytes": 5124,
+      "sha256": "bc82c2cac3d7a4dbb189ffc1e6f419aff7870b5c95b510d788ea09706eb16e48"
+    },
+    {
+      "path": "analysis/outputs/calibration_ece_bins.csv",
+      "bytes": 1247098,
+      "sha256": "77aac8fb3c508497b489dfa8e2c3d1dfc77233d2be5d1ebe21c8e1bbec89d317"
+    },
+    {
+      "path": "analysis/outputs/calibration_prauc_manifest.json",
+      "bytes": 812,
+      "sha256": "22f9b6e39784ed0548440958e911aea54f3dc16407c7f89a93dfa3232bcfe581"
+    },
+    {
+      "path": "analysis/outputs/calibration_prauc_paired_changes.csv",
+      "bytes": 108152,
+      "sha256": "0deaca26afba891b5c8874d0941b21334526b2c0c1332822f94e1ca9ba94b9c6"
+    },
+    {
+      "path": "analysis/outputs/calibration_prauc_per_seed.csv",
+      "bytes": 113348,
+      "sha256": "cb5b5545d9a5cfb3a334a4e9787ea1a2a8c3e6c4934138502d7482391ae1cd66"
+    },
+    {
+      "path": "analysis/outputs/calibration_prauc_summary.csv",
+      "bytes": 10768,
+      "sha256": "4c7ba924eed2950d874679cc927e3f1aa39b7b56af8d93709b739ec01b03d088"
+    },
+    {
+      "path": "figures/fig07_compas_extended_seeds_clean.png",
+      "bytes": 97866,
+      "sha256": "410afd0f4479ae90b7919f747ec94a4d8f6af83b257deb303b80906556165eae"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx",
+      "bytes": 13657365,
+      "sha256": "7717fc0c4dcef815dafe4046635f019c294f090be65f50c1a030431b5e2e9895"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.pdf",
+      "bytes": 1533699,
+      "sha256": "bef2cb223fd9c9accc1ba64cba42e83717a86bcf0c1e1d2be4a68d28b6754134"
+    },
+    {
+      "path": "analysis/run_typeaware_mechanisms.py",
+      "bytes": 6549,
+      "sha256": "a679533e0eb1dac469833d64d23ea993e8e13fa95db6b9f48998a431b5859747"
+    },
+    {
+      "path": "analysis/outputs/typeaware_mechanisms_pilot/typeaware_mechanisms_manifest.txt",
+      "bytes": 291,
+      "sha256": "b28a574f8c2cb665262dc49230e3e737892bf26118d673f59f757c37ababaeab"
+    },
+    {
+      "path": "analysis/outputs/typeaware_mechanisms_pilot/typeaware_mechanisms_per_seed.csv",
+      "bytes": 17361,
+      "sha256": "77a82017eb82db922a4285d7c800c6fcd5fe182b77d0ab8f302211b6f93df274"
+    },
+    {
+      "path": "analysis/outputs/typeaware_mechanisms_pilot/typeaware_mechanisms_summary.csv",
+      "bytes": 2929,
+      "sha256": "36bafafa7628f33ebc022f9db4fd56bcc35f962b0f899f83d8c99e0b84c3480b"
+    },
+    {
+      "path": "analysis/run_native_routing_pilot.py",
+      "bytes": 4451,
+      "sha256": "8553a68040dc7957df0890d1d047cdcc6c419e3d3a464dcef35b28a465d2d7f2"
+    },
+    {
+      "path": "analysis/outputs/native_routing_pilot/native_routing_pilot_manifest.txt",
+      "bytes": 295,
+      "sha256": "bbda33bd093147f3fd3ba81558b6f30c26c8c3615f4dc29bab560f7938766e55"
+    },
+    {
+      "path": "analysis/outputs/native_routing_pilot/native_routing_pilot_per_seed.csv",
+      "bytes": 2843,
+      "sha256": "9d90349e735b5816f7e5c6dc4c9334593976b2482f991a7b4460fcfa3101e73c"
+    },
+    {
+      "path": "analysis/outputs/native_routing_pilot/native_routing_pilot_summary.csv",
+      "bytes": 640,
+      "sha256": "5d77cda403867331be8225d94a248b58417b67fbd9947ad3ce419467df889c9a"
+    },
+    {
+      "path": "analysis/outputs/typeaware_mechanisms_full/typeaware_mechanisms_manifest.txt",
+      "bytes": 285,
+      "sha256": "5ef68300668beb1e7f027ed6172285affd42e4d639c1bcf96b50f1b0496ac819"
+    },
+    {
+      "path": "analysis/outputs/typeaware_mechanisms_full/typeaware_mechanisms_per_seed.csv",
+      "bytes": 34446,
+      "sha256": "e0e818a5f162f74672a3913fb711b340be851d7c82829b333f811a0660b3a213"
+    },
+    {
+      "path": "analysis/outputs/typeaware_mechanisms_full/typeaware_mechanisms_summary.csv",
+      "bytes": 2970,
+      "sha256": "b9c8740ac43be2179dc4f2b0bb864d33e244bc968274f002f766782e5503965d"
+    },
+    {
+      "path": "analysis/outputs/native_routing_full/native_routing_pilot_manifest.txt",
+      "bytes": 309,
+      "sha256": "c083511f69ccb97f2240e69e042adac153392dc985aca1c3b032f36c5432c8dd"
+    },
+    {
+      "path": "analysis/outputs/native_routing_full/native_routing_pilot_per_seed.csv",
+      "bytes": 5600,
+      "sha256": "a8d89cea7f5774cefc603833e330e7879e02eb52a55ababf1300bc2e865ea039"
+    },
+    {
+      "path": "analysis/outputs/native_routing_full/native_routing_pilot_summary.csv",
+      "bytes": 650,
+      "sha256": "aaabe797ebecd1fa60c74ff9b2360b3cb20e01f20d974b46cc7447e9027c4994"
+    },
+    {
+      "path": "analysis/run_all_models_mechanisms.py",
+      "bytes": 5914,
+      "sha256": "35071ed6a041b62418cd919c1042dea0c7c84e68d7caf0807416fda4b9704b61"
+    },
+    {
+      "path": "analysis/outputs/all_models_mechanisms/all_models_mechanisms_manifest.txt",
+      "bytes": 267,
+      "sha256": "531909bafaac62e1bbc2a04e591a2de38f547bdccf112a4a29f1308f82fea014"
+    },
+    {
+      "path": "analysis/outputs/all_models_mechanisms/all_models_mechanisms_per_seed.csv",
+      "bytes": 100294,
+      "sha256": "39e8a40424f7f96881cd3dbd2c6985a0c4f5c7118e8c41ef06d83a92d336e9f9"
+    },
+    {
+      "path": "analysis/outputs/all_models_mechanisms/all_models_mechanisms_summary.csv",
+      "bytes": 10671,
+      "sha256": "f85e5ba77e5093564e6e33c078cccc004043c23cf411c662ca9d44009f243c96"
+    },
+    {
+      "path": "analysis/run_brfss_weight_training_sensitivity.py",
+      "bytes": 3081,
+      "sha256": "74bba4fa7c5f24171ae9d18dc7ec17420a595b0f62a6039e5a0e0b7a4f2a5671"
+    },
+    {
+      "path": "analysis/outputs/brfss_weight_sensitivity/brfss_weight_training_sensitivity_manifest.txt",
+      "bytes": 190,
+      "sha256": "0e96e2b574c3ba21a9daa7175de284ab122671f1de7d07ffe5134f4ce191c68e"
+    },
+    {
+      "path": "analysis/outputs/brfss_weight_sensitivity/brfss_weight_training_sensitivity_per_seed.csv",
+      "bytes": 537,
+      "sha256": "c137cbd67ba49857b9d461c1bdb1aae7701e0d693c783e779bd78d9e538dca6b"
+    },
+    {
+      "path": "analysis/outputs/brfss_weight_sensitivity/brfss_weight_training_sensitivity_summary.csv",
+      "bytes": 251,
+      "sha256": "ee0f81bb313ee73a4f372eac7c4927a8e9aa2e1dabc5f9db7249d3adb15e037e"
+    },
+    {
+      "path": "analysis/run_natural_missingness_mi.py",
+      "bytes": 5122,
+      "sha256": "6c0eeedb1e76dcfcb189db715cf6c45f56eab12a8101d5bf080ad4657ccb9afb"
+    },
+    {
+      "path": "analysis/outputs/natural_missingness_MI/natural_missingness_mi_manifest.txt",
+      "bytes": 403,
+      "sha256": "e927217f20f41c76f349a4c74ed7c213c5d74d383ce4f5ff198d492cd8df0070"
+    },
+    {
+      "path": "analysis/outputs/natural_missingness_MI/natural_missingness_mi_paired.csv",
+      "bytes": 8030,
+      "sha256": "ca35b5d5ac4e6c79fac7c813f79d00077ec1676904522f1720ee8949e60fa5e5"
+    },
+    {
+      "path": "analysis/outputs/natural_missingness_MI/natural_missingness_mi_per_seed.csv",
+      "bytes": 9553,
+      "sha256": "6e84e6c079a13a0ce4d6d76c118197e61da381073352d0e27e66141b65bcf4af"
+    },
+    {
+      "path": "analysis/outputs/natural_missingness_MI/natural_missingness_mi_summary.csv",
+      "bytes": 675,
+      "sha256": "43f469680bad77afe82a53adf06dd009a1e65af0c5256f72f9e0d715eefbf6c1"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R8_natural_missingness.docx",
+      "bytes": 13657857,
+      "sha256": "8f466229273b7c0b5295d4c563e21ab809ecf5503887361fc938be968bffee00"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R8_natural_missingness.pdf",
+      "bytes": 1536383,
+      "sha256": "9a420f3da86636e344abaaffe138e8a5f8f05a52faa5bcf55036f9e84441c82c"
+    },
+    {
+      "path": "analysis/run_retrospective_operational_simulation.py",
+      "bytes": 4315,
+      "sha256": "4932591fde283517bc627c571cb2c0e1a5c0216bc185b1b6bd67095ef378804d"
+    },
+    {
+      "path": "analysis/outputs/retrospective_operational/operational_cell_results.csv",
+      "bytes": 16213,
+      "sha256": "a17db552eee54f9f74af907511e255cb23828d84c77cfca43aa9689d3f367d09"
+    },
+    {
+      "path": "analysis/outputs/retrospective_operational/operational_manifest.txt",
+      "bytes": 380,
+      "sha256": "e9cf40077b55b468fce57c3f740ab51be8a6cfc427a9d9f1a2573fad3d3b2622"
+    },
+    {
+      "path": "analysis/outputs/retrospective_operational/operational_overall_summary.csv",
+      "bytes": 218,
+      "sha256": "01e0fa1dfe8e36e9d4307a9b86bba4b28b8d27376c194e99951e440a95357ff8"
+    },
+    {
+      "path": "analysis/outputs/retrospective_operational/operational_rule_summary.csv",
+      "bytes": 1391,
+      "sha256": "d7d199fcd1fe99f42c41cdb6937416bf4c93201a0e9d05eb5b1ffa6c0ebf28aa"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R9_operational_screening.docx",
+      "bytes": 13658190,
+      "sha256": "318b35d4e43e10f84145dfc578881374379d33515db29c850c05fd963b897a3b"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R9_operational_screening.pdf",
+      "bytes": 1538119,
+      "sha256": "4e089bb5e60332a07aeb36a8de26dcf49243b7e91d27eebbb8f2b6fe25f27426"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R9_corrected.docx",
+      "bytes": 13658016,
+      "sha256": "36c7a3cbea4b814b8956811e97041445bc796f91af25968a954a4e473a195cbe"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R9_corrected.pdf",
+      "bytes": 1540881,
+      "sha256": "6728b972fd92b964793304efd6c2cbce0bbe18d536fa0da352f2059768679980"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.docx",
+      "bytes": 13658010,
+      "sha256": "06de9ddf26bcf7f4b52574d9d8981e7ad8e9c3cb050b685f3aa67522597130ba"
+    },
+    {
+      "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.pdf",
+      "bytes": 1536045,
+      "sha256": "81d9eeeac80ae6a726d9b0deb36cf1ad9cb56758e8644a3ad37a3376242a9a37"
+    },
+    {
+      "path": "manuscript/FMG_supplementary_public_health_extension_R1.docx",
+      "bytes": 44159,
+      "sha256": "bacc75d144c87d8c3fc15911df38cc5cc58e2f0f2baf45e8c7028b1d967c04c9"
     }
   ]
 }

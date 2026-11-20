@@ -1,3 +1,5 @@
+Auditing Subgroup Sensitivity to Test-Time Feature Degradation
+
 Masking Gap reproducibility package
 
 Release snapshot: `fmg-submission-release-v2-2026-10-25`. The canonical analysis
@@ -6,6 +8,20 @@ is `manuscript/FMG_manuscript_final_release_2026-10-25.docx`.
 The submission bundle and SHA-256 inventory are
 `FMG_final_submission_release_v2_2026-10-25.zip` and
 `FMG_final_submission_release_v2_2026-10-25_manifest.json`.
+
+Submission title: `Auditing Subgroup Sensitivity to Test-Time Feature Degradation`.
+
+Latest corrected submission manuscript: `manuscript/TCSST_IRO_FMG_revision_R9_corrected.docx`
+with rendered PDF `manuscript/TCSST_IRO_FMG_revision_R9_corrected.pdf`. This
+revision moves the natural-missingness and operational-rule analyses to
+Results, reports the recall-only comparison and FMG precision, adds the UCI
+Myocardial Infarction Complications citation and dataset row, and reconciles
+the LightGBM, limitations, and future-work wording.
+
+The current final manuscript is `manuscript/TCSST_IRO_FMG_revision_R11_final.docx`
+with rendered PDF `manuscript/TCSST_IRO_FMG_revision_R11_final.pdf`.
+Table 7 was moved to `manuscript/FMG_supplementary_public_health_extension_R1.docx`
+as Supplementary Table S11 to preserve the 25-page main-manuscript limit.
 
 Canonical source
 ----------------
@@ -208,6 +224,34 @@ included separately in the revised manuscript and supplement, without changing
 archived primary results. It is a retrospective benchmark, not deployment or
 clinical validation.
 
+### Independent natural-missingness check
+
+`analysis/run_natural_missingness_mi.py` evaluates an independent UCI
+Myocardial Infarction Complications check using observed feature missingness
+rather than synthetic masks. The target is `FIBR_PREDS`, with female records
+as the focus group and male records as the comparison group. For each of the
+ten fixed seeds, the test set is split at its median number of missing feature
+cells into lower- and higher-missingness strata; the model is fit once with
+training-fitted median imputation and evaluated on both strata. Outputs are in
+`analysis/outputs/natural_missingness_MI/` and include per-seed, paired,
+summary, and manifest files. This is an external retrospective stress check,
+not a causal missingness intervention, prospective deployment study, fairness
+validation, or population-level generalization claim. A complete-case arm was
+not estimable because the source records are broadly incomplete.
+
+### Retrospective operational screening simulation
+
+`analysis/run_retrospective_operational_simulation.py` applies two prespecified
+alert rules to the exported row-level predictions at 20% masking: an
+accuracy-only rule and an FMG-supported rule. A hidden event is defined as
+focus-group recall loss at least 0.01 while aggregate accuracy loss remains
+below 0.01. Across 200 dataset--model--seed cells, the accuracy-only rule
+detected 0 of 53 hidden events; the FMG-supported rule detected 52 of 53. The
+simulation is retrospective and descriptive: its alert counts do not measure
+human response time, prospective monitoring performance, clinical safety, or
+deployment benefit. Outputs are in
+`analysis/outputs/retrospective_operational/`.
+
 ### Multi-model, multi-seed TreeSHAP sensitivity
 
 `experiments/public_health/run_multiseed_tree_shap.py` adds a separate
@@ -389,3 +433,23 @@ as Zenodo if the journal requires a DOI.
 ## Submission release v4 (2026-10-29)
 
 This version is identified by Git tag `fmg-submission-release-v4-2026-10-29`. The single manuscript for this release is `manuscript/FMG_Subgroup_Recall_Audit_Polished_submission_v4.docx` and its supplementary material is `manuscript/FMG_supplementary_final_release_2026-10-28.docx`. The canonical executed/source notebooks, benchmark outputs, figures, public-health extension, and run manifests from v2 are retained. Metric-decomposition code and per-seed/summary outputs are added under `analysis/`; raw public-health and benchmark inputs are not redistributed. See `RELEASE_MANIFEST.json` for SHA-256 hashes and exact file inventory.
+
+## Submission release v5 (2026-11-20)
+
+This revision is identified by Git tag `fmg-submission-release-v5-2026-11-20`. The highlighted manuscript is `manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx`. It adds the calibration and ranking sensitivity computed from existing row-level probabilities: Brier score, equal-width 10-bin ECE, and average precision/PR-AUC for clean and 20% MCAR-masked inputs across median-imputation and ReMasker conditions. The per-seed, paired-change, ECE-bin, summary, and manifest files are under `analysis/outputs/`; the executable analysis is `analysis/run_calibration_prauc_analysis.py`. Figure 7 is also supplied as `figures/fig07_compas_extended_seeds_clean.png` without embedded p-values or PASS/FAIL labels. These outputs reuse existing predictions and do not claim prospective deployment benefit.
+
+The calibration script expects the archived row-level prediction export as an external input because the 232 MB file is not duplicated in this release. Run it with `python analysis/run_calibration_prauc_analysis.py <mcrg_candidate_row_predictions.csv> --output-dir analysis/outputs/calibration_prauc_rerun`.
+
+### Supplemental mechanism-sensitivity pilot
+
+`analysis/outputs/typeaware_mechanisms_pilot/` contains a laptop-feasible five-seed pilot for the primary median/mode preprocessing pipeline at 5%, 10%, and 20% masking under MCAR and constructed MAR/MNAR stress mechanisms. The pilot uses a 30-tree Random Forest and is supplemental evidence only; it does not replace the primary ten-seed analysis and does not establish that the simulated MAR/MNAR mechanisms represent natural missingness. The runner is `analysis/run_typeaware_mechanisms.py`.
+
+`analysis/outputs/native_routing_pilot/` contains a separate five-seed, 20% MCAR pilot comparing native NaN routing in LightGBM and XGBoost. It uses train-fitted ordinal encoding for categorical inputs and retains NaN values only in the masked test matrix. The result is diagnostic evidence about architecture-dependent direction, not a matched reproduction of the primary four-model protocol or a superiority claim. The runner is `analysis/run_native_routing_pilot.py`.
+
+### Full ten-seed sensitivity extensions
+
+`analysis/outputs/typeaware_mechanisms_full/` contains the completed ten-seed, 100-tree Random Forest extension of the median/mode preprocessing analysis at 5%, 10%, and 20% masking under MCAR and constructed MAR/MNAR stress mechanisms. `analysis/outputs/native_routing_full/` contains the completed ten-seed, 20% MCAR LightGBM/XGBoost native-routing comparison. Both remain sensitivity analyses because the first uses constructed missingness mechanisms and the second uses a two-model protocol with ordinal encoding for categorical inputs; neither is a fairness guarantee or deployment validation.
+
+`analysis/outputs/all_models_mechanisms/` contains the completed all-model extension: 3 datasets × 4 classifier families × 10 seeds × 3 masking rates × 3 mechanisms = 1,080 evaluations. It uses the median/mode pipeline for RF, XGBoost, LightGBM, and MLP. The manuscript reports these results as conditional sensitivity evidence, not as universal architecture-invariant behavior. The runner is `analysis/run_all_models_mechanisms.py`.
+
+`analysis/outputs/brfss_weight_sensitivity/` contains a compact BRFSS survey-weight sensitivity check using RF, the 80/20 split, 20% MCAR, and seeds 42, 123, and 456. It compares unweighted versus CDC-person-weighted training while applying CDC weights during held-out evaluation in both arms. The result is descriptive and does not establish design-unbiased survey estimation. The runner is `analysis/run_brfss_weight_training_sensitivity.py`.
