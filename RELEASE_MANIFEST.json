@@ -1,7 +1,7 @@
 {
-  "release_tag": "fmg-submission-release-v14-2026-11-21",
+  "release_tag": "fmg-submission-release-v15-2026-11-21",
   "title": "Auditing Subgroup Sensitivity to Test-Time Feature Degradation",
-  "created_date": "2026-11-20",
+  "created_date": "2026-11-21",
   "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
   "manuscript": "manuscript/TCSST_IRO_FMG_revision_R11_final.docx",
   "supplement": "manuscript/FMG_supplementary_public_health_extension_R1.docx",
@@ -16,7 +16,7 @@
     {
       "path": "README.md",
       "bytes": 32391,
-      "sha256": "ad4db6de291c9a107d412649cf825a121990d239130d5734bbf497113ff6ad7e"
+      "sha256": "b1fdb6897a91a2238d853b7dbcd7cc2460495ac1256956a7c50969c5b6542b72"
     },
     {
       "path": "adult_corrected_rerun/adult_corrected_table3_components.csv",
@@ -355,8 +355,8 @@
     },
     {
       "path": "create_response_letter_r20.py",
-      "bytes": 12125,
-      "sha256": "ae532c9bf46e711d21a6a2cb709345d22acceb5cc051022d11a15b6825287f79"
+      "bytes": 12359,
+      "sha256": "2e9f5b5ef6cd2525998e1f9b72e897a537ec209451def9a206b9cd4f31f6c5b4"
     },
     {
       "path": "experiments/public_health/FMG_public_health_full_run_Colab.ipynb",
@@ -525,23 +525,23 @@
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.docx",
-      "bytes": 47059,
-      "sha256": "fe7666672afa7be5afb4976800f9a19410adee58fac12ae48099d122ea3401b1"
+      "bytes": 47073,
+      "sha256": "c8bc7e228d1b811a3898a33233d72652e4abeadea455a2c1ae47646b5ca1f908"
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.pdf",
-      "bytes": 343463,
-      "sha256": "1e8797198918c0b9ac3a712051a34cfd06a77f6a3d56a96e773218135171e66b"
+      "bytes": 343925,
+      "sha256": "e52f38c94082224d5d02a7d96c418fb2d688ee52ddec63cc3681912a7fa74ed3"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.docx",
-      "bytes": 13513100,
-      "sha256": "5acc18bf86869731cae5dec7d7d71d0b8ca5e10fcdcec52bddb0207fbcaa9e38"
+      "bytes": 13513094,
+      "sha256": "928ff9fca84759d7470961bae8a37a58c5f1025c6892e3aec960d473c30ba152"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.pdf",
-      "bytes": 1132422,
-      "sha256": "343ab5a3b14bc34c0398e19e31474c360a4c522a295b1c34d7599630c840eea6"
+      "bytes": 1132364,
+      "sha256": "7f3e15d1a8383516077ef23245e0ba7d57823270309e8e1cc7fa2e5faff29b8a"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx",
@@ -655,18 +655,33 @@
     },
     {
       "path": "submission_response_letter_TCSST-26-773.docx",
-      "bytes": 39532,
-      "sha256": "570f87066b113bb9a0103f832dde818536d1191b5fe94bc5da17669cc77406cc"
+      "bytes": 39582,
+      "sha256": "f0f5b4c481cf682ba296cd305c937d80816a007231fe248f5ac6cbede290b2d3"
     },
     {
       "path": "submission_response_letter_TCSST-26-773.pdf",
-      "bytes": 160809,
-      "sha256": "3158ad68e1285fc7cb102f29d8fc650d8b1be837379757a4d44de1aba00652a6"
+      "bytes": 161324,
+      "sha256": "41e9407371e24ba84061f1d6671fed8b8d955287ef75231dec7d7cff00e6c532"
     },
     {
       "path": "update_review_additions_docs.py",
       "bytes": 7207,
       "sha256": "23029065b55852b4e5eaecff340deafebf71b42445e11019cb784f590977827e"
+    },
+    {
+      "path": "repair_leading_space.py",
+      "bytes": 1668,
+      "sha256": "4fe2c78060fc2c0f8b8c776a3e14cf41ce5d9231a4bfbd42bb670ea2ad6d7b4d"
+    },
+    {
+      "path": "repair_r21_release.py",
+      "bytes": 4006,
+      "sha256": "9aaa9a410712d24c9cb947c106eea5e56bb05a983dc7cae7cfadb07d662fd0ec"
+    },
+    {
+      "path": "update_release_urls.py",
+      "bytes": 841,
+      "sha256": "09d2cf866929c76b5eaad9a3de725ed886cc837659cb05b6c1e774feeae94697"
     }
   ]
 }
