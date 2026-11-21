@@ -1,5 +1,5 @@
 {
-  "release_tag": "fmg-submission-release-v15-2026-11-21",
+  "release_tag": "fmg-submission-release-v16-2026-11-21",
   "title": "Auditing Subgroup Sensitivity to Test-Time Feature Degradation",
   "created_date": "2026-11-21",
   "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 32391,
-      "sha256": "b1fdb6897a91a2238d853b7dbcd7cc2460495ac1256956a7c50969c5b6542b72"
+      "bytes": 32865,
+      "sha256": "4c3549696d6d3740cb7c53b25312320bce68cc970047e8f2c8b6b5445c3df398"
     },
     {
       "path": "adult_corrected_rerun/adult_corrected_table3_components.csv",
@@ -356,7 +356,7 @@
     {
       "path": "create_response_letter_r20.py",
       "bytes": 12359,
-      "sha256": "2e9f5b5ef6cd2525998e1f9b72e897a537ec209451def9a206b9cd4f31f6c5b4"
+      "sha256": "42dd6edb44a597d7d2f933c6c3a15eae2c7b1fb81db56d0a996dfab388a35cfb"
     },
     {
       "path": "experiments/public_health/FMG_public_health_full_run_Colab.ipynb",
@@ -525,23 +525,23 @@
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.docx",
-      "bytes": 47073,
-      "sha256": "c8bc7e228d1b811a3898a33233d72652e4abeadea455a2c1ae47646b5ca1f908"
+      "bytes": 49014,
+      "sha256": "e93bc08d0bee89896e50e8283c3d96059d5876560f73105d25a50900f3df4fa1"
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.pdf",
-      "bytes": 343925,
-      "sha256": "e52f38c94082224d5d02a7d96c418fb2d688ee52ddec63cc3681912a7fa74ed3"
+      "bytes": 358667,
+      "sha256": "7fa1ae07d2a6be9ed4edd17c0eea4194d9597c13942f157c0d2c576a641a515a"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.docx",
-      "bytes": 13513094,
-      "sha256": "928ff9fca84759d7470961bae8a37a58c5f1025c6892e3aec960d473c30ba152"
+      "bytes": 13514453,
+      "sha256": "559e0a47a6ce4cfe5c795159c8883c105257ff44cce8d176ead83c41f405b433"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.pdf",
-      "bytes": 1132364,
-      "sha256": "7f3e15d1a8383516077ef23245e0ba7d57823270309e8e1cc7fa2e5faff29b8a"
+      "bytes": 1131995,
+      "sha256": "e1b0bd79a270bf9b454a71d3e7fabe72e5afe1921d9f462fabaf72b3f14a5d5c"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx",
@@ -656,12 +656,12 @@
     {
       "path": "submission_response_letter_TCSST-26-773.docx",
       "bytes": 39582,
-      "sha256": "f0f5b4c481cf682ba296cd305c937d80816a007231fe248f5ac6cbede290b2d3"
+      "sha256": "61ceb61ae251a08f85504dd8b1d2fbd288be200d1d74bdfca60be4df7baa809a"
     },
     {
       "path": "submission_response_letter_TCSST-26-773.pdf",
-      "bytes": 161324,
-      "sha256": "41e9407371e24ba84061f1d6671fed8b8d955287ef75231dec7d7cff00e6c532"
+      "bytes": 161323,
+      "sha256": "64394dc66b3c5840984969c586819e8cbdc11b0231a664aa84358fac53e60f3f"
     },
     {
       "path": "update_review_additions_docs.py",
@@ -681,7 +681,17 @@
     {
       "path": "update_release_urls.py",
       "bytes": 841,
-      "sha256": "09d2cf866929c76b5eaad9a3de725ed886cc837659cb05b6c1e774feeae94697"
+      "sha256": "9a0cde6dfaf32da9d10b5cf3365c44f9a48ca8194cb1b8c40c4a6b2533175ba5"
+    },
+    {
+      "path": "format_tables_equations.py",
+      "bytes": 2300,
+      "sha256": "62a341f3fc99ce699611649ecd63b29e193db444a67a053a3489a4c452f1cf4c"
+    },
+    {
+      "path": "update_readme_release.py",
+      "bytes": 341,
+      "sha256": "0e75b8faf5ab3e7a05bf09361f51ac790e220b4bfa363e268c37a4242cc28a8f"
     }
   ]
 }

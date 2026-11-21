@@ -4,8 +4,8 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 
 DOC = Path("manuscript/TCSST_IRO_FMG_revision_R11_final.docx")
-old = b"fmg-submission-release-v14-2026-11-21"
-new = b"fmg-submission-release-v15-2026-11-21"
+old = b"fmg-submission-release-v15-2026-11-21"
+new = b"fmg-submission-release-v16-2026-11-21"
 
 with NamedTemporaryFile(suffix=".docx", delete=False, dir=DOC.parent) as tmp:
     temp = Path(tmp.name)
