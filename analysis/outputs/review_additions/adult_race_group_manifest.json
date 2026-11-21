@@ -1,0 +1,26 @@
+{
+  "dataset": "Adult Income",
+  "focus_group": "non-White race",
+  "comparison_group": "White race",
+  "models": [
+    "RF",
+    "XGB",
+    "LGB",
+    "MLP"
+  ],
+  "seeds": [
+    42,
+    123,
+    456,
+    1,
+    7,
+    13,
+    21,
+    37,
+    55,
+    99
+  ],
+  "mask_rate": 0.2,
+  "protocol": "archived row-level predictions; no retraining; labels verified against reconstructed test splits",
+  "raw_prediction_export": "C:\\Users\\mvk80\\Downloads\\fmg_row_level_predictions.csv"
+}

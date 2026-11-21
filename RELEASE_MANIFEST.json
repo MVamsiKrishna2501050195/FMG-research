@@ -1,5 +1,5 @@
 {
-  "release_tag": "fmg-submission-release-v13-2026-11-21",
+  "release_tag": "fmg-submission-release-v14-2026-11-21",
   "title": "Auditing Subgroup Sensitivity to Test-Time Feature Degradation",
   "created_date": "2026-11-20",
   "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 32310,
-      "sha256": "a1e674bcc8ef03011cbf07a56880b00c746535a3c5d4479df79a55423d66c880"
+      "bytes": 32391,
+      "sha256": "ad4db6de291c9a107d412649cf825a121990d239130d5734bbf497113ff6ad7e"
     },
     {
       "path": "adult_corrected_rerun/adult_corrected_table3_components.csv",
@@ -204,6 +204,21 @@
       "sha256": "d7d199fcd1fe99f42c41cdb6937416bf4c93201a0e9d05eb5b1ffa6c0ebf28aa"
     },
     {
+      "path": "analysis/outputs/review_additions/adult_race_group_manifest.json",
+      "bytes": 510,
+      "sha256": "62344abdf1373375ca6928c11aa627406e31a51edfbaf7f11ca207cab47311ec"
+    },
+    {
+      "path": "analysis/outputs/review_additions/adult_race_group_per_seed.csv",
+      "bytes": 8308,
+      "sha256": "0f6f31775e7a3d8da17d699b56114f7aeae300df3d902f868135a129a754cbec"
+    },
+    {
+      "path": "analysis/outputs/review_additions/adult_race_group_summary.csv",
+      "bytes": 530,
+      "sha256": "349f14adcb811646fb88a7deaab49650c1fb125255bee7388f033cdc740b02d6"
+    },
+    {
       "path": "analysis/outputs/review_additions/alternative_focus_group_g1_summary.csv",
       "bytes": 1347,
       "sha256": "3f241712ab06b3cae9e914bf028de92471f388dde2efbd011eea021bbd691871"
@@ -279,6 +294,11 @@
       "sha256": "36bafafa7628f33ebc022f9db4fd56bcc35f962b0f899f83d8c99e0b84c3480b"
     },
     {
+      "path": "analysis/run_adult_race_group_review.py",
+      "bytes": 5574,
+      "sha256": "55ee4d8a0879800fcf45300748858cc34b06b980112c3e2330fc1168ea007d85"
+    },
+    {
       "path": "analysis/run_all_models_mechanisms.py",
       "bytes": 5914,
       "sha256": "35071ed6a041b62418cd919c1042dea0c7c84e68d7caf0807416fda4b9704b61"
@@ -332,6 +352,11 @@
       "path": "create_response_letter.py",
       "bytes": 11366,
       "sha256": "45ff54f2a0b1a08f6314a19b1998684bd4a9b6d9637082d3c99510327902c501"
+    },
+    {
+      "path": "create_response_letter_r20.py",
+      "bytes": 12125,
+      "sha256": "ae532c9bf46e711d21a6a2cb709345d22acceb5cc051022d11a15b6825287f79"
     },
     {
       "path": "experiments/public_health/FMG_public_health_full_run_Colab.ipynb",
@@ -500,23 +525,23 @@
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.docx",
-      "bytes": 46689,
-      "sha256": "656bf2974d6522b57a3bb1b4eaf5170edfa54d3bf61ce6299d80539f4a5adba8"
+      "bytes": 47059,
+      "sha256": "fe7666672afa7be5afb4976800f9a19410adee58fac12ae48099d122ea3401b1"
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.pdf",
-      "bytes": 336665,
-      "sha256": "488e542b23f4c488b5717dccf2a578731ffa4b37c57c23736177544d994aa0c8"
+      "bytes": 343463,
+      "sha256": "1e8797198918c0b9ac3a712051a34cfd06a77f6a3d56a96e773218135171e66b"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.docx",
-      "bytes": 13512991,
-      "sha256": "45bae52ae983640203ecee22562ba065ba5900822d9561ffdc184a366f9469ab"
+      "bytes": 13513100,
+      "sha256": "5acc18bf86869731cae5dec7d7d71d0b8ca5e10fcdcec52bddb0207fbcaa9e38"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.pdf",
-      "bytes": 1132077,
-      "sha256": "b1958f7b9efc247d898684fc9445446016cc1ccc70e95ef82a9fd3c4a44bb50c"
+      "bytes": 1132422,
+      "sha256": "343ab5a3b14bc34c0398e19e31474c360a4c522a295b1c34d7599630c840eea6"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx",
@@ -594,6 +619,16 @@
       "sha256": "8ddc3f826314241814c45b7b89e47dc048d0e11086ae359679664632075a06fd"
     },
     {
+      "path": "repair_r20_docs.py",
+      "bytes": 5675,
+      "sha256": "8117cda04b069a760ba141cd86e4a1f1e2289dc20308816c75d1caa052581ea4"
+    },
+    {
+      "path": "repair_s10_format.py",
+      "bytes": 674,
+      "sha256": "3d57d9d415f4fb00c5ee417ee628230563a7b6d9c56b68aee341f65b5f92b360"
+    },
+    {
       "path": "repair_supplement_headers.py",
       "bytes": 453,
       "sha256": "787fe9853a6bdba77ee527674af690aff8a6fd47bef3108e8c8adc612a2faca6"
@@ -620,13 +655,13 @@
     },
     {
       "path": "submission_response_letter_TCSST-26-773.docx",
-      "bytes": 39377,
-      "sha256": "ea5908533a0c8479bb09b9df0778be530384a8cff1bab7ea9feb2ae8c3c173f7"
+      "bytes": 39532,
+      "sha256": "570f87066b113bb9a0103f832dde818536d1191b5fe94bc5da17669cc77406cc"
     },
     {
       "path": "submission_response_letter_TCSST-26-773.pdf",
-      "bytes": 186367,
-      "sha256": "f7035b0ec46d929fcd949eddccd1951b3e137600947885f5ee00a714e46ccd44"
+      "bytes": 160809,
+      "sha256": "3158ad68e1285fc7cb102f29d8fc650d8b1be837379757a4d44de1aba00652a6"
     },
     {
       "path": "update_review_additions_docs.py",
