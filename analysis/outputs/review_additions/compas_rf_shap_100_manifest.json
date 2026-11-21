@@ -1,0 +1,16 @@
+{
+  "dataset": "COMPAS",
+  "model": "Random Forest",
+  "seed": 42,
+  "mask_rate": 0.2,
+  "n_matched_per_group": 100,
+  "protocol": "training-fitted preprocessing, frozen classifier, test-only MCAR mask, training-fitted median imputation",
+  "interpretation": "descriptive attribution sensitivity; not causal explanation",
+  "software": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "shap": "0.51.0"
+  },
+  "input_sha256": "3f4247418489771ed78d3580055e00051ab79959d18621ad2fe706494ed5560b"
+}

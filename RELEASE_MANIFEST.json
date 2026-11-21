@@ -1,5 +1,5 @@
 {
-  "release_tag": "fmg-submission-release-v11-2026-11-21",
+  "release_tag": "fmg-submission-release-v13-2026-11-21",
   "title": "Auditing Subgroup Sensitivity to Test-Time Feature Degradation",
   "created_date": "2026-11-20",
   "canonical_notebook": "FMG_research_final_REVIEWER_FIXED.ipynb",
@@ -15,8 +15,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 31904,
-      "sha256": "1b219220a514fcd8970447db67a5eadfe673282727dd567561a6f7b5405255eb"
+      "bytes": 32310,
+      "sha256": "a1e674bcc8ef03011cbf07a56880b00c746535a3c5d4479df79a55423d66c880"
     },
     {
       "path": "adult_corrected_rerun/adult_corrected_table3_components.csv",
@@ -204,6 +204,36 @@
       "sha256": "d7d199fcd1fe99f42c41cdb6937416bf4c93201a0e9d05eb5b1ffa6c0ebf28aa"
     },
     {
+      "path": "analysis/outputs/review_additions/alternative_focus_group_g1_summary.csv",
+      "bytes": 1347,
+      "sha256": "3f241712ab06b3cae9e914bf028de92471f388dde2efbd011eea021bbd691871"
+    },
+    {
+      "path": "analysis/outputs/review_additions/compas_rf_shap_100_manifest.json",
+      "bytes": 541,
+      "sha256": "360788d5c2afef14049ed39083340529e667e605d3c5af2d523fd57335634c5c"
+    },
+    {
+      "path": "analysis/outputs/review_additions/compas_rf_shap_100_per_feature.csv",
+      "bytes": 3062,
+      "sha256": "83d8740d934365573f91440dbd70a4d5d7fe0785c9bd3ca89740b89a36aab445"
+    },
+    {
+      "path": "analysis/outputs/review_additions/compas_rf_shap_100_top5.csv",
+      "bytes": 1767,
+      "sha256": "c205d187a3cf626ed39cfde01dab7bfb39694d3f066c826a8aacdf1f37757ff9"
+    },
+    {
+      "path": "analysis/outputs/review_additions/corrected_resampled_t_primary.csv",
+      "bytes": 2267,
+      "sha256": "98b68e487e6cc25e422ed001c8e3608181abccbf9305cba1d50b131f18cb5721"
+    },
+    {
+      "path": "analysis/outputs/review_additions/review_additions_manifest.json",
+      "bytes": 495,
+      "sha256": "36a6148fd277bd1906fd9d4558b68975b36b97ca9734473751d0eebe7bcf081f"
+    },
+    {
       "path": "analysis/outputs/typeaware_all_models/typeaware_all_models_manifest.json",
       "bytes": 681,
       "sha256": "ab1d9e8d272f5e2a5f49213cec71fc733d597818646aea59f77701257dd3a7bc"
@@ -264,6 +294,11 @@
       "sha256": "bc82c2cac3d7a4dbb189ffc1e6f419aff7870b5c95b510d788ea09706eb16e48"
     },
     {
+      "path": "analysis/run_compas_rf_shap_100.py",
+      "bytes": 4693,
+      "sha256": "db2478a2c1bc93ae54e33dd5b3970af9143834411c7377e58eedc252af26849c"
+    },
+    {
       "path": "analysis/run_native_routing_pilot.py",
       "bytes": 4451,
       "sha256": "8553a68040dc7957df0890d1d047cdcc6c419e3d3a464dcef35b28a465d2d7f2"
@@ -279,6 +314,11 @@
       "sha256": "4932591fde283517bc627c571cb2c0e1a5c0216bc185b1b6bd67095ef378804d"
     },
     {
+      "path": "analysis/run_review_additions.py",
+      "bytes": 4508,
+      "sha256": "45f918d8e14cd47d2d66aa088eb158c47813b51f53a032af6aec81effad103dc"
+    },
+    {
       "path": "analysis/run_typeaware_mechanisms.py",
       "bytes": 6549,
       "sha256": "a679533e0eb1dac469833d64d23ea993e8e13fa95db6b9f48998a431b5859747"
@@ -287,6 +327,11 @@
       "path": "analysis/write_metric_decomposition_manifest.py",
       "bytes": 4259,
       "sha256": "2c46b48f8a1d370222605b5bf7f6290838767178899604e9b143d4242a45255b"
+    },
+    {
+      "path": "create_response_letter.py",
+      "bytes": 11366,
+      "sha256": "45ff54f2a0b1a08f6314a19b1998684bd4a9b6d9637082d3c99510327902c501"
     },
     {
       "path": "experiments/public_health/FMG_public_health_full_run_Colab.ipynb",
@@ -455,23 +500,23 @@
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.docx",
-      "bytes": 44350,
-      "sha256": "337587138cdb854a3c98e9f1e8f1fa651f8f41ea06cba76dda560b9bc272fc44"
+      "bytes": 46689,
+      "sha256": "656bf2974d6522b57a3bb1b4eaf5170edfa54d3bf61ce6299d80539f4a5adba8"
     },
     {
       "path": "manuscript/FMG_supplementary_public_health_extension_R1.pdf",
-      "bytes": 276776,
-      "sha256": "0e110a274756606ba9c04fee337b70838aa32b37a21658701e3b06a1a81521dc"
+      "bytes": 336665,
+      "sha256": "488e542b23f4c488b5717dccf2a578731ffa4b37c57c23736177544d994aa0c8"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.docx",
-      "bytes": 13512719,
-      "sha256": "3ebee11b5ad233cc745d98e3f0785b9f4cb80d4abac249dd5ba1bd52e4fff844"
+      "bytes": 13512991,
+      "sha256": "45bae52ae983640203ecee22562ba065ba5900822d9561ffdc184a366f9469ab"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R11_final.pdf",
-      "bytes": 1130923,
-      "sha256": "bdbf0f90e74d1ff992e7ef79199c089e618fb7c4012dabd2a04321332644cc00"
+      "bytes": 1132077,
+      "sha256": "b1958f7b9efc247d898684fc9445446016cc1ccc70e95ef82a9fd3c4a44bb50c"
     },
     {
       "path": "manuscript/TCSST_IRO_FMG_revision_R7_highlighted.docx",
@@ -549,6 +594,11 @@
       "sha256": "8ddc3f826314241814c45b7b89e47dc048d0e11086ae359679664632075a06fd"
     },
     {
+      "path": "repair_supplement_headers.py",
+      "bytes": 453,
+      "sha256": "787fe9853a6bdba77ee527674af690aff8a6fd47bef3108e8c8adc612a2faca6"
+    },
+    {
       "path": "reproducibility/FMG_full_run_outputs_2026-10-25.zip",
       "bytes": 29734,
       "sha256": "ab42e43e895a6a7569351536f882b3f0dd41093659804b75ff1cfed97d19fa0b"
@@ -567,6 +617,21 @@
       "path": "run_manifest_20261025.json",
       "bytes": 6097,
       "sha256": "2b7d0a4d565e054728e81c892b79cda077782f1615b182d2d61d2beb0e92cee7"
+    },
+    {
+      "path": "submission_response_letter_TCSST-26-773.docx",
+      "bytes": 39377,
+      "sha256": "ea5908533a0c8479bb09b9df0778be530384a8cff1bab7ea9feb2ae8c3c173f7"
+    },
+    {
+      "path": "submission_response_letter_TCSST-26-773.pdf",
+      "bytes": 186367,
+      "sha256": "f7035b0ec46d929fcd949eddccd1951b3e137600947885f5ee00a714e46ccd44"
+    },
+    {
+      "path": "update_review_additions_docs.py",
+      "bytes": 7207,
+      "sha256": "23029065b55852b4e5eaecff340deafebf71b42445e11019cb784f590977827e"
     }
   ]
 }

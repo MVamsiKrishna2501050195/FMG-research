@@ -1,0 +1,11 @@
+{
+  "analysis": "reviewer-requested low-cost additions",
+  "corrected_test": "Nadeau-Bengio corrected resampled t-test of FMG against zero",
+  "test_ratio": 0.4285714285714286,
+  "primary_cells": 12,
+  "alternative_group": "same archived Adult/COMPAS/Taiwan predictions with g1 treated as focus group",
+  "outputs": [
+    "analysis\\outputs\\review_additions\\alternative_focus_group_g1_summary.csv",
+    "analysis\\outputs\\review_additions\\corrected_resampled_t_primary.csv"
+  ]
+}
