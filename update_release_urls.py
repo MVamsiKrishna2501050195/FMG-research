@@ -4,8 +4,8 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 
 DOC = Path("manuscript/TCSST_IRO_FMG_revision_R11_final.docx")
-old = b"fmg-submission-release-v18-2026-11-21"
-new = b"fmg-submission-release-v19-2026-11-22"
+old = b"fmg-submission-release-v19-2026-11-22"
+new = b"fmg-submission-release-v20-2026-11-22"
 
 with NamedTemporaryFile(suffix=".docx", delete=False, dir=DOC.parent) as tmp:
     temp = Path(tmp.name)
@@ -22,4 +22,4 @@ with ZipFile(DOC) as zin, ZipFile(temp, "w", ZIP_DEFLATED) as zout:
 if not changed:
     raise RuntimeError("The v14 release URL was not found")
 temp.replace(DOC)
-print(f"Updated {DOC} to the v19 release URL")
+print(f"Updated {DOC} to the v20 release URL")
